@@ -42,21 +42,21 @@ a {
 .cold {
     background-image: url("http://unsplash.com/photos/cKyqdM-xias/download");
     background-position: center;
-    background-size: inherit;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 .hot {
     background-image: url("http://unsplash.com/photos/AKuzZrpJJew/download");
     background-position: center;
-    background-size: inherit;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 .moderate {
     background-image: url("http://unsplash.com/photos/bBG0dtdDf6A/download");
     background-position: center;
-    background-size: inherit;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
