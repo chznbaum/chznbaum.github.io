@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta name="charset" content="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Personal Prortfolio|Chazona Baum</title>
+        <meta name="author" content="Chazona Baum" />
+        <meta name="description" content="The personal portfolio of Chazona Baum, web development student" />
+        <meta name="keywords" content="portfolio, web development, html, css, javascript" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="default.css" />
+        <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/05e1351669.js"></script>
+        <script src="scripts.js"></script>
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="80">
+        <div class="skip">
+            <a class="btn btn-primary btn-lg sr-only sr-only-focusable skip-navigation" href="#main">Skip navigation</a>
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Chazona Baum</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Portfolio<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#portfolio">View All</a></li>
+                                <li><a href="http://anotherconsolelog.com/tributepage/index.html">Tribute Page</a></li>
+                                <li><a href="http://anotherconsolelog.com/randomquotemachine/index.html">Random Quote Generator</a></li>
+                                <li><a href="http://anotherconsolelog.com/localweatherapp/index.html">Local Weather App</a></li>
+                                <li><a href="http://anotherconsolelog.com/wikipediaviewer/index.html">Wikipedia Viewer</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" id="main" role="main">
+            <div id="home">
+                <div class="jumbotron">
+                    <h1 class="text-center">Front-End Web Development</h1>
+                    <p class="text-center">Modern, responsive websites and sleek web apps</p>
+                </div>
+            </div>
+            <div id="about">
+                <div class="row" id="aboutrow">
+                    <h2 class="text-center">About</h2>
+                    <div class="col-md-4">
+                        <img class= "img-circle img-responsive center-block" src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13435367_1078343348911815_5850640948544552117_n.jpg?oh=f82a88e9770820ac26c32752973173df&oe=57EAA05F" >
+                    </div>
+                    <div class="col-md-8">
+                        <p class="lead text-center">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+                        <p class="lead text-center">Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                        <p class="lead text-center">Capitalise on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="portfolio">
+                <div class="row" id="portfoliorow">
+                    <h2 class="text-center">Portfolio</h2>
+                    <p class="lead text-center">Browse my recent projects:</p>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="http://chznbaum.github.io/images/tributepage.PNG" alt="Screenshot of Tribute Page">
+                            <div class="caption">
+                                <h3 class="text-center">Tribute Page - Jane Addams</h3>
+                                <p class="text-center">A page in honor of Jane Addams - an author, suffragette, and social work pioneer.</p>
+                                <p><a href="http://anotherconsolelog.com/tributepage/index.html" class="btn btn-primary btn-block">View Project</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="http://chznbaum.github.io/images/randomquotemachine.PNG" alt="Screenshot of Random Quote Machine">
+                            <div class="caption">
+                                <h3 class="text-center">Random Quote Machine</h3>
+                                <p class="text-center">An app to view random inspirational quotes.</p>
+                                <p><a href="http://anotherconsolelog.com/randomquotemachine/index.html" class="btn btn-primary btn-block">View Project</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="http://chznbaum.github.io/images/localweatherapp.PNG" alt="Screenshot of Local Weather App">          
+                            <div class="caption">
+                                <h3 class="text-center">Local Weather App</h3>
+                                <p class="text-center">An app to view the temperature at your location.</p>
+                                <p><a href="http://anotherconsolelog.com/localweatherapp/index.html" class="btn btn-primary btn-block">View Project</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="http://chznbaum.github.io/images/wikiviewer.PNG" alt="Screenshot of Wikipedia Viewer">
+                            <div class="caption">
+                                <h3 class="text-center">Wikipedia Viewer</h3>
+                                <p class="text-center">A Wikipedia search tool with the option of viewing a random page.</p>
+                                <p><a href="http://anotherconsolelog.com/wikipediaviewer/index.html" class="btn btn-primary btn-block">View Project</a></p>
+                            </div>          
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Comingsoon.png" alt="An example of a designed website">
+                            <div class="caption">
+                                <h3 class="text-center">Leverage Agile Frameworks</h3>
+                                <p class="text-center">Bring to the table win-win survival strategies to ensure proactive domination.</p>
+                                <p><a href="#" class="btn btn-primary btn-block">View Project</a></p>
+                            </div>          
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Comingsoon.png" alt="An example of a designed website">
+                            <div class="caption">
+                                <h3 class="text-center">Leverage Agile Frameworks</h3>
+                                <p class="text-center">Bring to the table win-win survival strategies to ensure proactive domination.</p>
+                                <p><a href="#" class="btn btn-primary btn-block">View Project</a></p>
+                            </div>          
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Comingsoon.png" alt="An example of a designed website">
+                            <div class="caption">
+                                <h3 class="text-center">Leverage Agile Frameworks</h3>
+                                <p class="text-center">Bring to the table win-win survival strategies to ensure proactive domination.</p>
+                                <p><a href="#" class="btn btn-primary btn-block">View Project</a></p>
+                            </div>          
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Comingsoon.png" alt="An example of a designed website">
+                            <div class="caption">
+                                <h3 class="text-center">Leverage Agile Frameworks</h3>
+                                <p class="text-center">Bring to the table win-win survival strategies to ensure proactive domination.</p>
+                                <p><a href="#" class="btn btn-primary btn-block">View Project</a></p>
+                            </div>          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="contact">
+                <div class="row" id="contactrow">
+                    <h2 class="text-center">Contact</h2>
+                    <div class="col-xs-12 col-md-6">
+                        <p class="lead">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+                        <p class="lead">Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <form>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="inputfirstname">First name</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="inputfirstname" placeholder="John">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="inputlastname">Last name</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="inputlastname" placeholder="Doe">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="inputemail">Email address</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="email" class="form-control" id="inputemail" placeholder="johndoe@company.com">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="inputphone">Phone number</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="tel" class="form-control" id="inputphone" placeholder="(000)000-0000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="inputmessage">Message</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <textarea class="form-control" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" class="btn btn-default" role="button"><span class="glyphicon glyphicon-send"></span> Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center">Get Social</h2>
+                        <div class="social">
+                            <ul class="list-inline text-center">
+                                <li><a href="https://www.linkedin.com/in/chznbaum/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://github.com/chznbaum/" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li><a href="https://twitter.com/chznbaum/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.freecodecamp.com/chznbaum/" target="_blank">(<i class="fa fa-fire">)</i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer role="contentinfo">
+            <hr><p class="text-center"><a href="https://anotherconsolelog.com/">Chazona Baum</a> &#169 2016. All Rights Reserved</p>
+        </footer>
+    </body>
+</html>
