@@ -1,0 +1,80 @@
+@import 'https://fonts.googleapis.com/css?family=PT+Sans|Bree+Serif';
+
+body {
+    position: relative;
+    margin-top: 100px;
+    background-color: #ACF0F2;
+    color: rgba(0,0,0,0.875);
+}
+
+p, .navbar {
+    font-family: "PT Sans", sans-serif;
+}
+
+h1, h2, h3, .navbar-brand {
+    font-family: "Bree Serif", serif;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+dl {
+    border-style: none;
+    border-radius: 10px;
+    background-color: rgba(250,250,250,0.5);
+}
+
+dl a {
+    color: #225378;
+}
+
+dt, dd {
+    padding: 0 20px;
+}
+
+dt {
+    margin-top: 20px;
+    font-size: 1.75em;
+}
+
+dd {
+    margin-bottom: 20px;
+    font-size: 1.25em;
+}
+
+footer a {
+    color: #FFFFFF;
+}
+
+.navbar {
+    font-size: 1.25em;
+}
+
+.navbar-brand {
+    font-size: 1.75em;
+}
+
+.btn {
+    color: #FFFFFF;
+    font-size: 1.5em;
+}
+
+#btnRow {
+    margin-top: 10px;
+}
+
+#resultsBtn {
+    background-color: #225378;
+    border-color: #225378;
+}
+
+#randomBtn {
+    background-color: #EB7F00;
+    border-color: #EB7F00;
+}
+
+@media(max-width: 767px) {
+    margin-top: 40px;
+}
