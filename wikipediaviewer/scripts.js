@@ -25,8 +25,7 @@ $(document).ready(function() {
             $(this).removeAttr('tabindex');
         }).focus(); // focus on the content container
     });
-});
-// When randomBtn clicked, open link to random Wikipedia entry
+    // When randomBtn clicked, open link to random Wikipedia entry
 $("#randomBtn").on("click", function() {
     window.open("https://en.wikipedia.org/wiki/Special:Random");
 });
@@ -54,4 +53,5 @@ $("#resultsBtn").on("click", function() {
             }
         }
     });
+});
 });
