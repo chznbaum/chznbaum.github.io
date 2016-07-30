@@ -18,7 +18,7 @@
         <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/05e1351669.js"></script>
-        <script src="../scripts.js"></script>
+        <script src="scripts.js"></script>
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="80">
         <div class="skip">
@@ -171,62 +171,65 @@
                         <p>Me contacte sobre esta forma o por los medios de comunicación social. Responderé dentro de dos dias. Podemos hablar sobre un trabajo o solo sobre nuestro disfrute mutuo de Unbreakable Kimmy Schmidt.</p>
                     </div>
                     <div class="col-xs-12 col-md-6">
-                        <form>
-                            <div class="form-group">
+                        <form action="mailto:chazona@anotherconsolelog.com" method="post" enctype="text/plain" name="contact" onsubmit="return validateForm()">
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="inputfirstname">Nombre</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="firstname" id="inputfirstname" placeholder="Juan" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="inputlastname">Apellido</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="lastname" id="inputlastname" placeholder="García" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="inputemail">Email</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="email" class="form-control" name="email" id="inputemail" placeholder="juangarcia@company.com" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="inputphone">Teléfono</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="tel" class="form-control" name="phone" id="inputphone" placeholder="(000)000-0000">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="inputmessage">Mensaje</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" name="message" id="inputmessage" placeholder="Hola Chazona, ..." rows="5" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="inputfirstname">Nombre de pila</label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <input type="text" class="form-control" id="inputfirstname" placeholder="Juan">
+                                    <div class="col-md-8 col-md-offset-4">
+                                        <input type="submit" class="btn btn-default" role="button" value="Submit" />
+                                        <input type="reset" class="btn btn-default" role="button" value="Reset" />
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="inputlastname">Apellido</label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <input type="text" class="form-control" id="inputlastname" placeholder="García">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="inputemail">Email</label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <input type="email" class="form-control" id="inputemail" placeholder="juangarcia@company.com">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="inputphone">Teléfono</label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <input type="tel" class="form-control" id="inputphone" placeholder="(000)000-0000">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="inputmessage">Mensaje</label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <textarea class="form-control" rows="5"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-4">
-                                    <button type="submit" class="btn btn-default" role="button"><span class="glyphicon glyphicon-send"></span> Me envie</button>
-                                </div>
-                            </div>
+                            </fieldset>
                         </form>
                     </div>
                 </div>
