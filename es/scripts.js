@@ -28,6 +28,6 @@ $(document).ready(function() {
     // Contact form
     $("#contactform").on("submit", function(e) {
         $("#contactform *").fadeOut(2000);
-        $("#contactform").prepend("Ha envió su mensaje.");
+        $("#contactform").prepend("Ha enviado su mensaje.");
     });
 });
