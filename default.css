@@ -99,6 +99,7 @@ footer a {
 
 @media (max-width: 767px){
     #home {
+        margin-top: 40px;
         padding: 150px 0 120px 0;
   }
   
