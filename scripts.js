@@ -25,26 +25,4 @@ $(document).ready(function() {
             $(this).removeAttr('tabindex');
         }).focus(); // focus on the content container
     });
-    // Validate contact form
-    function validateForm() {
-        var formFName = document.forms["contact"]["firstname"].value;
-        if (formFName == null || formFName == "") {
-            alert("First name must be filled out.");
-            return false;
-        };
-        var formLName = document.forms["contact"]["lastname"].value;
-        if (formLName == null || formLName == "") {
-            alert("Last name must be filled out.");
-            return false;
-        };
-        var formEmail = document.forms["contact"]["lastname"].value;
-        if (formEmail == null || formEmail == "") {
-            alert("Email must be filled out.");
-            return false;
-        };
-        var formMessage = document.forms["contact"]["lastname"].value;
-        if (formMessage == null || formMessage == "") {
-            alert("Message must be filled out.")
-        };
-    };
 });
