@@ -26,6 +26,7 @@ $(document).ready(function() {
         }).focus(); // focus on the content container
     });
     // Contact form
+    var submitted=false;
     $("#contactform").on("submit", function(e) {
         $("#contactform *").fadeOut(2000);
         $("#contactform").prepend("Your message has been sent.");
