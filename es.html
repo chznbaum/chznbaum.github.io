@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta name="charset" content="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Portafolio Personal|Chazona Baum</title>
+        <meta name="author" content="Chazona Baum" />
+        <meta name="description" content="El portafolio personal de Chazona Baum, estudiante de desarrollo web" />
+        <meta name="keywords" content="portfolio, web development, html, css, javascript" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="default.css" />
+        <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/05e1351669.js"></script>
+        <script src="scripts.js"></script>
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="80">
+        <div class="skip">
+            <a class="btn btn-primary btn-lg sr-only sr-only-focusable skip-navigation" href="#main">Omita la navegación</a>
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                        <span class="sr-only">Palanca de la navegación</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Chazona Baum</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Sobre Chazona</a></li>
+                        <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Portafolio<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#portfolio">View All</a></li>
+                                <li><a href="http://anotherconsolelog.com/tributepage/index.html">Tribute Page</a></li>
+                                <li><a href="http://anotherconsolelog.com/randomquotemachine/index.html">Random Quote Generator</a></li>
+                                <li><a href="http://anotherconsolelog.com/localweatherapp/index.html">Local Weather App</a></li>
+                                <li><a href="http://anotherconsolelog.com/wikipediaviewer/index.html">Wikipedia Viewer</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#contact">Contactar</a></li>
+                        <li><a href="https://medium.com/another-day-another-console-log">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" id="main" role="main">
+            <div id="home">
+                <div class="jumbotron">
+                    <h1 class="text-center">Desarrollo de Pájinas Web Front-End</h1>
+                    <p class="text-center">Diseños modernos y aplicaciones funcionales</p>
+                </div>
+            </div>
+            <div id="about">
+                <div class="row" id="aboutrow">
+                    <h2 class="text-center">Sobre Chazona</h2>
+                    <div class="col-md-4">
+                        <img class= "img-circle img-responsive center-block" src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/13435367_1078343348911815_5850640948544552117_n.jpg?oh=f82a88e9770820ac26c32752973173df&oe=57EAA05F" >
+                    </div>
+                    <div class="col-md-8">
+                        <p class="lead text-center">No se parezco como un programador promedio. Mi currículum no es el típico de los que trabajan sobre computadoras. Mis experiencias de la vida ha sido tan diversos, y he trabajado en industrias como la comida, la medicina y el seguro. Tengo dos hijos enérgicos, y presto atención a personas de ámbitos diferentes de la vida.</p>
+                        <p class="text-center">Debido a la visión única del mundo que tengo, resuelvo problemas complejos como nadie. Me encanta crear por la mente, busco de la ciencia, y soy tan elástica. Aprendo conceptos nuevos rapidamente.</p>
+                        <p class="text-center">Si busca unos empleados por su empresa o necesita un proyecto independiente, su empresa necesita más que la media.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="portfolio">
+                <div class="row" id="portfoliorow">
+                    <h2 class="text-center">Poratfolio</h2>
+                    <p class="lead text-center">Mire mis proyectos recientes:</p>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="http://chznbaum.github.io/images/tributepage.PNG" alt="Screenshot de la pájina sobre Jane Addams">
+                            <div class="caption">
+                                <h3 class="text-center">Tribute Page</h3>
+                                <p class="text-center">Una pájina sobre Jane Addams, una sufragista y trabajadora social.</p>
+                                <p><a href="http://anotherconsolelog.com/tributepage/index.html" class="btn btn-primary btn-block">Mire Proyecto</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="http://chznbaum.github.io/images/randomquotemachine.PNG" alt="Screenshot de la generador de citas aleatorias">
+                            <div class="caption">
+                                <h3 class="text-center">Random Quote Machine</h3>
+                                <p class="text-center">Una aplicación web por leer citas aleatorias.</p>
+                                <p><a href="http://anotherconsolelog.com/randomquotemachine/index.html" class="btn btn-primary btn-block">Mire Proyecto</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="http://chznbaum.github.io/images/localweatherapp.PNG" alt="Screenshot de la aplicación web por el tiempo local">          
+                            <div class="caption">
+                                <h3 class="text-center">Local Weather App</h3>
+                                <p class="text-center">Una aplicación web por comprobar el tiempo local.</p>
+                                <p><a href="http://anotherconsolelog.com/localweatherapp/index.html" class="btn btn-primary btn-block">Mire Proyecto</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="http://chznbaum.github.io/images/wikiviewer.PNG" alt="Screenshot de la aplicación web por Wikipedia Search">
+                            <div class="caption">
+                                <h3 class="text-center">Wikipedia Viewer</h3>
+                                <p class="text-center">Una aplicación web por Wikipedia Search. También se puede mirar una pájina aleatoria.</p>
+                                <p><a href="http://anotherconsolelog.com/wikipediaviewer/index.html" class="btn btn-primary btn-block">Mire Proyecto</a></p>
+                            </div>          
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Comingsoon.png" alt="Un ejemplo de mi diseño y desarrollo">
+                            <div class="caption">
+                                <h3 class="text-center">TBA</h3>
+                                <p class="text-center">Un ejemplo de mi proyecto reciente.</p>
+                                <p><a href="#" class="btn btn-primary btn-block">Mire Proyecto</a></p>
+                            </div>          
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Comingsoon.png" alt="Un ejemplo de mi diseño y desarrollo">
+                            <div class="caption">
+                                <h3 class="text-center">TBA</h3>
+                                <p class="text-center">Un ejemplo de mi proyecto reciente.</p>
+                                <p><a href="#" class="btn btn-primary btn-block">Mire Proyecto</a></p>
+                            </div>          
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Comingsoon.png" alt="Un ejemplo de mi diseño y desarrollo">
+                            <div class="caption">
+                                <h3 class="text-center">TBA</h3>
+                                <p class="text-center">Un ejemplo de mi proyecto reciente.</p>
+                                <p><a href="#" class="btn btn-primary btn-block">Mire Proyecto</a></p>
+                            </div>          
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-s-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Comingsoon.png" alt="Un ejemplo de mi diseño y desarrollo">
+                            <div class="caption">
+                                <h3 class="text-center">TBA</h3>
+                                <p class="text-center">Un ejemplo de mi proyecto reciente.</p>
+                                <p><a href="#" class="btn btn-primary btn-block">Mire Proyecto</a></p>
+                            </div>          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="contact">
+                <div class="row" id="contactrow">
+                    <h2 class="text-center">Contact</h2>
+                    <div class="col-xs-12 col-md-6">
+                        <p class="lead">Quiere más información o hablar sobre las necesidades de su empresa?</p>
+                        <p>Me contacte sobre esta forma o por los medios de comunicación social. Responderé dentro de dos dias. Podemos hablar sobre un trabajo o solo sobre nuestro disfrute mutuo de Unbreakable Kimmy Schmidt.</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <form>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="inputfirstname">Nombre de pila</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="inputfirstname" placeholder="Juan">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="inputlastname">Apellido</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="inputlastname" placeholder="García">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="inputemail">Email</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="email" class="form-control" id="inputemail" placeholder="juangarcia@company.com">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="inputphone">Teléfono</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="tel" class="form-control" id="inputphone" placeholder="(000)000-0000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="inputmessage">Mensaje</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <textarea class="form-control" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" class="btn btn-default" role="button"><span class="glyphicon glyphicon-send"></span> Me envie</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center">Sea social</h2>
+                        <div class="social">
+                            <ul class="list-inline text-center">
+                                <li><a href="https://www.linkedin.com/in/chznbaum/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://github.com/chznbaum/" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li><a href="https://twitter.com/chznbaum/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.freecodecamp.com/chznbaum/" target="_blank">(<i class="fa fa-fire">)</i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer role="contentinfo">
+            <hr><p class="text-center"><a href="https://anotherconsolelog.com/">Chazona Baum</a> &#169 2016. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>
