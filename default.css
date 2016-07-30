@@ -97,6 +97,10 @@ footer a {
     color: #FFFFFF;
 }
 
+#hidden_iframe {
+    display: none;
+}
+
 @media (max-width: 767px){
     #home {
         margin-top: 40px;

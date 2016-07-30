@@ -25,4 +25,9 @@ $(document).ready(function() {
             $(this).removeAttr('tabindex');
         }).focus(); // focus on the content container
     });
+    // Contact form
+    $("#contactform").on("submit", function(e) {
+        $("#contactform *").fadeOut(2000);
+        $("#contactform").prepend("Your message has been sent.");
+    });
 });
