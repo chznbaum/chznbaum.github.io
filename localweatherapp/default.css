@@ -40,21 +40,21 @@ a {
 }
 
 .cold {
-    background-image: url("http://unsplash.com/photos/cKyqdM-xias/download");
+    background-image: url("../images/icycold.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .hot {
-    background-image: url("http://unsplash.com/photos/AKuzZrpJJew/download");
+    background-image: url("../images/hotdesert.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .moderate {
-    background-image: url("http://unsplash.com/photos/bBG0dtdDf6A/download");
+    background-image: url("../images/moderategreenhills.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

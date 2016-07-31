@@ -44,22 +44,22 @@ $(document).ready(function() {
   });
   // Array of quotes, citations and images
   var quoteList = [
-    ["Art is either plagiarism or revolution.", "Paul Ganguin", "https://upload.wikimedia.org/wikipedia/commons/7/73/Paul_Gauguin_056.jpg"],
-    ["Happiness is not something you postpone for the future; it is something you design for the present.", "Jim Rohn", "https://i.ytimg.com/vi/MggMYrfpgLw/maxresdefault.jpg"],
-    ["The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.", "Helen Keller", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Helen_Keller_cph.3b07695.jpg/1280px-Helen_Keller_cph.3b07695.jpg"],
-    ["I can't change the direction of the wind, but I can adjust my sails to always reach my destination", "Jimmy Dean", "http://images1.mtv.com/uri/mgid:file:docroot:mtv.com:/crop-images/2013/08/22/Jimmy%20Dean%20Getty%20Stephen%20Rose%201996.jpg"],
-    ["Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.", "Francis of Assisi", "https://upload.wikimedia.org/wikipedia/commons/2/2e/Saint_Francis_of_Assisi_Receiving_the_Stigmata.jpg"],
-    ["Keep your face always toward the sunshine - and shadows will fall behind you.", "Walt Whitman", "https://upload.wikimedia.org/wikipedia/commons/0/0d/Walt_Whitman_photographed_by_Thomas_Eakins.jpg"],
-    ["What we think, we become.", "Buddha", "http://www.publicdomainpictures.net/pictures/130000/velka/face-buddha.jpg"],
-    ["Try to be a rainbow in someone's cloud.", "Maya Angelou", "https://upload.wikimedia.org/wikipedia/commons/b/b4/Angelou_at_Clinton_inauguration.jpg"],
-    ["Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.", "Steve Jobs", "https://upload.wikimedia.org/wikipedia/commons/b/bc/Steve_Jobs_at_Apple_iPad_Event.jpg"],
-    ["Perfection is not attainable, but if we chase perfection we can catch excellence.", "Vince Lombardi", "http://a.espncdn.com/photo/2013/0502/nfl_lombardi_01.jpg"],
-    ["We know what we are, but know not what we may be.", "William Shakespeare", "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/10/31/1414778447153/William-Shakespeare-014.jpg"],
-    ["Nothing is impossible, the word itself says 'I'm possible'!", "Audrey Hepburn", "http://wfiles.brothersoft.com/a/audrey_hepburn_69151-1400x1050.jpg"],
-    ["It is during our darkest moments that we must focus to see the light.", "Aristotle Onassis", "http://media.web.britannica.com/eb-media/96/68596-050-C6F9AD78.jpg"],
-    ["Change your thoughts and you change your world.", "Norman Vincent Peale", "http://www.investors.com/wp-content/uploads/2016/02/LSpentPic_Peale.jpg"],
-    ["We must let go of the life we have planned, so as to accept the one that is waiting for us.", "Joseph Campbell", "http://www.awaken.com/wp-content/uploads/2013/07/highres_53159344.jpg"],
-    ["Put your heart, mind, and soul into even your smallest acts. This is the secret of success.", "Swami Sivananda", "http://www.dlshq.org/saints/siva_mmedia/siva5.jpg"]
+    ["Art is either plagiarism or revolution.", "Paul Gauguin", "../images/paulgauguin.jpg"],
+    ["Happiness is not something you postpone for the future; it is something you design for the present.", "Jim Rohn", "../images/jimrohn.jpg"],
+    ["The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.", "Helen Keller", "../images/helenkeller.jpg"],
+    ["I can't change the direction of the wind, but I can adjust my sails to always reach my destination", "Jimmy Dean", "../images/jimmydean.jpg"],
+    ["Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.", "Francis of Assisi", "../images/francisofassisi.jpg"],
+    ["Keep your face always toward the sunshine - and shadows will fall behind you.", "Walt Whitman", "../images/waltwhitman.jpg"],
+    ["What we think, we become.", "Buddha", "../images/buddha.jpg"],
+    ["Try to be a rainbow in someone's cloud.", "Maya Angelou", "../images/mayaangelou.jpg"],
+    ["Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.", "Steve Jobs", "../images/stevejobs.jpg"],
+    ["Perfection is not attainable, but if we chase perfection we can catch excellence.", "Vince Lombardi", "../images/vincelombardi.jpg"],
+    ["We know what we are, but know not what we may be.", "William Shakespeare", "../images/williamshakespeare.jpg"],
+    ["Nothing is impossible, the word itself says 'I'm possible'!", "Audrey Hepburn", "../images/audreyhepburn.jpg"],
+    ["It is during our darkest moments that we must focus to see the light.", "Aristotle Onassis", "../images/aristotleonassis.jpg"],
+    ["Change your thoughts and you change your world.", "Norman Vincent Peale", "../images/normanvincentpeale.jpg"],
+    ["We must let go of the life we have planned, so as to accept the one that is waiting for us.", "Joseph Campbell", "../images/josephcampbell.jpg"],
+    ["Put your heart, mind, and soul into even your smallest acts. This is the secret of success.", "Swami Sivananda", "../images/swamisivananda.jpg"]
   ]
   // Declare variables for randomizer
   var maxID = quoteList.length - 1;
