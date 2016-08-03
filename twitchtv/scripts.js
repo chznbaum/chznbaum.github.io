@@ -41,13 +41,13 @@ $(document).ready(function() {
                 var div = document.createElement('div');
                 twitchBlock.appendChild(div);
                 div.className = "col-md-3 col-sm-6 col-xs-12 " + userName + " showOffline";
-                div.innerHTML = "<a href=" + offlineData._links.self + " class=\"thumbnail\"><img src=\"../images/offline.jpg\" alt=\"Preview of Twitch TV channel\" /><div class=\"caption\"><div class=\"row\"><div class=\"col-xs-4 col-xs-offset-4\"><img class=\"img-responsive img-circle twitchLogo\" src=" + offlineData.logo + "></div><div class=\"col-xs-12\"><h3 class=\"text-center\">" + userName + "</h3><p class=\"text-center\">Offline</p></div></div></div></a>";
+                div.innerHTML = "<a href=http://twitch.tv/" + userName + " class=\"thumbnail\"><img src=\"../images/offline.jpg\" alt=\"Preview of Twitch TV channel\" /><div class=\"caption\"><div class=\"row\"><div class=\"col-xs-4 col-xs-offset-4\"><img class=\"img-responsive img-circle twitchLogo\" src=" + offlineData.logo + "></div><div class=\"col-xs-12\"><h3 class=\"text-center\">" + userName + "</h3><p class=\"text-center\">Offline</p></div></div></div></a>";
             });
             } else if (data.hasOwnProperty("stream") && data.stream !== null) {
                 var div = document.createElement('div');
                 twitchBlock.appendChild(div);
                 div.className = "col-md-3 col-sm-6 col-xs-12 " + userName + " showOnline";
-                div.innerHTML = "<a href=" + data._links.channel + " class=\"thumbnail\"><img src=" + data.stream.preview.large + " alt=\"Preview of Twitch TV channel\" /><div class=\"caption\"><div class=\"row\"><div class=\"col-xs-4 col-xs-offset-4\"><img class=\"img-responsive img-circle twitchLogo\" src=" + data.stream.channel.logo + "></div><div class=\"col-xs-12\"><h3 class=\"text-center\">" + userName + "</h3><p class=\"text-center\">" + data.stream.channel.status + "</p></div></div></div></a>";
+                div.innerHTML = "<a href=http://twitch.tv/" + userName + " class=\"thumbnail\"><img src=" + data.stream.preview.large + " alt=\"Preview of Twitch TV channel\" /><div class=\"caption\"><div class=\"row\"><div class=\"col-xs-4 col-xs-offset-4\"><img class=\"img-responsive img-circle twitchLogo\" src=" + data.stream.channel.logo + "></div><div class=\"col-xs-12\"><h3 class=\"text-center\">" + userName + "</h3><p class=\"text-center\">" + data.stream.channel.status + "</p></div></div></div></a>";
             };
             $("#allButton").on("click", function() {
                 $(".showOnline").fadeIn();
