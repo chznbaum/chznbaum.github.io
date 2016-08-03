@@ -106,15 +106,19 @@ footer a {
 
 @media (max-width: 767px){
     #home {
-        margin-top: 40px;
-        padding: 160px 0 200px 0;
+        margin-top: 40;
+        padding: 150px 0 150px 0;
   }
   
     .jumbotron {
         padding: 40px 80px 40px 80px;
   }
   
+    #chazona-baum {
+        max-width: 200px;
+    }
+    
     #about, #contact {
-        padding: 60px;
+        padding: 20px;
     }
 } 
