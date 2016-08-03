@@ -106,7 +106,7 @@ footer a {
 
 @media (max-width: 767px){
     #home {
-        margin-top: 40;
+        margin-top: 40px;
         padding: 150px 0 150px 0;
   }
   
@@ -119,6 +119,6 @@ footer a {
     }
     
     #about, #contact {
-        padding: 20px;
+        padding: 40px;
     }
 } 
