@@ -2,8 +2,12 @@
 
 body {
     position: relative;
-    margin: 320px 0 0 0;
+    margin: 250px 0 200px 0;
     background-color: #D0D0D0;
+    background-image: url("../images/default.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #FFFFFF;
 }
 
@@ -37,27 +41,6 @@ a {
 
 .navbar-brand {
     font-size: 1.75em;
-}
-
-.cold {
-    background-image: url("../images/icycold.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.hot {
-    background-image: url("../images/hotdesert.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.moderate {
-    background-image: url("../images/moderategreenhills.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 #weatherBox {
