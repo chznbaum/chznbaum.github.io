@@ -35,18 +35,14 @@ $(document).ready(function() {
             userLatitude = position.coords.latitude;
             userLongitude = position.coords.longitude;
             // Use Ask GEO to obtain City, ST, Country
-            var geoApi = "AIzaSyBKszVxhS9oS9US75Agin439UJvaPGnkQc";
-            $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + userLatitude "," + userLongitude + "&key=" + geoAPI + "?callback=?", function(results) {
-                var userCity = results.address_components[4][long_name];
-                var userState = results.address_components[6][long_name];
-                var userCountry = results.address_components[7][long-name];
+            var geoAPI = "AIzaSyDC6U1aZXcePTAR20iwRKIuJ26LqXX6t5s";
+            var geoString = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + userLatitude + "," + userLongitude + "&key=" + geoAPI;
+            $.getJSON(geoString, function(locData) {
+                console.log(locData);
+                var userLocation = locData.results[1].formatted_address;
                 // Get the City, ST, Country text and replace them with the user's city and state
-                var elemCity = document.getElementById("city");
-                var elemState = document.getElementById("state");
-                var elemCountry = document.getElementById("country");
-                elemCity.innerHTML = userCity;
-                elemState.innerHTML = userState;
-                elemCountry.innerHTML = userCountry;
+                var elemLocation = document.getElementById("currentLocation");
+                elemLocation.innerHTML = userLocation;
                 // Call Dark Sky Forcast API and retrieve user's weather JSON
                 var apiKey = "56e678830a6e621a5f38e1b43296e432";
                 var weatherStr = "https://api.forecast.io/forecast/" + apiKey + "/" + userLatitude + "," + userLongitude + "?callback=?";
