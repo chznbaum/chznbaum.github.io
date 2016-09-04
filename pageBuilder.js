@@ -2,21 +2,32 @@
 HTML strings
 */
 
+var HTMLnavbarNav = '<div class="container-fluid><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="%url%">%title%</a></div><div class="collapse navbar-collapse" id="mynavbar"><ul class="nav navbar-nav navbar-right" id="navbar-items"></ul></div></div>';
+var HTMLanchorItem = '<li><a href="%url%">%title%</a></li>';
+var HTMLportfolioNav = '<li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">%title%<span class="caret"></span></a><ul class="dropdown-menu" id="portfolio-items"></ul></li>';
+
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderHeadline = '<span class="headline-text">%data%</span><hr>';
+var HTMLfooter = '<hr><p class="text-center"><a href="%url%">%name%</a> &#169 2016. All Rights Reserved. <a href="%privurl%">Privacy Policy</a></p>'
 
 var HTMLcontactGeneric = '<li class="contact-item">%contact% %data%</li>';
+var HTMLContactBlurb = '<p class="lead">%data%</p>';
 var HTMLmobile = '<li class="contact-item">mobile %data%</li>';
 var HTMLemail = '<li class="contact-item">email %data%</li>';
-var HTMLlinkedin = '<li class="contact-item">linkedin %data% </li>'
+var HTMLlinkedin = '<li class="contact-item">linkedin %data% </li>';
 var HTMLtwitter = '<li class="contact-item">twitter %data%</li>';
 var HTMLgithub = '<li class="contact-item">github %data%</li>';
 var HTMLblog = '<li class="contact-item">blog %data%</li>';
 var HTMLlocation = '<li class="contact-item">location %data%</li>';
 
+var HTMLcontactFormStart = '<form action="https://docs.google.com/forms/u/1/d/12DqhH2BxLz6ESSYmnKRgpjBFQGHWvk3GPkW5jSynh7M/formResponse" enctype="text/plain" name="contactform" id="contactform" target="hidden_iframe" onsubmit="submitted=true;"><fieldset><div id="form-item"></div></fieldset></form><iframe name="hidden_iframe" id="hidden_iframe" onload="if(submitted) {}"></iframe>';
+var HTMLformItem = '<div class="form-group"><label for="%formitemid%">%label%</label><input type="%inputtype%" class="form-control" name="%formitemid%" id="%formitemid%" placeholder="%placeholder%" required></div>';
+var HTMLtextarea = '<div class="form-group"><label for="%formitemid%">%label%</label><textarea class="form-control" name="%formitemid%" id="%formitemid%" placeholder="%placeholder%" rows="5" required></textarea></div>';
+var HTMLsubmitReset = '<input type="submit" class="btn btn-default" role="button" value="Submit" /><input type="reset" class="btn btn-default" role="button" value="Reset" />';
+
 var HTMLbioPic = '<img src="%data%" class="biopic img-responsive">';
 var HTMLwelcomeMsg = '<p class="welcome-message">%data%</p>';
-var HTMLblurb = '<p class="lead">%data%</p>'
+var HTMLblurb = '<p class="lead">%data%</p>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills"></ul>';
 var HTMLskills = '<li class="skills-item">%data%</li>';
@@ -34,6 +45,9 @@ var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%" class="img-responsive">';
 
+var HTMLportfolioStart = '<div class="row portfolio-each"></div>';
+var HTMLportfolioEach = '<div class="col-xs-12 col-s-6 col-md-3"><div class="thumbnail"><img src="%imgurl%" alt="Screenshot of %title%" /><div class="caption"><h3 class="text-center">%title%</h3><p class="text-center">%description%</p><p><a href="%url%" class="btn btn-primary btn-block">View Project</a></p></div></div></div>';
+
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
@@ -47,19 +61,38 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
+var submitted = false;
+
 var projects = {
 	"projects" : [
 	{
 		"title" : "Tribute Page",
 		"dates" : "July 2016",
  		"description" : "A tribute page in honor of Jane Addams, an influential author, suffragette, and social work pioneer, created in HTML and CSS.",
- 		"url" : "./tribute_page/index.html",
+ 		"keywords" : [
+ 		"Jane Addams",
+ 		"social work",
+ 		"womens suffrage",
+ 		"tribute page"
+ 		],
+ 		"url" : "./tribute_page.html",
  		"images" : ["./images/tributepage.jpg"]
  	},
  	{
  		"title" : "Personal Portfolio",
  		"dates" : "July 2016",
  		"description" : "A personal portfolio page highlighting recent projects, created with HTML, CSS and client-side JavaScript.",
+ 		"keywords" : [
+ 		"portfolio",
+ 		"web development",
+ 		"html",
+ 		"css",
+ 		"javascript",
+ 		"jquery",
+ 		"projects",
+ 		"computer programming",
+ 		"code"
+ 		],
  		"url" : "./index.html",
  		"images" : ["./images/portfolio01.png", "images/portfolio02.png", "images/portfolio03.png", "images/portfolio04.png"]
  	},
@@ -67,46 +100,83 @@ var projects = {
  		"title" : "Random Quote Generator",
  		"dates" : "July 2016",
  		"description" : "A generator that provides random inspirational quotes to the user, created with HTML, CSS and client-side JavaScript.",
- 		"url" : "./random_quote_generator/index.html",
+ 		"keywords" : [
+ 		"quotes",
+ 		"randomizer"
+ 		],
+ 		"url" : "./random_quote_generator.html",
  		"images" : ["./images/RandomQuote01.PNG", "images/RandomQuote02.PNG", "images/RandomQuote03.PNG", "images/RandomQuote04.PNG"]
  	},
  	{
  		"title" : "Local Weather App",
  		"dates" : "July 2016",
  		"description" : "A web app that displays the weather at the user's location, and adjusts the graphical display accordingly, created with HTML, CSS, client-side JavaScript and APIs.",
- 		"url" : "./local_weather_app/index.html",
+ 		"keywords" : [
+ 		"weather",
+ 		"local",
+ 		"forecast"
+ 		],
+ 		"url" : "./local_weather_app.html",
  		"images" : ["./images/localweatherapp.jpg"]
  	},
  	{
  		"title" : "Wikipedia Viewer",
  		"dates" : "July 2016",
  		"description" : "A web tool that allows the user to search for and view relevant Wikipedia entries or view a random Wikipedia entry, created with HTML, CSS, client-side JavaScript and APIs.",
- 		"url" : "./wikipedia_viewer/index.html",
+ 		"keywords" : [
+ 		"Wikipedia",
+ 		"search",
+ 		"randomizer"
+ 		],
+ 		"url" : "./wikipedia_viewer.html",
  		"images" : ["./images/wikiviewer.jpg"]
  	},
  	{
  		"title" : "Twitch TV JSON API",
  		"dates" : "August 2016",
  		"description" : "A web tool which allows the user to check if various Twitch live-streamers are broadcasting and to view their content, created with HTML, CSS, client-side JavaScript and APIs.",
- 		"url" : "./twitch_tv_json_api/index.html",
+ 		"keywords" : [
+ 		"TwitchTV",
+ 		"streaming"
+ 		],
+ 		"url" : "./twitch_tv_json_api.html",
  		"images" : ["./images/twitchtvjsonapi.JPG"]
  	},
  	{
  		"title" : "Free Food Game",
  		"dates" : "August 2016",
  		"description" : "A simple falling objects game made with Scratch. Using the left and right keys to control the protagonist, catch as many fruit as you can without being hit by the school's musical instruments.",
+ 		"keywords" : [
+ 		"online game",
+ 		"falling objects",
+ 		"school"
+ 		],
  		"url" : "https://scratch.mit.edu/projects/119382473/",
- 		"images" : ["./images/fallingfood.png"]
+ 		"images" : ["./images/freefoodgame.png"]
  	},
  	{
  		"title" : "Personal Resume",
  		"dates" : "August 2016",
  		"description" : "",
- 		"url" : "./resume/index.html",
+ 		"keywords" : [
+ 		"resume",
+ 		"web development",
+ 		"html",
+ 		"css",
+ 		"javascript",
+ 		"jquery",
+ 		"git",
+ 		"github",
+ 		"bash",
+ 		"ruby",
+ 		"computer programming",
+ 		"code"
+ 		],
+ 		"url" : "./resume.html",
  		"images" : ["./images/resume02.png"]
  	}
  	]
-}
+};
 var work = {
 	"jobs" : [
 	{
@@ -145,7 +215,7 @@ var work = {
  		"description" : "As a public face of the brand, I shaped the initial and final impressions of pet parents as I set expectations and guided them through the hospital process. I created treatment plans, filled prescriptions, and assisted clients in understanding both in more understandable terms. In addition, I provided assistance to clients who only spoke Spanish so they could navigate a potentially confusing ordeal."
  	}
  	]
-}
+};
 var bio = {
  	"name" : "Chazona Baum",
  	"role" : "Web Development Student",
@@ -161,16 +231,52 @@ var bio = {
  		"linkedin" : "chznbaum",
  		"github" : "chznbaum",
  		"twitter" : "@otherconsolelog",
- 		"location" : "Midlothian, VA"
+ 		"location" : "Midlothian, VA",
+ 		"contactBlurbs" : ["Feel free to contact me through this form or social media. I will get back to you within 48 hours, whether we're talking about a job or merely sharing our mutual love of Unbreakable Kimmy Schmidt."],
+ 		"contactFormItems" : [
+ 		{
+ 			"formItemID" : "entry.1048969626",
+ 			"label" : "First Name",
+ 			"placeholder" : "John",
+ 			"inputType" : "text"
+ 		},
+ 		{
+ 			"formItemID" : "entry.1752707953",
+ 			"label" : "Last Name",
+ 			"placeholder" : "Doe",
+ 			"inputType" : "text"
+ 		},
+ 		{
+ 			"formItemID" : "entry.1454796987",
+ 			"label" : "Email address",
+ 			"placeholder" : "johndoe@company.com",
+ 			"inputType" : "email"
+ 		},
+ 		{
+ 			"formItemID" : "entry.610207668",
+ 			"label" : "Phone number",
+ 			"placeholder" : "(000)000-0000",
+ 			"inputType" : "tel"
+ 		},
+ 		{
+ 			"formItemID" : "entry.401952099",
+ 			"label" : "Message",
+ 			"placeholder" : "Hi Chazona, ...",
+ 			"inputType" : "textarea"
+ 		}
+ 		]
  	},
  	"skills" : [
  	"HTML",
  	"CSS",
  	"JavaScript",
  	"Ruby",
- 	"jQuery"
+ 	"jQuery",
+ 	"git",
+ 	"GitHub",
+ 	"Linux command-line"
  	]
-}
+};
 var education = {
  	"schools" : [
  	{
@@ -216,12 +322,83 @@ var education = {
  		"url" : "https://www.edx.org/course/algorithms-iitbombayx-cs213-3x"
  	}
  	]
-}
+};
+var homeNav = {
+	"sections" : [
+	{
+		"title" : "Home",
+		"anchor" : "#home"
+	},
+	{
+		"title" : "About Me",
+		"anchor" : "#about"
+	},
+	{
+		"title" : "Portfolio",
+		"anchor" : "#portfolio"
+	},
+	{
+		"title" : "Contact Me",
+		"anchor" : "#contact"
+	}
+	]
+};
 function addToPage(section, helper, data) {
  	if (data != "") {
  		var formatted = helper.replace("%data%", data);
  		$(section).append(formatted);
  	}
+}
+function formAddToPage(section, helper, formItemID, label, placeholder, inputType) {
+	if (formItemID != "" && label != "" && placeholder != "" && inputType != "") {
+		if (inputType == "textarea") {
+			helper = HTMLtextarea;
+		}
+		var formatted = helper.replace(/%formitemid%/g, formItemID);
+		formatted = formatted.replace(/%label%/g, label);
+		formatted = formatted.replace(/%placeholder%/g, placeholder);
+		if (inputType != "textarea") {
+			formatted = formatted.replace(/%inputtype%/g, inputType);
+		}
+		$(section).append(formatted);
+	}
+}
+function navAddToPage(section, helper, url, title) {
+	if (url != "" && title != "") {
+		var formatted = helper.replace(/%url%/g, url);
+		formatted = formatted.replace(/%title%/g, title);
+		$(section).append(formatted);
+	}
+}
+function portfolioAddToPage(section, helper, url, imgurl, title, description) {
+	if (section != "" && helper != "" && url != "" && imgurl != "" && title != "" && description != "") {
+		var formatted = helper.replace(/%url%/g, url);
+		formatted = formatted.replace(/%imgurl%/g, imgurl);
+		formatted = formatted.replace(/%title%/g, title);
+		formatted = formatted.replace(/%description%/g, description);
+		$(section).append(formatted);
+	}
+}
+navDisplay = function() {
+	navAddToPage("#nav", HTMLnavbarNav, homeNav.sections[0].anchor, bio.name);
+	if (homeNav.sections.length > 0) {
+		for (section in homeNav.sections) {
+			if (homeNav.sections[section].title != "Portfolio") {
+				navAddToPage("#navbar-items:last", HTMLanchorItem, homeNav.sections[section].anchor, homeNav.sections[section].title);
+			} else if (homeNav.sections[section].title == "Portfolio") {
+				navAddToPage("#navbar-items:last", HTMLportfolioNav, homeNav.sections[section].anchor, homeNav.sections[section].title);
+				for (project in projects.projects) {
+					navAddToPage("#portfolio-items:last", HTMLanchorItem, projects.projects[project].url, projects.projects[project].title);
+				}
+			}
+		}
+	}
+}
+footer.display = function() {
+	var formatted = HTMLfooter.replace(/%url%/g, projects.projects[1].url);
+	formatted = formatted.replace(/%privacyurl%/g, "./privacy.html");
+	formatted = formatted.replace(/%name%/g, bio.name);
+	$("#footer").append(formatted);
 }
 bio.display = function() {
  	if (bio != "") {
@@ -232,12 +409,20 @@ bio.display = function() {
  		for (blurb in bio.blurbs) {
  			addToPage("#about", HTMLblurb, bio.blurbs[blurb]);
  		}
+ 		for (blurb in bio.contacts.contactBlurbs) {
+ 			addToPage("#contact", HTMLContactBlurb, bio.contacts.contactBlurbs[blurb]);
+ 		}
  		addToPage("#contact", HTMLmobile, bio.contacts.mobile);
  		addToPage("#contact", HTMLemail, bio.contacts.email);
  		addToPage("#contact", HTMLlinkedin, bio.contacts.linkedin);
  		addToPage("#contact", HTMLtwitter, bio.contacts.twitter);
  		addToPage("#contact", HTMLgithub, bio.contacts.github);
  		addToPage("#contact", HTMLlocation, bio.contacts.location);
+ 		$("#contact").append(HTMLcontactFormStart);
+ 		for (item in bio.contacts.contactFormItems) {
+ 			formAddToPage("#form-item:last", HTMLformItem, bio.contacts.contactFormItems[item].formItemID, bio.contacts.contactFormItems[item].label, bio.contacts.contactFormItems[item].placeholder, bio.contacts.contactFormItems[item].inputType);
+ 		}
+ 		$("#form-item:last").append(HTMLsubmitReset);
  		$("#about").append(HTMLskillsStart);
  		for (skill in bio.skills) {
  			addToPage("#skills", HTMLskills, bio.skills[skill]);
@@ -270,6 +455,15 @@ projects.display = function() {
  		}
  	}
 }
+portfolioDisplay = function() {
+	if (projects.projects.length > 0) {
+		$("#portfolio").append('<div class="row">');
+		$("#portfolio").append(HTMLportfolioStart);
+		for (project in projects.projects) {
+			portfolioAddToPage(".portfolio-each:last", HTMLportfolioEach, projects.projects[project].url, projects.projects[project].images[0], projects.projects[project].title, projects.projects[project].description);
+		}
+	}
+}
 education.display = function() {
  	if (education.schools.length > 0) {
  		for (school in education.schools) {
@@ -292,7 +486,3 @@ education.display = function() {
  		}
  	}
 }
-bio.display();
-//work.display();
-projects.display();
-//education.display();
