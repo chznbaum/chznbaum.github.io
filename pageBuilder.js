@@ -343,6 +343,128 @@ var homeNav = {
 	}
 	]
 };
+var quotes = {
+	"speakers" : [
+	"Aristotle Onassis" : {
+		"image" : "./images/aristotleonassis.jpg",
+		"quotes" : [
+		"It is during our darkest moments that we must focus to see the light."
+		]
+	},
+	"Audrey Hepburn" : {
+		"image" : "./images/audreyhepburn.jpg",
+		"quotes" : [
+		"Nothing is impossible, the word itself says 'I'm possible'!"
+		]
+	},
+	"Francis of Assisi" : {
+		"image" : "./images/francisofassisi.jpg",
+		"quotes" : [
+		"Start by doing what's necessary, then do what's possible, and suddenly you are doing the impossible."
+		]
+	},
+	"Grace Hopper" : {
+		"images" : "./images/gracehopper.jpg",
+		"quotes" : [
+		"I've always been more interested in the future than in the past.",
+		"It's easier to ask forgiveness than it is to get permission.",
+		"The most damaging phrase in the language is 'We've always done it this way!'"
+		]
+	},
+	"Helen Keller" : {
+		"image" : "./images/helenkeller.jpg",
+		"quotes" : [
+		"The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart."
+		]
+	},
+	"Jim Rohn" : {
+		"image" : "./images/jimrohn.jpg",
+		"quotes" : [
+		"Happiness is not something you postpone for the future; it is something you design for the present."
+		]
+	},
+	"Jimmy Dean" : {
+		"image" : "./images/jimmydean.jpg",
+		"quotes" : [
+		"I can't change the direction of the wind, but I can adjust my sails to always reach my destination."
+		]
+	},
+	"Jane Addams" : {
+		"image" : "./images/janeaddams.jpg",
+		"quotes" : [
+		"Action indeed is the sole medium of expression for ethics.",
+		"America's future will be determined by the home and the school. The child becomes largely what he is taught; hence we must watch what we teach, and how we live.",
+		"Civilization is a method of living, an attitude of equal respect for all men.",
+		"Life cannot be administered by definite rules and regulations; that wisdom to deal with a man's difficulties comes only through some knowledge of his life and habits as a whole.",
+		"Of all the aspects of social misery nothing is so heartbreaking as unemployment.",
+		"Old-fashioned ways which no longer apply to changed conditions are a snare in which the feet of women have always become readily entangled.",
+		"The cure for the ills of Democracy is more Democracy.",
+		"The essence of immorality is the tendency to make an exception of myself.",
+		"Social advance depends as much upon the process through which it is secured as upon the result itself.",
+		"The common stock of intellectual enjoyment should not be difficult of access because of the economic position of him who would approach it.",
+		"The good we secure for ourselves is precarious and uncertain until it is secured for all of us and incorporated into our common life.",
+		"What after all has maintained the human race on this old globe despite all the calamities of nature and all the tragic failings of mankind, if not faith in new possibilities and courage to advocate them."
+		]
+	},
+	"Joseph Campbell" : {
+		"image" : "./images/josephcampbell.jpg",
+		"quotes" : [
+		"We must let go of the life we have planned, so as to accept the one that is waiting for us."
+		]
+	},
+	"Maya Angelou" : {
+		"image" : "./images/mayaangelou.jpg",
+		"quotes" : [
+		"Try to be a rainbow in someone's cloud."
+		]
+	},
+	"Norman Vincent Peale" :
+	{
+		"image" : "./images/normanvincentpeale.jpg",
+		"quotes" : [
+		"Change your thoughts and you change your world."
+		]
+	},
+	"Paul Gauguin" : {
+		"image" : "./images/paulgaugin.jpg",
+		"quotes" : [
+		"Art is either plagiarism or revolution."
+		]
+	},
+	"Siddhartha Gautama" : {
+		"image" : "./images/siddharthagautama.jpg",
+		"quotes" : [
+		"What we think, we become."
+		]
+	},
+	"Steve Jobs" : {
+		"image" : "./images/stevejobs.jpg",
+		"quotes" : [
+		"My favorite things in life don't cost any money. It's really clear that the most precious resource we all have is time.",
+		"Sometimes life is going to hit you in the head with a brick. Don't lose faith.",
+		"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it."
+		]
+	},
+	"Vince Lombardi" : {
+		"image" : "./images/vincelombardi.jpg",
+		"quotes" : [
+		"Perfection is not attainable, but if we chase perfection we can catch excellence."
+		]
+	},
+	"Walt Whitman" : {
+		"image" : "./images/waltwhitman.jpg",
+		"quotes" : [
+		"Keep your face always toward the sunshine - and shadows will fall behind you."
+		]
+	},
+	"William Shakespeare" : {
+		"image" : "./images/williamshakespeare.jpg",
+		"quotes" : [
+		"We know what we are, but know not what we may be."
+		]
+	}
+	]
+};
 function addToPage(section, helper, data) {
  	if (data != "") {
  		var formatted = helper.replace("%data%", data);
