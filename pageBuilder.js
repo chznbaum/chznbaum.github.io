@@ -61,6 +61,11 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
+var HTMLquoteStart = '<h1 class="text-center">Random Quote Generator</h1><p class="lead text-center">Click below to enjoy a different quote for endless motivation.</p><blockquote class="blockquote" id="quoteBlock"></blockquote>'
+var HTMLquoteButtons = '<button class="btn btn-primary btn-block" id = "btnNewQuote">Generate New Quote</button><button class="btn btn-info btn-block" id="btnTweetQuote"><i class="fa fa-twitter"></i>Tweet this Quote</button>'
+var HTMLquoteItem = '<p>"%quote%"</p><footer>%citation%</footer>';
+var CSSquoteImage = '"url(\'%imgurl%\')"';
+
 var submitted = false;
 
 var projects = {
@@ -237,7 +242,7 @@ var bio = {
  		{
  			"formItemID" : "entry.1048969626",
  			"label" : "First Name",
- 			"placeholder" : "John",
+ 			"placeholder" : "",
  			"inputType" : "text"
  		},
  		{
@@ -345,25 +350,36 @@ var homeNav = {
 };
 var quotes = {
 	"speakers" : [
-	"Aristotle Onassis" : {
+	{
+		"speaker" : "Aristotle Onassis",
 		"image" : "./images/aristotleonassis.jpg",
 		"quotes" : [
 		"It is during our darkest moments that we must focus to see the light."
 		]
 	},
-	"Audrey Hepburn" : {
+	{
+		"speaker" : "Audrey Hepburn",
 		"image" : "./images/audreyhepburn.jpg",
 		"quotes" : [
 		"Nothing is impossible, the word itself says 'I'm possible'!"
 		]
 	},
-	"Francis of Assisi" : {
+	{
+		"speaker" : "Benjamin Franklin",
+		"imarge" : "./images/benjaminfranklin.jpg",
+		"quotes" : [
+		"An investment in knowledge pays the best interest."
+		]
+	},
+	{
+		"speaker" : "Francis of Assisi",
 		"image" : "./images/francisofassisi.jpg",
 		"quotes" : [
 		"Start by doing what's necessary, then do what's possible, and suddenly you are doing the impossible."
 		]
 	},
-	"Grace Hopper" : {
+	{
+		"speaker" : "Grace Hopper",
 		"images" : "./images/gracehopper.jpg",
 		"quotes" : [
 		"I've always been more interested in the future than in the past.",
@@ -371,25 +387,29 @@ var quotes = {
 		"The most damaging phrase in the language is 'We've always done it this way!'"
 		]
 	},
-	"Helen Keller" : {
+	{
+		"speaker" : "Helen Keller",
 		"image" : "./images/helenkeller.jpg",
 		"quotes" : [
 		"The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart."
 		]
 	},
-	"Jim Rohn" : {
+	{
+		"speaker" : "Jim Rohn",
 		"image" : "./images/jimrohn.jpg",
 		"quotes" : [
 		"Happiness is not something you postpone for the future; it is something you design for the present."
 		]
 	},
-	"Jimmy Dean" : {
+	{
+		"speaker" : "Jimmy Dean",
 		"image" : "./images/jimmydean.jpg",
 		"quotes" : [
 		"I can't change the direction of the wind, but I can adjust my sails to always reach my destination."
 		]
 	},
-	"Jane Addams" : {
+	{
+		"speaker" : "Jane Addams",
 		"image" : "./images/janeaddams.jpg",
 		"quotes" : [
 		"Action indeed is the sole medium of expression for ethics.",
@@ -406,38 +426,50 @@ var quotes = {
 		"What after all has maintained the human race on this old globe despite all the calamities of nature and all the tragic failings of mankind, if not faith in new possibilities and courage to advocate them."
 		]
 	},
-	"Joseph Campbell" : {
+	{
+		"speaker" : "Joseph Campbell",
 		"image" : "./images/josephcampbell.jpg",
 		"quotes" : [
 		"We must let go of the life we have planned, so as to accept the one that is waiting for us."
 		]
 	},
-	"Maya Angelou" : {
+	{
+		"speaker" : "Maya Angelou",
 		"image" : "./images/mayaangelou.jpg",
 		"quotes" : [
 		"Try to be a rainbow in someone's cloud."
 		]
 	},
-	"Norman Vincent Peale" :
 	{
+		"speaker" : "Norman Vincent Peale",
 		"image" : "./images/normanvincentpeale.jpg",
 		"quotes" : [
 		"Change your thoughts and you change your world."
 		]
 	},
-	"Paul Gauguin" : {
+	{
+		"speaker" : "Paul Gauguin",
 		"image" : "./images/paulgaugin.jpg",
 		"quotes" : [
 		"Art is either plagiarism or revolution."
 		]
 	},
-	"Siddhartha Gautama" : {
+	{
+		"speaker" : "Siddhartha Gautama",
 		"image" : "./images/siddharthagautama.jpg",
 		"quotes" : [
 		"What we think, we become."
 		]
 	},
-	"Steve Jobs" : {
+	{
+		"speaker" : "Sophia Loren",
+		"image" : "./images/sophialoren.jpg",
+		"quotes" : [
+		"Mistakes are part of the dues one pays for a full life.",
+		]
+	},
+	{
+		"speaker" : "Steve Jobs",
 		"image" : "./images/stevejobs.jpg",
 		"quotes" : [
 		"My favorite things in life don't cost any money. It's really clear that the most precious resource we all have is time.",
@@ -445,19 +477,22 @@ var quotes = {
 		"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it."
 		]
 	},
-	"Vince Lombardi" : {
+	{
+		"speaker" : "Vince Lombardi",
 		"image" : "./images/vincelombardi.jpg",
 		"quotes" : [
 		"Perfection is not attainable, but if we chase perfection we can catch excellence."
 		]
 	},
-	"Walt Whitman" : {
+	{
+		"speaker" : "Walt Whitman",
 		"image" : "./images/waltwhitman.jpg",
 		"quotes" : [
 		"Keep your face always toward the sunshine - and shadows will fall behind you."
 		]
 	},
-	"William Shakespeare" : {
+	{
+		"speaker" : "William Shakespeare",
 		"image" : "./images/williamshakespeare.jpg",
 		"quotes" : [
 		"We know what we are, but know not what we may be."
@@ -465,13 +500,20 @@ var quotes = {
 	}
 	]
 };
+var functionName = "";
+function emptyError(field, functionName) {
+	console.log('Error: The ' + field + ' field in the function ' + functionName +' is empty.');
+}
 function addToPage(section, helper, data) {
  	if (data != "") {
- 		var formatted = helper.replace("%data%", data);
+ 		var formatted = helper.replace(/%data%/g, data);
  		$(section).append(formatted);
+ 	} else if (data != "") {
+ 		emptyError("data", addToPage);
  	}
 }
 function formAddToPage(section, helper, formItemID, label, placeholder, inputType) {
+	functionName = "formAddToPage";
 	if (formItemID != "" && label != "" && placeholder != "" && inputType != "") {
 		if (inputType == "textarea") {
 			helper = HTMLtextarea;
@@ -483,22 +525,48 @@ function formAddToPage(section, helper, formItemID, label, placeholder, inputTyp
 			formatted = formatted.replace(/%inputtype%/g, inputType);
 		}
 		$(section).append(formatted);
+	} else if (formItemID == "") {
+		emptyError("formItemID", functionName);
+	} else if (label == "") {
+		emptyError("label", functionName);
+	} else if (placeholder == "") {
+		emptyError("placeholder", functionName);
+	} else if (inputType == "") {
+		emptyError("inputType", functionName);
 	}
 }
 function navAddToPage(section, helper, url, title) {
+	functionName = "navAddToPage";
 	if (url != "" && title != "") {
 		var formatted = helper.replace(/%url%/g, url);
 		formatted = formatted.replace(/%title%/g, title);
 		$(section).append(formatted);
+	} else if (url == "") {
+		emptyError("url", functionName);
+	} else if (title == "") {
+		emptyError("title", functionName);
 	}
 }
 function portfolioAddToPage(section, helper, url, imgurl, title, description) {
+	functionName = "portfolioAddToPage";
 	if (section != "" && helper != "" && url != "" && imgurl != "" && title != "" && description != "") {
 		var formatted = helper.replace(/%url%/g, url);
 		formatted = formatted.replace(/%imgurl%/g, imgurl);
 		formatted = formatted.replace(/%title%/g, title);
 		formatted = formatted.replace(/%description%/g, description);
 		$(section).append(formatted);
+	} else if (section == "") {
+		emptyError("section", functionName);
+	} else if (helper == "") {
+		emptyError("helper", functionName);
+	} else if (url == "") {
+		emptyError("url", functionName);
+	} else if (imgurl == "") {
+		emptyError("imgurl", functionName);
+	} else if (title == "") {
+		emptyError("title", functionName);
+	} else if (description == "") {
+		emptyError("description", functionName);
 	}
 }
 navDisplay = function() {
@@ -607,4 +675,11 @@ education.display = function() {
  			addToPage(".education-entry:last", HTMLonlineURL, education.onlineCourses[course].url);
  		}
  	}
+}
+function randomizer(groupLength) {
+	var maxID = groupLength - 1;
+	var minID = 0;
+	var randomIndex = 0;
+	randomIndex = Math.floor(Math.random() * (maxID - minID + 1) + minID);
+	return randomIndex;
 }
