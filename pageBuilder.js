@@ -4,7 +4,7 @@ HTML strings
 
 var HTMLnavbarNav = '<div class="container-fluid><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="%url%">%title%</a></div><div class="collapse navbar-collapse" id="mynavbar"><ul class="nav navbar-nav navbar-right" id="navbar-items"></ul></div></div>';
 var HTMLanchorItem = '<li><a href="%url%">%title%</a></li>';
-var HTMLportfolioNav = '<li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">%title%<span class="caret"></span></a><ul class="dropdown-menu" id="portfolio-items"></ul></li>';
+var HTMLportfolioNav = '<li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#portfolio" role="button" aria-haspopup="true" aria-expanded="false">%title%<span class="caret"></span></a><ul class="dropdown-menu" id="portfolio-items"></ul></li>';
 
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderHeadline = '<span class="headline-text">%data%</span><hr>';
@@ -61,10 +61,18 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var HTMLquoteStart = '<h1 class="text-center">Random Quote Generator</h1><p class="lead text-center">Click below to enjoy a different quote for endless motivation.</p><blockquote class="blockquote" id="quoteBlock"></blockquote>'
-var HTMLquoteButtons = '<button class="btn btn-primary btn-block" id = "btnNewQuote">Generate New Quote</button><button class="btn btn-info btn-block" id="btnTweetQuote"><i class="fa fa-twitter"></i>Tweet this Quote</button>'
+var HTMLquoteStart = '<h1 class="text-center">Random Quote Generator</h1><p class="lead text-center">Click below to enjoy a different quote for endless motivation.</p><blockquote class="blockquote" id="quoteBlock"></blockquote>';
+var HTMLquoteButtons = '<div class="row"><div class="col-md-6 col-md-offset-3 col-xs-12"><button class="btn btn-primary btn-block" id = "btnNewQuote">Generate New Quote</button></div></div><div class="row"><div class="col-md-3 col-md-offset-3 col-xs-12"><button class="btn btn-info btn-block" id="btnTweetQuote"><i class="fa fa-twitter"></i>Tweet this Quote</button></div><div class="col-md-3 col-xs-12"><button class="btn btn-primary btn-block" id = "btnPreviousQuote">Show Previous Quotes</button></div></div>';
 var HTMLquoteItem = '<p>"%quote%"</p><footer>%citation%</footer>';
 var CSSquoteImage = '"url(\'%imgurl%\')"';
+var HTMLpreviousQuotes = '<h3>You previously generated:</h3><blockquote class="previousQuotes"></blockquote>';
+var HTMLerrorNoQuotes = '<p class="warning">Sorry, there are no quotes to display here. How about generating a quote?</p>'
+var HTMLquoteTagsDrop = '<div class="row"><div class="col-md-4 col-sm-12 col-xs-12"><div class="dropdown"><select id="quoteTags" class="quoteTags"></select><button id="btnTagClick" type="button" class="btn btn-default">Choose Tag</button></div></div>';
+var HTMLquoteTagsEach = '<option value="%data%">%data%</option>'
+var HTMLquoteResults = '<h3>Quotes tagged %data%:</h3><blockquote class="blockquote" id="resultsBlock"></blockquote>'
+
+var HTMLsearchBox = '<div class="col-md-4 col-sm-6 col-xs-12"><input type="search" class="form-control input-lg" placeholder="Search" id="inputSearch" aria-label="Search" /></div><div class="col-md-4 col-sm-6 col-xs-12"><button class="btn btn-default btn-block" id="resultsBtn">%data%</button></div></div>';
+var HTMLsearchResults = '<h3>Quotes containing your search term, %data%:</h3><blockquote class="blockquote" id="resultsBlock"></blockquote>'
 
 var submitted = false;
 
@@ -354,148 +362,378 @@ var quotes = {
 		"speaker" : "Aristotle Onassis",
 		"image" : "./images/aristotleonassis.jpg",
 		"quotes" : [
-		"It is during our darkest moments that we must focus to see the light."
+		{
+			"quoteText" : "It is during our darkest moments that we must focus to see the light.",
+			"tags" : [
+			"hope",
+			"life",
+			"motivational",
+			"moving on"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Audrey Hepburn",
 		"image" : "./images/audreyhepburn.jpg",
 		"quotes" : [
-		"Nothing is impossible, the word itself says 'I'm possible'!"
+		{
+			"quoteText" : "Nothing is impossible, the word itself says 'I'm possible'!",
+			"tags" : [
+			"attitude",
+			"hope",
+			"motivational"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Benjamin Franklin",
 		"imarge" : "./images/benjaminfranklin.jpg",
 		"quotes" : [
-		"An investment in knowledge pays the best interest."
+		{
+			"quoteText" : "An investment in knowledge pays the best interest.",
+			"tags" : [
+			"knowledge",
+			"wisdom"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Francis of Assisi",
 		"image" : "./images/francisofassisi.jpg",
 		"quotes" : [
-		"Start by doing what's necessary, then do what's possible, and suddenly you are doing the impossible."
+		{
+			"quoteText" : "Start by doing what's necessary, then what's possible, and suddenly you are doing the impossible.",
+			"tags" : [
+			"attitude",
+			"motivational"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Grace Hopper",
 		"images" : "./images/gracehopper.jpg",
 		"quotes" : [
-		"I've always been more interested in the future than in the past.",
-		"It's easier to ask forgiveness than it is to get permission.",
-		"The most damaging phrase in the language is 'We've always done it this way!'"
+		{
+			"quoteText" : "I've always been more interested in the future than in the past.",
+			"tags" : [
+			"attitude",
+			"future",
+			"motivational"
+			]
+		},
+		{
+			"quoteText" : "It's easier to ask forgiveness than it is to get permission.",
+			"tags" : [
+			"attitude",
+			"forgiveness",
+			"motivational"
+			]
+		},
+		{
+			"quoteText" : "The most damaging phrase in the language is 'We've always done it this way!'",
+			"tags" : [
+			"attitude",
+			"leadership",
+			"wisdom"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Helen Keller",
 		"image" : "./images/helenkeller.jpg",
 		"quotes" : [
-		"The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart."
+		{
+			"quoteText" : "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+			"tags" : [
+			"beauty",
+			"experience",
+			"love",
+			"wisdom"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Jim Rohn",
 		"image" : "./images/jimrohn.jpg",
 		"quotes" : [
-		"Happiness is not something you postpone for the future; it is something you design for the present."
+		{
+			"quoteText" : "Happiness is not something you postpone for the future; it is something you design for the present.",
+			"tags" : [
+			"design",
+			"future",
+			"happiness",
+			"motivational",
+			"wisdom"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Jimmy Dean",
 		"image" : "./images/jimmydean.jpg",
 		"quotes" : [
-		"I can't change the direction of the wind, but I can adjust my sails to always reach my destination."
+		{
+			"quoteText" : "I can't change the direction of the wind, but I can adjust my sails to always reach my destination.",
+			"tags" : [
+			"attitude",
+			"motivational",
+			"success"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Jane Addams",
 		"image" : "./images/janeaddams.jpg",
 		"quotes" : [
-		"Action indeed is the sole medium of expression for ethics.",
-		"America's future will be determined by the home and the school. The child becomes largely what he is taught; hence we must watch what we teach, and how we live.",
-		"Civilization is a method of living, an attitude of equal respect for all men.",
-		"Life cannot be administered by definite rules and regulations; that wisdom to deal with a man's difficulties comes only through some knowledge of his life and habits as a whole.",
-		"Of all the aspects of social misery nothing is so heartbreaking as unemployment.",
-		"Old-fashioned ways which no longer apply to changed conditions are a snare in which the feet of women have always become readily entangled.",
-		"The cure for the ills of Democracy is more Democracy.",
-		"The essence of immorality is the tendency to make an exception of myself.",
-		"Social advance depends as much upon the process through which it is secured as upon the result itself.",
-		"The common stock of intellectual enjoyment should not be difficult of access because of the economic position of him who would approach it.",
-		"The good we secure for ourselves is precarious and uncertain until it is secured for all of us and incorporated into our common life.",
-		"What after all has maintained the human race on this old globe despite all the calamities of nature and all the tragic failings of mankind, if not faith in new possibilities and courage to advocate them."
+		{
+			"quoteText" : "Action indeed is the sole medium of expression for ethics.",
+			"tags" : [
+			"ethics"
+			]
+		},
+		{
+			"quoteText" : "America's future will be determined by the home and the school. The child becomes largely what he is taught; hence we must watch what we teach, and how we live.",
+			"tags" : [
+			"education",
+			"future"
+			]
+		},
+		{
+			"quoteText" : "Civilization is a method of living, an attitude of equal respect for all men.",
+			"tags" : [
+			"equality",
+			"respect"
+			]
+		},
+		{
+			"quoteText" : "Life cannot be administered by definite rules and regulations; that wisdom to deal with a man's difficulties comes only through some knowledge of his life and habits as a whole.",
+			"tags" : [
+			"life",
+			"wisdom"
+			]
+		},
+		{
+			"quoteText" : "Of all the aspects of social misery nothing is so heartbreaking as unemployment.",
+			"tags" : [
+			"money",
+			"society",
+			"work"
+			]
+		},
+		{
+			"quoteText" : "Old-fashioned ways which no longer apply to changed conditions are a snare in which the feet of women have always become readily entangled.",
+			"tags" : [
+			"change",
+			"equality",
+			"future",
+			"society",
+			"women"
+			]
+		},
+		{
+			"quoteText" : "The cure for the ills of Democracy is more Democracy.",
+			"tags" : [
+			"politics"
+			]
+		},
+		{
+			"quoteText" : "The essence of immorality is the tendency to make an exception of myself.",
+			"tags" : [
+			"attitude",
+			"equality",
+			"ethics"
+			]
+		},
+		{
+			"quoteText" : "Social advance depends as much upon the process through which it is secured as upon the result itself.",
+			"tags" : [
+			"ethics",
+			"future",
+			"society"
+			]
+		},
+		{
+			"quoteText" : "The common stock of intellectual enjoyment should not be difficult of access because of the economic position of him who would approach it.",
+			"tags" : [
+			"education",
+			"equality",
+			"money"
+			]
+		},
+		{
+			"quoteText" : "The good we secure for ourselves is precarious and uncertain until it is secured for all of us and incorporated into our common life.",
+			"tags" : [
+			"equality",
+			"ethics",
+			"society",
+			"success"
+			]
+		},
+		{
+			"quoteText" : "What after all has maintained the human race on this old globe despite all the calamities of nature and all the tragic failings of mankind, if not faith in new possibilities and courage to advocate them.",
+			"tags" : [
+			"courage",
+			"failure",
+			"hope",
+			"motivational"
+			]
+		}		
 		]
 	},
 	{
 		"speaker" : "Joseph Campbell",
 		"image" : "./images/josephcampbell.jpg",
 		"quotes" : [
-		"We must let go of the life we have planned, so as to accept the one that is waiting for us."
+		{
+			"quoteText" : "We must let go of the life we have planned, so as to accept the one that is waiting for us.",
+			"tags" : [
+			"change",
+			"future",
+			"life",
+			"moving on",
+			"wisdom"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Maya Angelou",
 		"image" : "./images/mayaangelou.jpg",
 		"quotes" : [
-		"Try to be a rainbow in someone's cloud."
+		{
+			"quoteText" : "Try to be a rainbow in someone's cloud.",
+			"tags" : [
+			"attitude"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Norman Vincent Peale",
 		"image" : "./images/normanvincentpeale.jpg",
 		"quotes" : [
-		"Change your thoughts and you change your world."
+		{
+			"quoteText" : "Change your thoughts and you change your world.",
+			"tags" : [
+			"attitude",
+			"change"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Paul Gauguin",
 		"image" : "./images/paulgaugin.jpg",
 		"quotes" : [
-		"Art is either plagiarism or revolution."
+		{
+			"quoteText" : "Art is either plagiarism or revolution.",
+			"tags" : [
+			"art",
+			"change"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Siddhartha Gautama",
 		"image" : "./images/siddharthagautama.jpg",
 		"quotes" : [
-		"What we think, we become."
+		{
+			"quoteText" : "What we think, we become.",
+			"tags" : [
+			"attitude",
+			"wisdom"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Sophia Loren",
 		"image" : "./images/sophialoren.jpg",
 		"quotes" : [
-		"Mistakes are part of the dues one pays for a full life.",
+		{
+			"quoteText" : "Mistakes are part of the dues one pays for a full life.",
+			"tags" : [
+			"failure",
+			"life"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Steve Jobs",
 		"image" : "./images/stevejobs.jpg",
 		"quotes" : [
-		"My favorite things in life don't cost any money. It's really clear that the most precious resource we all have is time.",
-		"Sometimes life is going to hit you in the head with a brick. Don't lose faith.",
-		"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it."
+		{
+			"quoteText" : "My favorite things in life don't cost any money. It's really clear that the most precious resource we all have is time.",
+			"tags" : [
+			"life",
+			"money",
+			"time"
+			]
+		},
+		{
+			"quoteText" : "Sometimes life is going to hit you in the head with a brick. Don't lose faith.",
+			"tags" : [
+			"life",
+			"hope"
+			]
+		},
+		{
+			"quoteText" : "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.",
+			"tags" : [
+			"happiness",
+			"life",
+			"work"
+			]
+		}	
 		]
 	},
 	{
 		"speaker" : "Vince Lombardi",
 		"image" : "./images/vincelombardi.jpg",
 		"quotes" : [
-		"Perfection is not attainable, but if we chase perfection we can catch excellence."
+		{
+			"quoteText" : "Perfection is not attainable, but if we chase perfection we can catch excellence.",
+			"tags" : [
+			"motivational",
+			"success"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "Walt Whitman",
 		"image" : "./images/waltwhitman.jpg",
 		"quotes" : [
-		"Keep your face always toward the sunshine - and shadows will fall behind you."
+		{
+			"quoteText" : "Keep your face always toward the sunshine - and shadows will fall behind you.",
+			"tags" : [
+			"attitude",
+			"hope"
+			]
+		}
 		]
 	},
 	{
 		"speaker" : "William Shakespeare",
 		"image" : "./images/williamshakespeare.jpg",
 		"quotes" : [
-		"We know what we are, but know not what we may be."
+		{
+			"quoteText" : "We know what we are, but know not what we may be.",
+			"tags" : [
+			"future",
+			"knowledge",
+			"motivational"
+			]
+		}
 		]
 	}
 	]
@@ -503,6 +741,12 @@ var quotes = {
 var functionName = "";
 function emptyError(field, functionName) {
 	console.log('Error: The ' + field + ' field in the function ' + functionName +' is empty.');
+}
+function titleCaseArray(array) {
+    for (item in array) {
+        array[item][0] = array[item[0]].toUpperCase();
+    }
+    return array;
 }
 function addToPage(section, helper, data) {
  	if (data != "") {
@@ -682,4 +926,24 @@ function randomizer(groupLength) {
 	var randomIndex = 0;
 	randomIndex = Math.floor(Math.random() * (maxID - minID + 1) + minID);
 	return randomIndex;
+}
+function wikipediaSearch() {
+	var searchQuery = $('#inputSearch').value;
+	// Call Wikipedia API and get list of results for search query
+	$.ajax({
+		url: '//www.wikipedia.org/w/api.php',
+		data: { action: 'query', list: 'search', srsearch: searchQuery, srprop: "snippet", srlimit: 15, format: 'json' },
+		dataType: 'jsonp',
+		success: function(xhr) {
+			// Obtain array from JSON results
+			var wikiArray = $.map(xhr, function(i) {
+				return i;
+			});
+			// Populate description list with titles with links and snippets from the array
+			for (i = 0; i < wikiArray.length; i++) {
+				var wikiEncode = encodeURI(wikiArray[i].title);
+				$('#resultsBox').append('<dt><a href=https://en.wikipedia.org/wiki/' + wikiEncode + 'target="_blank">' + wikiArray[i].title + '</a></dt><dd>' + wikiArray[i].snippet + "...</dd>");
+			}
+		}
+	});
 }
