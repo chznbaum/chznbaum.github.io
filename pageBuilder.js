@@ -61,18 +61,19 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var HTMLquoteStart = '<h1 class="text-center">Random Quote Generator</h1><p class="lead text-center">Click below to enjoy a different quote for endless motivation.</p><blockquote class="blockquote" id="quoteBlock"></blockquote>';
+var HTMLquoteStart = '<div class="row"><h1 class="text-center">Random Quote Generator</h1></div><div class="row"><p class="lead text-center">Click below to enjoy a different quote for endless motivation.</p><div id="image"></div></div><div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="quoteBlock"></blockquote></div></div>';
 var HTMLquoteButtons = '<div class="row"><div class="col-md-6 col-md-offset-3 col-xs-12"><button class="btn btn-primary btn-block" id = "btnNewQuote">Generate New Quote</button></div></div><div class="row"><div class="col-md-3 col-md-offset-3 col-xs-12"><button class="btn btn-info btn-block" id="btnTweetQuote"><i class="fa fa-twitter"></i>Tweet this Quote</button></div><div class="col-md-3 col-xs-12"><button class="btn btn-primary btn-block" id = "btnPreviousQuote">Show Previous Quotes</button></div></div>';
+var HTMLquoteImage = '<img src="%imgurl%" class="quotePic img-responsive img-circle center-block" />'
 var HTMLquoteItem = '<p>"%quote%"</p><footer>%citation%</footer>';
 var CSSquoteImage = '"url(\'%imgurl%\')"';
-var HTMLpreviousQuotes = '<h3>You previously generated:</h3><blockquote class="previousQuotes"></blockquote>';
+var HTMLpreviousQuotes = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>You previously generated:</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="previousQuotes"></blockquote></div></div>';
 var HTMLerrorNoQuotes = '<p class="warning">Sorry, there are no quotes to display here. How about generating a quote?</p>'
-var HTMLquoteTagsDrop = '<div class="row"><div class="col-md-4 col-sm-12 col-xs-12"><div class="dropdown"><select id="quoteTags" class="quoteTags"></select><button id="btnTagClick" type="button" class="btn btn-default">Choose Tag</button></div></div>';
+var HTMLquoteTagsDrop = '<div class="row"><div class="col-md-4 col-md-offset-3 col-sm-8 col-xs-6"><div class="dropdown"><select id="quoteTags" class="quoteTags form-control"></select></div></div><div class="col-md-2 col-sm-4 col-xs-6"><button id="btnTagClick" type="button" class="btn btn-default btn-block">Choose Tag</button></div></div></div>';
 var HTMLquoteTagsEach = '<option value="%data%">%data%</option>'
-var HTMLquoteResults = '<h3>Quotes tagged %data%:</h3><blockquote class="blockquote" id="resultsBlock"></blockquote>'
+var HTMLquoteResults = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>Quotes tagged %data%:</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="resultsBlock"></blockquote></div></div>'
 
-var HTMLsearchBox = '<div class="col-md-4 col-sm-6 col-xs-12"><input type="search" class="form-control input-lg" placeholder="Search" id="inputSearch" aria-label="Search" /></div><div class="col-md-4 col-sm-6 col-xs-12"><button class="btn btn-default btn-block" id="resultsBtn">%data%</button></div></div>';
-var HTMLsearchResults = '<h3>Quotes containing your search term, %data%:</h3><blockquote class="blockquote" id="resultsBlock"></blockquote>'
+var HTMLsearchBox = '<div class="row"><div class="col-md-4 col-md-offset-3 col-sm-8 col-xs-6"><input type="search" class="form-control" placeholder="Search" id="inputSearch" aria-label="Search" /></div><div class="col-md-2 col-sm-4 col-xs-6"><button class="btn btn-default btn-block" id="resultsBtn">%data%</button></div></div>';
+var HTMLsearchResults = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>Quotes containing your search term, %data%:</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="resultsBlock"></blockquote></div></div>'
 
 var submitted = false;
 
@@ -360,7 +361,7 @@ var quotes = {
 	"speakers" : [
 	{
 		"speaker" : "Aristotle Onassis",
-		"image" : "./images/aristotleonassis.jpg",
+		"image" : "./images/aristotle_onassis.jpg",
 		"quotes" : [
 		{
 			"quoteText" : "It is during our darkest moments that we must focus to see the light.",
@@ -370,13 +371,46 @@ var quotes = {
 			"motivational",
 			"moving on"
 			]
+		},
+		{
+			"quoteText" : "The secret of business is to know something that nobody else knows.",
+			"tags" : [
+			"business",
+			"knowledge",
+			"money"
+			]
+		},
+		{
+			"quoteText" : "To succeed in business it is necessary to make others see things as you see them.",
+			"tags" : [
+			"business",
+			"knowledge",
+			"money"
+			]
+		},
+		{
+			"quoteText" : "We must free ourselves of the hope that the sea will ever rest. We must learn to sail in high winds.",
+			"tags" : [
+			"attitude",
+			"life",
+			"motivational"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Audrey Hepburn",
-		"image" : "./images/audreyhepburn.jpg",
+		"image" : "./images/audrey_hepburn.jpg",
 		"quotes" : [
+		{
+			"quoteText" : "As you grow older, you will discover that you have two hands, one for helping yourself, the other for helping others.",
+			"tags" : [
+			"attitude",
+			"equality",
+			"experience",
+			"wisdom"
+			]
+		},
 		{
 			"quoteText" : "Nothing is impossible, the word itself says 'I'm possible'!",
 			"tags" : [
@@ -384,12 +418,26 @@ var quotes = {
 			"hope",
 			"motivational"
 			]
+		},
+		{
+			"quoteText" : "People, even more than things, have to be restored, renewed, revived, reclaimed, and redeemed; never throw out anyone.",
+			"tags" : [
+			"failure",
+			"respect"
+			]
+		},
+		{
+			"quoteText" : "The most important thing is to enjoy your life - to be happy - it's all that matters.",
+			"tags" : [
+			"happiness",
+			"life"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Benjamin Franklin",
-		"imarge" : "./images/benjaminfranklin.jpg",
+		"image" : "./images/benjamin_franklin.jpg",
 		"quotes" : [
 		{
 			"quoteText" : "An investment in knowledge pays the best interest.",
@@ -397,25 +445,72 @@ var quotes = {
 			"knowledge",
 			"wisdom"
 			]
+		},
+		{
+			"quoteText" : "By failing to prepare, you are preparing to fail.",
+			"tags" : [
+			"business",
+			"wisdom"
+			]
+		},
+		{
+			"quoteText" : "Tell me and I forget, teach me and I may remember, involve me and I learn.",
+			"tags" : [
+			"education",
+			"knowledge"
+			]
+		},
+		{
+			"quoteText" : "They who can give up essential liberty to obtain a little temporary safety deserve neither liberty nor safety.",
+			"tags" : [
+			"politics"
+			]
+		},
+		{
+			"quoteText" : "Well done is better than well said.",
+			"tags" : [
+			"experience"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Francis of Assisi",
-		"image" : "./images/francisofassisi.jpg",
+		"image" : "./images/francis_of_assisi.jpg",
 		"quotes" : [
+		{
+			"quoteText" : "All the darkness in the world cannot extinguish the light of a single candle.",
+			"tags" : [
+			"attitude",
+			"moving on"
+			]
+		},
+		{
+			"quoteText" : "For it is in giving that we receive.",
+			"tags" : [
+			"attitude",
+			"wisdom"
+			]
+		},
 		{
 			"quoteText" : "Start by doing what's necessary, then what's possible, and suddenly you are doing the impossible.",
 			"tags" : [
 			"attitude",
 			"motivational"
 			]
-		}
+		},
+		{
+			"quoteText" : "While you are proclaiming peace with your lips, be careful to have it even more fully in your heart.",
+			"tags" : [
+			"attitude",
+			"wisdom"
+			]
+		},
 		]
 	},
 	{
 		"speaker" : "Grace Hopper",
-		"images" : "./images/gracehopper.jpg",
+		"image" : "./images/grace_hopper.jpg",
 		"quotes" : [
 		{
 			"quoteText" : "I've always been more interested in the future than in the past.",
@@ -445,8 +540,36 @@ var quotes = {
 	},
 	{
 		"speaker" : "Helen Keller",
-		"image" : "./images/helenkeller.jpg",
+		"image" : "./images/helen_keller.jpg",
 		"quotes" : [
+		{
+			"quoteText" : "Alone we can do so little; together we can do so much.",
+			"tags" : [
+			"alone",
+			"friendship"
+			]
+		},
+		{
+			"quoteText" : "Although the world is full of suffering, it is also full of the overcoming of it.",
+			"tags" : [
+			"attitude",
+			"moving on"
+			]
+		},
+		{
+			"quoteText" : "Life is either a great adventure or nothing.",
+			"tags" : [
+			"attitude",
+			"life"
+			]
+		},
+		{
+			"quoteText" : "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.",
+			"tags" : [
+			"attitude",
+			"success"
+			]
+		},
 		{
 			"quoteText" : "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
 			"tags" : [
@@ -455,12 +578,20 @@ var quotes = {
 			"love",
 			"wisdom"
 			]
+		},
+		{
+			"quoteText" : "When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us.",
+			"tags" : [
+			"attitude",
+			"happiness",
+			"moving on"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Jim Rohn",
-		"image" : "./images/jimrohn.jpg",
+		"image" : "./images/jim_rohn.jpg",
 		"quotes" : [
 		{
 			"quoteText" : "Happiness is not something you postpone for the future; it is something you design for the present.",
@@ -471,12 +602,18 @@ var quotes = {
 			"motivational",
 			"wisdom"
 			]
+		},
+		{
+			"quoteText" : "Work harder on yourself than you do on your job.",
+			"tags" : [
+			"work"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Jimmy Dean",
-		"image" : "./images/jimmydean.jpg",
+		"image" : "./images/jimmy_dean.jpg",
 		"quotes" : [
 		{
 			"quoteText" : "I can't change the direction of the wind, but I can adjust my sails to always reach my destination.",
@@ -485,12 +622,18 @@ var quotes = {
 			"motivational",
 			"success"
 			]
+		},
+		{
+			"quoteText" : "You gotta try your luck at least once a day, because you could be going around lucky all day and not even know it.",
+			"tags" : [
+			"motivational"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Jane Addams",
-		"image" : "./images/janeaddams.jpg",
+		"image" : "./images/jane_addams.jpg",
 		"quotes" : [
 		{
 			"quoteText" : "Action indeed is the sole medium of expression for ethics.",
@@ -588,11 +731,51 @@ var quotes = {
 		]
 	},
 	{
-		"speaker" : "Joseph Campbell",
-		"image" : "./images/josephcampbell.jpg",
+		"speaker" : "John Romero",
+		"image" : "./images/john_romero.jpg",
 		"quotes" : [
 		{
-			"quoteText" : "We must let go of the life we have planned, so as to accept the one that is waiting for us.",
+			"quoteText" : "You might not think that programmers are artists, but programming is an extremely creative profession. It's logic-based creativity.",
+			"tags" : [
+			"art",
+			"computers",
+			"work"
+			]
+		}
+		]
+	},
+	{
+		"speaker" : "Joseph Campbell",
+		"image" : "./images/joseph_campbell.jpg",
+		"quotes" : [
+		{
+			"quoteText" : "A hero is someone who has given his or her life to something bigger than oneself.",
+			"tags" : [
+			"life",
+			"success"
+			]
+		},
+		{
+			"quoteText" : "It is by going down into the abyss that we recover the treasures of life. Where you stumble, there lies your treasure.",
+			"tags" : [
+			"failure",
+			"success"
+			]
+		},
+		{
+			"quoteText" : "The cave you fear to enter holds the treasure you seek.",
+			"tags" : [
+			"success"
+			]
+		},
+		{
+			"quoteText" : "The goal of life is to make your heartbeat match the beat of the universe, to match your nature with Nature.",
+			"tags" : [
+			"life"
+			]
+		},
+		{
+			"quoteText" : "We must be willing to get rid of the life we've planned, so as to have the life that is waiting for us.",
 			"tags" : [
 			"change",
 			"future",
@@ -600,37 +783,106 @@ var quotes = {
 			"moving on",
 			"wisdom"
 			]
+		},
+		{
+			"quoteText" : "Your sacred space is where you can find yourself again and again.",
+			"tags" : [
+			"wisdom"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Maya Angelou",
-		"image" : "./images/mayaangelou.jpg",
+		"image" : "./images/maya_angelou.jpg",
 		"quotes" : [
+		{
+			"quoteText" : "If you don't like something, change it. If you can't change it, change your attitude.",
+			"tags" : [
+			"attitude",
+			"change"
+			]
+		},
+		{
+			"quoteText" : "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+			"tags" : [
+			"failure",
+			"success"
+			]
+		},
+		{
+			"quoteText" : "Prejudice is a burden that confuses the past, threatens the future and renders the present inaccessible.",
+			"tags" : [
+			"wisdom"
+			]
+		},
+		{
+			"quoteText" : "There is no greater agony than bearing an untold story inside you.",
+			"tags" : [
+			"life"
+			]
+		},
 		{
 			"quoteText" : "Try to be a rainbow in someone's cloud.",
 			"tags" : [
 			"attitude"
+			]
+		},
+		{
+			"quoteText" : "We delight in the beauty of the butterfly, but rarely admit the changes it has gone through to achieve that beauty.",
+			"tags" : [
+			"beauty",
+			"change",
+			"life",
+			"success"
+			]
+		},
+		{
+			"quoteText" : "You may not control all the events that happen to you, but you can decide not to be reduced by them.",
+			"tags" : [
+			"attitude",
+			"moving on"
 			]
 		}
 		]
 	},
 	{
 		"speaker" : "Norman Vincent Peale",
-		"image" : "./images/normanvincentpeale.jpg",
+		"image" : "./images/norman_vincent_peale.jpg",
 		"quotes" : [
+		{
+			"quoteText" : "Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.",
+			"tags" : [
+			"attitude",
+			"success"
+			]
+		},
 		{
 			"quoteText" : "Change your thoughts and you change your world.",
 			"tags" : [
 			"attitude",
 			"change"
 			]
+		},
+		{
+			"quoteText" : "Stand up to your obstacles and do something about them. You will find that they haven't half the strength you think they have.",
+			"tags" : [
+			"attitude",
+			"success"
+			]
+		},
+		{
+			"quoteText" : "There is a real magic in enthusiasm. It spells the difference between mediocrity and accomplishment.",
+			"tags" : [
+			"attitude",
+			"success"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Paul Gauguin",
-		"image" : "./images/paulgaugin.jpg",
+		"image" : "./images/paul_gauguin.jpg",
 		"quotes" : [
 		{
 			"quoteText" : "Art is either plagiarism or revolution.",
@@ -638,17 +890,58 @@ var quotes = {
 			"art",
 			"change"
 			]
+		},
+		{
+			"quoteText" : "Art requires philosophy, just as philosophy requires art. Otherwise, what would become of beauty?",
+			"tags" : [
+			"art"
+			]
+		},
+		{
+			"quoteText" : "It is the eye of ignorance that assigns a fixed and unchangeable color to every object; beware of this stumbling block.",
+			"tags" : [
+			"failure"
+			]
+		},
+		{
+			"quoteText" : "We never really know what stupidity is until we have experimented on ourselves.",
+			"tags" : [
+			"failure"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Siddhartha Gautama",
-		"image" : "./images/siddharthagautama.jpg",
+		"image" : "./images/siddhartha_gautama.jpg",
 		"quotes" : [
 		{
-			"quoteText" : "What we think, we become.",
+			"quoteText" : "Holding on to anger is like grasping a hot coal with the intent of throwing it at someone else; you are the one who gets burned.",
 			"tags" : [
 			"attitude",
+			"failure",
+			"wisdom"
+			]
+		},
+		{
+			"quoteText" : "The mind is everything. What you think, you become.",
+			"tags" : [
+			"attitude",
+			"wisdom"
+			]
+		},
+		{
+			"quoteText" : "Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.",
+			"tags" : [
+			"attitude",
+			"wisdom"
+			]
+		},
+		{
+			"quoteText" : "You will not be punished for your anger, you will be punished by your anger.",
+			"tags" : [
+			"attitude",
+			"failure",
 			"wisdom"
 			]
 		}
@@ -656,20 +949,35 @@ var quotes = {
 	},
 	{
 		"speaker" : "Sophia Loren",
-		"image" : "./images/sophialoren.jpg",
+		"image" : "./images/sophia_loren.jpg",
 		"quotes" : [
+		{
+			"quoteText" : "It's a mistake to think that once you're done with school you need never learn anything new.",
+			"tags" : [
+			"education",
+			"failure",
+			"knowledge"
+			]
+		},
 		{
 			"quoteText" : "Mistakes are part of the dues one pays for a full life.",
 			"tags" : [
 			"failure",
 			"life"
 			]
+		},
+		{
+			"quoteText" : "When you are a mother, you are never really alone in your thoughts. A mother always has to think twice, once for herself and once for her child.",
+			"tags" : [
+			"alone",
+			"women"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Steve Jobs",
-		"image" : "./images/stevejobs.jpg",
+		"image" : "./images/steve_jobs.jpg",
 		"quotes" : [
 		{
 			"quoteText" : "My favorite things in life don't cost any money. It's really clear that the most precious resource we all have is time.",
@@ -698,21 +1006,67 @@ var quotes = {
 	},
 	{
 		"speaker" : "Vince Lombardi",
-		"image" : "./images/vincelombardi.jpg",
+		"image" : "./images/vince_lombardi.jpg",
 		"quotes" : [
+		{
+			"quoteText" : "Individual commitment to a group effort - that is what makes a team work, a company work, a society work, a civilization work.",
+			"tags" : [
+			"business"
+			]
+		},
+		{
+			"quoteText" : "It's not whether you get knocked down, it's whether you get up.",
+			"tags" : [
+			"attitude",
+			"failure"
+			]
+		},
 		{
 			"quoteText" : "Perfection is not attainable, but if we chase perfection we can catch excellence.",
 			"tags" : [
 			"motivational",
 			"success"
 			]
+		},
+		{
+			"quoteText" : "The harder you work, the harder it is to surrender.",
+			"tags" : [
+			"failure",
+			"work"
+			]
 		}
 		]
 	},
 	{
 		"speaker" : "Walt Whitman",
-		"image" : "./images/waltwhitman.jpg",
+		"image" : "./images/walt_whitman.jpg",
 		"quotes" : [
+		{
+			"quoteText" : "Be curious, not judgmental.",
+			"tags" : [
+			"attitude",
+			"wisdom"
+			]
+		},
+		{
+			"quoteText" : "Behold I do not give lectures or a little charity. When I give I give myself.",
+			"tags" : [
+			"giving"
+			]
+		},
+		{
+			"quoteText"  : "Do I contradict myself? Very well then I contradict myself, (I am large, I contain multitudes.)",
+			"tags" : [
+			"miscelaneous"
+			]
+		},
+		{
+			"quoteText" : "I exist as I am, that is enough.",
+			"tags" : [
+			"attitude",
+			"success"
+			]
+		},
 		{
 			"quoteText" : "Keep your face always toward the sunshine - and shadows will fall behind you.",
 			"tags" : [
@@ -724,8 +1078,33 @@ var quotes = {
 	},
 	{
 		"speaker" : "William Shakespeare",
-		"image" : "./images/williamshakespeare.jpg",
+		"image" : "./images/william_shakespeare.jpg",
 		"quotes" : [
+		{
+			"quoteText" : "Better three hours too soon than a minute too late.",
+			"tags" : [
+			"time"
+			]
+		},
+		{
+			"quoteText" : "Cowards die many times before their deaths; the valiant never taste of death but once.",
+			"tags" : [
+			"courage"
+			]
+		},
+		{
+			"quoteText" : "Love all, trust a few, do wrong to none.",
+			"tags" : [
+			"love",
+			"wisdom"
+			]
+		},
+		{
+			"quoteText" : "The course of love never did run smooth.",
+			"tags" : [
+			"love"
+			]
+		},
 		{
 			"quoteText" : "We know what we are, but know not what we may be.",
 			"tags" : [

@@ -45,7 +45,9 @@ $(document).ready(function() {
         var quoteIndex = randomizer(quotes.speakers[citationIndex].quotes.length);
         var formatted = HTMLquoteItem.replace(/%quote%/g, quotes.speakers[citationIndex].quotes[quoteIndex].quoteText);
         formatted = formatted.replace(/%citation%/g, quotes.speakers[citationIndex].speaker);
+        var formattedImg = HTMLquoteImage.replace(/%imgurl%/g, quotes.speakers[citationIndex].image);
         $('#quoteBlock').html(formatted);
+        $('#image').html(formattedImg);
         prevQuotesArray.push(formatted);
     });
     $('#btnPreviousQuote').on('click', function() {
