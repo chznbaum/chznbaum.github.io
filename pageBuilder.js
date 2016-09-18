@@ -6,12 +6,13 @@ var HTMLnavbarNav = '<div class="container-fluid><div class="navbar-header"><but
 var HTMLanchorItem = '<li><a href="%url%">%title%</a></li>';
 var HTMLportfolioNav = '<li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#portfolio" role="button" aria-haspopup="true" aria-expanded="false">%title%<span class="caret"></span></a><ul class="dropdown-menu" id="portfolio-items"></ul></li>';
 
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderHeadline = '<span class="headline-text">%data%</span><hr>';
+var HTMLheaderName = '<h1 id="name" class="text-center">%data%</h1>';
+var HTMLheaderHeadline = '<p class="text-center">%data%</p><hr>';
 var HTMLfooter = '<hr><p class="text-center"><a href="%url%">%name%</a> &#169 2016. All Rights Reserved. <a href="%privurl%">Privacy Policy</a></p>'
 
 var HTMLcontactGeneric = '<li class="contact-item">%contact% %data%</li>';
 var HTMLContactBlurb = '<p class="lead">%data%</p>';
+var HTMLcontactIcons = '<li class="contact-item"><span class="fa %title%"></span> %data%</li>'
 var HTMLmobile = '<li class="contact-item">mobile %data%</li>';
 var HTMLemail = '<li class="contact-item">email %data%</li>';
 var HTMLlinkedin = '<li class="contact-item">linkedin %data% </li>';
@@ -25,12 +26,13 @@ var HTMLformItem = '<div class="form-group"><label for="%formitemid%">%label%</l
 var HTMLtextarea = '<div class="form-group"><label for="%formitemid%">%label%</label><textarea class="form-control" name="%formitemid%" id="%formitemid%" placeholder="%placeholder%" rows="5" required></textarea></div>';
 var HTMLsubmitReset = '<input type="submit" class="btn btn-default" role="button" value="Submit" /><input type="reset" class="btn btn-default" role="button" value="Reset" />';
 
-var HTMLbioPic = '<img src="%data%" class="biopic img-responsive">';
-var HTMLwelcomeMsg = '<p class="welcome-message">%data%</p>';
+var HTMLbioPic = '<img src="%data%" class="biopic img-responsive img-circle center-block">';
+var HTMLhelpButton = '<button type="button" class="btn btn-link btn-lg center-block" data-toggle="modal" data-target="#helpModal">Need help?</button>'
+var HTMLwelcomeMsg = '<p class="text-center">%data%</p>';
 var HTMLblurb = '<p class="lead">%data%</p>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills"></ul>';
-var HTMLskills = '<li class="skills-item">%data%</li>';
+var HTMLskills = '<li class="skills-item"><i class="%data%"></i></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
@@ -61,19 +63,30 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var HTMLquoteStart = '<div class="row"><h1 class="text-center">Random Quote Generator</h1></div><div class="row"><p class="lead text-center">Click below to enjoy a different quote for endless motivation.</p><div id="image"></div></div><div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="quoteBlock"></blockquote></div></div>';
-var HTMLquoteButtons = '<div class="row"><div class="col-md-6 col-md-offset-3 col-xs-12"><button class="btn btn-primary btn-block" id = "btnNewQuote">Generate New Quote</button></div></div><div class="row"><div class="col-md-3 col-md-offset-3 col-xs-12"><button class="btn btn-info btn-block" id="btnTweetQuote"><i class="fa fa-twitter"></i>Tweet this Quote</button></div><div class="col-md-3 col-xs-12"><button class="btn btn-primary btn-block" id = "btnPreviousQuote">Show Previous Quotes</button></div></div>';
-var HTMLquoteImage = '<img src="%imgurl%" class="quotePic img-responsive img-circle center-block" />'
-var HTMLquoteItem = '<p>"%quote%"</p><footer>%citation%</footer>';
-var CSSquoteImage = '"url(\'%imgurl%\')"';
+var HTMLquoteStart = '<div class="row"><h1 class="text-center">Random Quote Generator</h1></div><div class="row"><p class="lead text-center">curated by Chazona Baum</p><p class="lead text-center">Click below to enjoy a different quote for endless motivation.</p>' + HTMLhelpButton + '<div id="image"></div></div><div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="quoteBlock"></blockquote></div></div>';
+var HTMLquoteButtons = '<div class="row"><div class="col-md-6 col-md-offset-3 col-xs-12"><button class="btn btn-primary btn-block btn-lg" id = "btnNewQuote">Generate Random Quote</button></div></div><div class="row"><div class="col-md-3 col-md-offset-3 col-xs-12"><button class="btn btn-default btn-block btn-lg" id="btnTweetQuote"><i class="fa fa-twitter"></i> Tweet this Quote</button></div><div class="col-md-3 col-xs-12"><button class="btn btn-default btn-block btn-lg" id="btnFacebookQuote"><i class="fa fa-facebook-square"></i> Share the Generator</button></div></div><div class="row"><div class="col-md-6 col-md-offset-3 col-xs-12"><button class="btn btn-default btn-block btn-lg" id = "btnPreviousQuote">Show Previous Quotes</button></div></div>';
+var HTMLquoteImage = '<img src="%imgurl%" class="quotePic img-responsive img-circle center-block" />';
+var HTMLquoteItem = '<p><span class="fa fa-quote-left"></span> %quote% <span class="fa fa-quote-right"></span></p><footer>%citation%</footer>';
 var HTMLpreviousQuotes = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>You previously generated:</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="previousQuotes"></blockquote></div></div>';
-var HTMLerrorNoQuotes = '<p class="warning">Sorry, there are no quotes to display here. How about generating a quote?</p>'
-var HTMLquoteTagsDrop = '<div class="row"><div class="col-md-4 col-md-offset-3 col-sm-8 col-xs-6"><div class="dropdown"><select id="quoteTags" class="quoteTags form-control"></select></div></div><div class="col-md-2 col-sm-4 col-xs-6"><button id="btnTagClick" type="button" class="btn btn-default btn-block">Choose Tag</button></div></div></div>';
+var HTMLerrorNoQuotes = '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><span class="fa fa-times-circle-o"></span></span></button><h4>Hey, there aren\'t any quotes here!</h4><p>No quotes have been generated, so there\'s nothing to display. How about generating a quote?</p><button type="button" class="btn btn-danger" data-dismiss="alert">Close</button></div>';
+var HTMLquoteTagsDrop = '<div class="row"><div class="col-md-4 col-md-offset-3 col-sm-8 col-xs-6"><div class="dropdown"><select id="quoteTags" class="quoteTags form-control input-lg"></select></div></div><div class="col-md-2 col-sm-4 col-xs-6"><button id="btnTagClick" type="button" class="btn btn-default btn-block btn-lg">Choose Tag</button></div></div></div>';
 var HTMLquoteTagsEach = '<option value="%data%">%data%</option>'
-var HTMLquoteResults = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>Quotes tagged %data%:</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="resultsBlock"></blockquote></div></div>'
+var HTMLquoteResults = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>Quotes tagged "%data%":</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="resultsBlock"></blockquote></div></div>';
 
-var HTMLsearchBox = '<div class="row"><div class="col-md-4 col-md-offset-3 col-sm-8 col-xs-6"><input type="search" class="form-control" placeholder="Search" id="inputSearch" aria-label="Search" /></div><div class="col-md-2 col-sm-4 col-xs-6"><button class="btn btn-default btn-block" id="resultsBtn">%data%</button></div></div>';
-var HTMLsearchResults = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>Quotes containing your search term, %data%:</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="resultsBlock"></blockquote></div></div>'
+var HTMLsearchBox = '<div class="row"><div class="col-md-4 col-md-offset-3 col-sm-8 col-xs-6"><input type="search" class="form-control input-lg" placeholder="Search" id="inputSearch" aria-label="Search" /></div><div class="col-md-2 col-sm-4 col-xs-6"><button class="btn btn-default btn-block btn-lg" id="resultsBtn">%data%</button></div></div>';
+var HTMLsearchResults = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>Quotes containing your search term, "%data%":</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="resultsBlock"></blockquote></div></div>';
+
+var HTMLhelpModal = '<div class="modal fade" tabindex="-1" id="helpModal" role="dialog" aria-labelledby="helpModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-times-circle-o"></span></span></button><h4 class="modal-title" id="helpModalLabel">%title%</h4></div><div class="modal-body">%data%</div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div>';
+var HTMLhelpBox = '<h3>Frequently Asked Questions:</h3><div class="panel-group faq-item" id="helpAccordion" role="tablist" aria-multiselectable="true">';
+var HTMLquoteHelpText = '<div class="panel panel-default"><div class="panel-heading" role="tab" id="%heading%"><h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#helpAccordion" href="#%collapseid%" aria-expanded="true" aria-controls="%collapseid%">%question%</a></h4></div><div id="%collapseid%" class="panel-collapse collapse" role="tabpanel" aria-labelledby="%heading%"><div class="panel-body">%answer%</div></div></div>';
+
+var HTMLwikipediaStart = '<div class="row"><div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12"><h1 class="text-center">Wikipedia Viewer</h1><input type="search" class="form-control input-lg" placeholder="Search" id="inputSearch" aria-label="Search" /><div class="row" id="btnRow"><div class="col-md-6 col-sm-6 col-xs-12"><button class="btn btn-default btn-block btn-lg" id="resultsBtn">View Results</button></div><div class="col-md-6 col-sm-6 col-xs-12"><button class="btn btn-default btn-block btn-lg" id="randomBtn">View Random Page</button></div></div></div></div>';
+var HTMLwikipediaResultsStart = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><dl id="showResults"></dl></div></div>';
+
+var HTMLtributeCarousel = '<div id="carousel-tribute-quote" class="carousel slide" data-ride="carousel"></div>';
+var HTMLtributeCarouselItem = '<div class="carousel-inner" role="listbox"><div class="item"><div class="carousel-caption"><blockquote><span class="fa fa-quote-left"></span>%quote%<span class="fa fa-quote-right"></span><footer>%citation%</footer></blockquote></div></div></div>';
+
+var HTMLweatherSetUp = '<div class="row"><div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" id="weatherBox"><h1 class="text-center">Local Weather App</h1><p class="text-center" id="currentLocation">City, State, Country</p><p class="text-center">Currently: <span id="weatherTemp">0</span><span id="degreeSym1">&#8457</span></p><p class="text-center">Feels like: <span id="feelsLikeTemp">0</span><span id="degreeSym2">&#8457</span></p><p class="text-center" id="weatherDescrip">Local weather</p><button class="btn btn-lg center-block btn-primary" id="convertBtn">Convert &#8457 / &#8451</button></div></div>';
 
 var submitted = false;
 
@@ -171,7 +184,7 @@ var projects = {
  	{
  		"title" : "Personal Resume",
  		"dates" : "August 2016",
- 		"description" : "",
+ 		"description" : "An easily edited personal resume, created with HTML, CSS and client-side JavaScript.",
  		"keywords" : [
  		"resume",
  		"web development",
@@ -236,22 +249,50 @@ var bio = {
  	"welcomeMessage" : "Hello world!",
  	"biopic" : "images/chazonabaum.JPG",
  	"blurbs" : [
- 	"I don't look like your average coder. And my resume doesn't read like someone who works with computers. My experiences in life have been incredibly diverse, and I've worked in industries ranging from food to veterinary medicine to insurance. I have two adventurous children, and I've made a point to listen to people from virtually every walk in life.",
- 	"The unique worldview I've cultivated puts me in a excellent frame of mind to solve complex challenges and find common ground. With a passion for creating, a hunger for knowledge, and an unbreakable resiliency, you would be hard-pressed to find anyone else who brings to the table what I have or learns as quickly as I do."
+ 	"My name is Chazona Baum, I'm 28 and a self-taught JavaScript developer with two kids. My experiences in life have been incredibly diverse, and I've worked in industries ranging from food to veterinary medicine to insurance. When I'm not studying, writing or refactoring code, leading my local coding group, or wrangling my rambunctious kids, I enjoy scenic walks and sweet iced tea.",
+ 	"The unique worldview I've cultivated puts me in a excellent frame of mind to solve complex challenges and find common ground. With a passion for creating, a hunger for knowledge, and an unbreakable resiliency, I tend to make an impression. Want to know what I would be like to work with?"
  	],
  	"contacts" : {
- 		"mobile" : "(757)617-6964",
- 		"email" : "chznbaum@gmail.com",
- 		"linkedin" : "chznbaum",
- 		"github" : "chznbaum",
- 		"twitter" : "@otherconsolelog",
- 		"location" : "Midlothian, VA",
- 		"contactBlurbs" : ["Feel free to contact me through this form or social media. I will get back to you within 48 hours, whether we're talking about a job or merely sharing our mutual love of Unbreakable Kimmy Schmidt."],
+ 		"contactInfo" : [
+ 		{
+ 			"name" : "mobile",
+ 			"fontAwesome" : "fa-mobile",
+ 			"description" : "(757)617-6964"
+ 		},
+ 		{
+ 			"name" : "email",
+ 			"fontAwesome" : "fa-envelope-o",
+ 			"description" : "chazona@anotherconsolelog.com"
+ 		},
+ 		{
+ 			"name" : "website",
+ 			"fontAwesome" : "fa-desktop",
+ 			"description" : "anotherconsolelog.com"
+ 		},
+ 		{
+ 			"name" : "linkedin",
+ 			"fontAwesome" : "fa-linkedin-square",
+ 			"description" : "chznbaum"
+ 		},
+ 		{
+ 			"name" : "github",
+ 			"fontAwesome" : "fa-github-square",
+ 			"description" : "chznbaum"
+ 		},
+ 		{
+ 			"name" : "twitter",
+ 			"fontAwesome" : "fa-twitter-square",
+ 			"description" : "@otherconsolelog"
+ 		}
+ 		],
+ 		"contactBlurbs" : [
+ 		"Feel free to contact me through this form or social media. I will get back to you within 24 hours, whether we're talking about a job or merely sharing our mutual love of Unbreakable Kimmy Schmidt."
+ 		],
  		"contactFormItems" : [
  		{
  			"formItemID" : "entry.1048969626",
  			"label" : "First Name",
- 			"placeholder" : "",
+ 			"placeholder" : "John",
  			"inputType" : "text"
  		},
  		{
@@ -281,14 +322,30 @@ var bio = {
  		]
  	},
  	"skills" : [
- 	"HTML",
- 	"CSS",
- 	"JavaScript",
- 	"Ruby",
- 	"jQuery",
- 	"git",
- 	"GitHub",
- 	"Linux command-line"
+ 	{
+ 		"name" : "HTML",
+ 		"icon" : "fa fa-html5"
+ 	},
+ 	{
+ 		"name" : "CSS",
+ 		"icon" : "fa fa-css3"
+ 	},
+ 	{
+ 		"name" : "JavaScript",
+ 		"icon" : "icon-javascript"
+ 	},
+ 	{
+ 		"name" : "git",
+ 		"icon" : "fa fa-git"
+ 	},
+ 	{
+ 		"name" : "ubuntu",
+ 		"icon" : "icon-ubuntu"
+ 	},
+ 	{
+ 		"name" : "Bash",
+ 		"icon" : "fa fa-terminal"
+ 	}
  	]
 };
 var education = {
@@ -357,10 +414,59 @@ var homeNav = {
 	}
 	]
 };
+var frequentlyAskedQuestions = {
+	"index" : [
+	{
+		"question" : "An Industrious Bootstrapper",
+		"answer" : "\"How many jobs you got?\" While I could never compete with the characters on <em>In Living Color</em>'s Hey Mon sketches, it hasn't been unusual for me to work two or three different jobs simultaneously, even while raising my eldest son. I've walked three hours to get to work on multiple occasions. I'm a self-starter who, when dissatisfied with the status quo, will take whatever action I can to improve my circumstances. Because I'm constantly seeking additional knowledge and workplace responsibilites, it hasn't been unusual for me to be promoted expeditiously or be assigned special projects."
+	},
+	{
+		"question" : "An Obsessive Problem-Solver",
+		"answer" : "When I have an interesting problem to solve or task to do, it takes an intense amount of my concentration. When I was younger, it wasn't uncommon for me to completely lose track of time, neglecting to eat or drink while focusing on my work. Since having my children, I'm better at checking in with myself to ensure I'm taking care of myself while still enjoying the benefits my obsessive focus has on the creative process. I'm not the type to search for excuses to go home early."
+	},
+	{
+		"question" : "An Accidental Leader",
+		"answer" : "Whenever possible, I prefer to create things rather than manage people, though I do enjoy coaching and mentoring. I do not seek out commanding roles, but in the absence of leadership, I step up to fill the void. For example, while learning to code, I had a need to meet with other coders locally, but the closest local group was prohibitively far from home. Despite having barely a month's experience with web development, I formed a local group that now serves almost 50 people learning a variety of languages. Because I do not have a need to be \"in charge,\" I tend to be collaborative in leadership roles, and I seek to bring out the best ideas and talents in my teams."
+	},
+	{
+		"question" : "A Nimble Apprentice",
+		"answer" : "I pick up new information incredibly quickly, and it's not unusual for me to end up helping to teach new concepts to my collegues while still training for my position. I am skilled at mentally drawing patterns between concepts and prior knowledge, which enables me to master material more quickly. More importantly, I have a knack for navigating resources and a hunger to know as much as possible. I am not afraid of asking questions if it will increase my understanding, but if I can find the information quicker through searches or established materials, I will seek it out myself."
+	},
+	{
+		"question" : "A Compassionate Wanderer",
+		"answer" : "Of all the virtues a person can aspire to, the one I want to be remembered for most is kindness. I understand that we all begin this journey from different positions, and that our accumulated experiences tend to shape our perspectives and actions. Whenever possible, I strive to ask questions to build further understanding and to offer help and encouragement, so that I can hopefully improve the lives of those around me. I'm not one to cast someone aside or shatter my integrity simply to improve my own standing."
+	}
+	],
+	"tribute_page" : [
+	{
+		"question" : "What is this?",
+		"answer" : "This page is a Tribute Page project I built while studying with Free Code Camp. It highlights a picture, a quote from the figure, and details of their life."
+	},
+	{
+		"question" : "So does everyone at Free Code Camp have one like this?",
+		"answer" : "While it is a common project, each developer takes a different approach to it, and most go back and add additional features or functionality. These projects will not be the same, even though they are made to fit the same user stories."
+	},
+	{
+		"question" : "I don't like this person. Is this really who you did a tribute on?",
+		"answer" : "The person you are seeing is featured in my Random Quote Generator project. If you don't like this person, no worries. Refresh the page for a random other person's tribute page."
+	}
+	],
+	"random_quote_generator" : [
+	{
+		"question" : "How to I generate a new quote?",
+		"answer" : "Click the \"Generate Random Quote\" button."
+	},
+	{
+		"question" : "How can I view a quote on a specific topic?",
+		"answer" : "For most broad topics, select from the drop-down menu the tag about your topic. Click \"Choose Tag\", and a list of any quotes tagged with your topic will display. For a more specific search, choose a word or phrase you want included in your quote, and enter it in the search box. Click \"Search Quotes\" to pull up a list of all quotes that include your word or phrase."
+	}
+	]
+};
 var quotes = {
 	"speakers" : [
 	{
 		"speaker" : "Aristotle Onassis",
+		"headline" : "Shipping Magnate",
 		"image" : "./images/aristotle_onassis.jpg",
 		"quotes" : [
 		{
@@ -396,10 +502,73 @@ var quotes = {
 			"motivational"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1906",
+			"event" : "Born in Karatas, Smyrna."
+		},
+		{
+			"date" : "1922",
+			"event" : "Flees with his family to Greece as refugees after the Great Fire of Smyrna in the Greco-Turkish War. He loses uncles, an aunt, and her family in the fire."
+		},
+		{
+			"date" : "1923",
+			"event" : "Leaves for Buenos Aires, Argentina, and gets his first job as a telephone operator. He begins eavesdropping on business calls, and uses that information to secure his own deals."
+		},
+		{
+			"date" : "1928",
+			"event" : "Makes a trade agreement with Greece. He becomes involved with smuggling, bribing, and other illegitimate activities."
+		},
+		{
+			"date" : "1929",
+			"event" : "An increase in Greek tariffs of 1000% poses a massive disruption for his South American business. He bribes Greek ministers and successfully gains an exemption from these taxes."
+		},
+		{
+			"date" : "1931",
+			"event" : "Once again manages to secure exemption from Greek tariffs by bribing Greek officials."
+		},
+		{
+			"date" : "1946",
+			"event" : "Marries Athina Livanos, the young daughter of a shipping magnate."
+		},
+		{
+			"date" : "1950",
+			"event" : "Enters the whaling industry off the coast of Peru, to great success."
+		},
+		{
+			"date" : "1956",
+			"event" : "Sells his whaling business to a Japanese company called Kyokuyo Hogei Kaisha."
+		},
+		{
+			"date" : "1957",
+			"event" : "Begins a relationship with singer Maria Callas."
+		},
+		{
+			"date" : "1960",
+			"event" : "Divorces from his first wife Athina Livanos as a result of his relationship with Maria Callas."
+		},
+		{
+			"date" : "1968",
+			"event" : "Marries Jackie Kennedy, widow of President John F. Kennedy."
+		},
+		{
+			"date" : "1957",
+			"event" : "Enters the airline business, rebranding the Greek National Airline as Olympic Airlines."
+		},
+		{
+			"date" : "1973",
+			"event" : "His son, Alexander, dies in a plane crash, leaving him devastated."
+		},
+		{
+			"date" : "1975",
+			"event" : "Dies in Neuilly-sur-Seine, France."
+		}
 		]
 	},
 	{
 		"speaker" : "Audrey Hepburn",
+		"headline" : "Film and Fashion Icon",
 		"image" : "./images/audrey_hepburn.jpg",
 		"quotes" : [
 		{
@@ -433,10 +602,73 @@ var quotes = {
 			"life"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1929",
+			"event" : "Born in Brussels, Belgium."
+		},
+		{
+			"date" : "1948",
+			"event" : "Appears in her first stage performance in the musical <em>High Button Shoes</em> as a chorus girl."
+		},
+		{
+			"date" : "1951",
+			"event" : "Performs the lead in <em>Gigi</em> for two years, leading to the recognition of her acting potential."
+		},
+		{
+			"date" : "1953",
+			"event" : "Plays the lead role of Princess Anne in the film <em>Last Holiday</em>, her breakthrough role which earned her an Academy Award."
+		},
+		{
+			"date" : "1954",
+			"event" : "Marries Mel Ferrer, a fellow actor she has worked with."
+		},
+		{
+			"date" : "1959",
+			"event" : "After enduring two miscarriages, she takes time off from her career to focus on her pregnancy and the delivery of her son Sean."
+		},
+		{
+			"date" : "1960",
+			"event" : "Three months after delivering her son, she begins filming <em>Breakfast at Tiffany's</em>, which will be released the next year and become one of her most acclaimed roles. She is also awarded a star on the Hollywood Walk of Fame."
+		},
+		{
+			"date" : "1961",
+			"event" : "Takes time off from her career again to care for Sean and her husband."
+		},
+		{
+			"date" : "1963",
+			"event" : "Stars in a number of movies over the next four years, including <em>My Fair Lady</em>."
+		},
+		{
+			"date" : "1967",
+			"event" : "Takes a nine-year break from acting."
+		},
+		{
+			"date" : "1976",
+			"event" : "Stars in a sparse number of movies, including <em>Robin and Marian</em> over the next twelve years."
+		},
+		{
+			"date" : "1988",
+			"event" : "Goes on a field mission for UNICEF to Ethiopia to bring food to an orphanage, followed by a mission to Turkey to help with immunizations, and another mission to South America."
+		},
+		{
+			"date" : "1990",
+			"event" : "Goes to Vietnam on a UNICEF trip to aid with immunization and providing clean water."
+		},
+		{
+			"date" : "1992",
+			"event" : "Is awarded the BAFTA Lifetime Achievements Award. She goes to Somalia to help provide clean water. After returning from Somalia, she falls ill with an abdominal cancer which has grown over the years without being detected. She attempts chemotherapy and surgery, but the terminal cancer is inoperable."
+		},
+		{
+			"date" : "1993",
+			"event" : "Dies in Vaud, Switzerland."
+		}
 		]
 	},
 	{
 		"speaker" : "Benjamin Franklin",
+		"headline" : "Founding Father of the US",
 		"image" : "./images/benjamin_franklin.jpg",
 		"quotes" : [
 		{
@@ -451,6 +683,12 @@ var quotes = {
 			"tags" : [
 			"business",
 			"wisdom"
+			]
+		},
+		{
+			"quoteText" : "Either write something worth reading or do something worth writing.",
+			"tags" : [
+			"motivational"
 			]
 		},
 		{
@@ -472,10 +710,69 @@ var quotes = {
 			"experience"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1706",
+			"event" : "Born in Boston, Massachusetts Bay Colony."
+		},
+		{
+			"date" : "1727",
+			"event" : "Establishes the Junto, a group of people looking to effect change in society and express creativity. Since books are scarce, they begin collecting books as a group, leading to America's first subscription library."
+		},
+		{
+			"date" : "1731",
+			"event" : "Writes the charter for the Library Company of Philadelphia, creating the first American library."
+		},
+		{
+			"date" : "1733",
+			"event" : "Purchases the <em>Pennsylvania Gazette</em> and begins publishing <em>Poor Richard's Almanack</em> under the pseudonym \"Poor Richard\"."
+		},
+		{
+			"date" : "1736",
+			"event" : "Establishes the Union Fire Company, America's first volunteer firefighting organization."
+		},
+		{
+			"date" : "1751",
+			"event" : "Publishes <em>Observations Concerning the Increase of Mankind, Peopling of Countries, &c.</em> on the study of demographics, which will influence Adam Smith and Thomas Malthus."
+		},
+		{
+			"date" : "1753",
+			"event" : "Receives the Copley Medal from the Royal Society of London."
+		},
+		{
+			"date" : "1756",
+			"event" : "Is elected a fellow of the Royal Society of London."
+		},
+		{
+			"date" : "1758",
+			"event" : "Published <em>The Way to Wealth</em>, a guide to finance and entrepreneurship."
+		},
+		{
+			"date" : "1771",
+			"event" : "Begins writing his autobiography, which will be published posthumously."
+		},
+		{
+			"date" : "1776",
+			"event" : "Assists the creation of the <em>Declaration of Independence</em>. He is appointed Commissioner of the United States to France."
+		},
+		{
+			"date" : "1785",
+			"event" : "Is made the President of the Executive Council of Pennsylvania."
+		},
+		{
+			"date" : "1787",
+			"event" : "Is selected as delegate to the Philadelphia Convention."
+		},
+		{
+			"date" : "1790",
+			"event" : "Dies in Philadelphia, Pennsylvania."
+		}
 		]
 	},
 	{
 		"speaker" : "Francis of Assisi",
+		"headline" : "Patron Saint of Italy, Animals, and Ecology",
 		"image" : "./images/francis_of_assisi.jpg",
 		"quotes" : [
 		{
@@ -505,11 +802,22 @@ var quotes = {
 			"attitude",
 			"wisdom"
 			]
+		}
+		],
+		"timeline" : [
+		{
+			"date" : "1181",
+			"event" : "Born in Assisi, in the Holy Roman Empire."
 		},
+		{
+			"date" : "1226",
+			"event" : "Died in Assisi, Umbria."
+		}
 		]
 	},
 	{
 		"speaker" : "Grace Hopper",
+		"headline" : "Inventer of the First Compiler",
 		"image" : "./images/grace_hopper.jpg",
 		"quotes" : [
 		{
@@ -536,10 +844,21 @@ var quotes = {
 			"wisdom"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1906",
+			"event" : "Born in New York City."
+		},
+		{
+			"date" : "1992",
+			"event" : "Died in Arlington, Virginia."
+		}
 		]
 	},
 	{
 		"speaker" : "Helen Keller",
+		"headline" : "Prolific Deaf-Blind Author and Activist",
 		"image" : "./images/helen_keller.jpg",
 		"quotes" : [
 		{
@@ -587,52 +906,21 @@ var quotes = {
 			"moving on"
 			]
 		}
-		]
-	},
-	{
-		"speaker" : "Jim Rohn",
-		"image" : "./images/jim_rohn.jpg",
-		"quotes" : [
+		],
+		"timeline" : [
 		{
-			"quoteText" : "Happiness is not something you postpone for the future; it is something you design for the present.",
-			"tags" : [
-			"design",
-			"future",
-			"happiness",
-			"motivational",
-			"wisdom"
-			]
+			"date" : "1880",
+			"event" : "Born in Tuscumbia, Alabama."
 		},
 		{
-			"quoteText" : "Work harder on yourself than you do on your job.",
-			"tags" : [
-			"work"
-			]
-		}
-		]
-	},
-	{
-		"speaker" : "Jimmy Dean",
-		"image" : "./images/jimmy_dean.jpg",
-		"quotes" : [
-		{
-			"quoteText" : "I can't change the direction of the wind, but I can adjust my sails to always reach my destination.",
-			"tags" : [
-			"attitude",
-			"motivational",
-			"success"
-			]
-		},
-		{
-			"quoteText" : "You gotta try your luck at least once a day, because you could be going around lucky all day and not even know it.",
-			"tags" : [
-			"motivational"
-			]
+			"date" : "1968",
+			"event" : "Died in Easton, Connecticut."
 		}
 		]
 	},
 	{
 		"speaker" : "Jane Addams",
+		"headline" : "The Mother of Social Work",
 		"image" : "./images/jane_addams.jpg",
 		"quotes" : [
 		{
@@ -728,10 +1016,137 @@ var quotes = {
 			"motivational"
 			]
 		}		
+		],
+		"timeline" : [
+		{
+			"date" : "1860",
+			"event" : "Born in Cedarville, Illinois."
+		},
+		{
+			"date" : "1864",
+			"event" : "Contracts Pott's disease, leading to a curvature of the spine and lifelong health problems."
+		},
+		{
+			"date" : "1881",
+			"event" : "Graduates Rockford Female Seminary with a collegiate certificate and membership in Phi Beta Kappa. Inspired by her late mother, she hopes to become a doctor so she can help the poor in Cedarville. Her father, John H. Addams, dies that summer. With his passing, she moves to Philadelphia for two years to pursue a medical education, but due to her physical and mental health, does not complete a degree and returns after one year."
+		},
+		{
+			"date" : "1883",
+			"event" : "After receiving spinal surgery from her brother-in-law, travels Europe with her stepmother, deciding to help the poor without becoming a doctor."
+		},
+		{
+			"date" : "1887",
+			"event" : "Falls into depression over the conventional life expected of well-off women of her time. Visits the first settlement house - a home where rich and poor live together in an interdependent community - Toynbee Hall, in London. She dreams of opening one of her own."
+		},
+		{
+			"date" : "1889",
+			"event" : "Co-founds Hull House, a settlement house in Chicago, with Ellen Gates Starr. It will eventually house 25 women and be visited by more than 2,000 people weekly."
+		},
+		{
+			"date" : "1894",
+			"event" : "Is the first woman to be appointed sanitary inspector to Chicago's 19th ward. Under her leadership, over a thousand new health violations are reported, reducing disease and death in the ward."
+		},
+		{
+			"date" : "1898",
+			"event" : "Joins the Anti-Imperialist Leaghe against the annexation of the Plilippines."
+		},
+		{
+			"date" : "1905",
+			"event" : "Is a charter member of the American Sociological Society. During her lifetime, she will remain the most prominent female member."
+		},
+		{
+			"date" : "1909",
+			"event" : "Argues that play and recreational programs are critical for children."
+		},
+		{
+			"date" : "1910",
+			"event" : "Helps mediate during the Garment Worker's Strike."
+		},
+		{
+			"date" : "1912",
+			"event" : "Helps form the new Progressive Party and supports Theodore Roosevelt's presidential campaign."
+		},
+		{
+			"date" : "1915",
+			"event" : "Becomes a part of the Women's Peace Party and is elected national chairman. She is invited to preside over the International Congress of Women at the Hague and is chosen to head the commission to find an end to the war. She is elected president of the International Committee of Women for a Permanent Peace; she will maintain her presidency through the organization being developed into the Women's International League for Peace and Freedom."
+		},
+		{
+			"date" : "1931",
+			"event" : "Is the first woman awarded a Nobel Peace prize."
+		},
+		{
+			"date" : "1935",
+			"event" : "Dies in Chicago, Illinois."
+		}
+		]
+	},
+	{
+		"speaker" : "Jim Rohn",
+		"headline" : "Entrepreneur and Motivational Speaker",
+		"image" : "./images/jim_rohn.jpg",
+		"quotes" : [
+		{
+			"quoteText" : "Happiness is not something you postpone for the future; it is something you design for the present.",
+			"tags" : [
+			"design",
+			"future",
+			"happiness",
+			"motivational",
+			"wisdom"
+			]
+		},
+		{
+			"quoteText" : "Work harder on yourself than you do on your job.",
+			"tags" : [
+			"work"
+			]
+		}
+		],
+		"timeline" : [
+		{
+			"date" : "1930",
+			"event" : "Born in Yakima, Washington."
+		},
+		{
+			"date" : "2009",
+			"event" : "Died in West Hills, California."
+		}
+		]
+	},
+	{
+		"speaker" : "Jimmy Dean",
+		"headline" : "Country Music Singer and Businessman",
+		"image" : "./images/jimmy_dean.jpg",
+		"quotes" : [
+		{
+			"quoteText" : "I can't change the direction of the wind, but I can adjust my sails to always reach my destination.",
+			"tags" : [
+			"attitude",
+			"motivational",
+			"success"
+			]
+		},
+		{
+			"quoteText" : "You gotta try your luck at least once a day, because you could be going around lucky all day and not even know it.",
+			"tags" : [
+			"motivational"
+			]
+		}
+		],
+		"timeline" : [
+		{
+			"date" : "1928",
+			"event" : "Born in Plainview, Texas."
+		},
+		{
+			"date" : "2010",
+			"event" : "Died in Varina, Virginia."
+		}
 		]
 	},
 	{
 		"speaker" : "John Romero",
+		"headline" : "Game Designer and Developer",
 		"image" : "./images/john_romero.jpg",
 		"quotes" : [
 		{
@@ -742,10 +1157,17 @@ var quotes = {
 			"work"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1967",
+			"event" : "Born in Colorado Springs, Colorado."
+		}
 		]
 	},
 	{
 		"speaker" : "Joseph Campbell",
+		"headline" : "Mythologist and Lecturer",
 		"image" : "./images/joseph_campbell.jpg",
 		"quotes" : [
 		{
@@ -790,10 +1212,21 @@ var quotes = {
 			"wisdom"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1904",
+			"event" : "Born in White Plains, New York."
+		},
+		{
+			"date" : "1987",
+			"event" : "Died in Honolulu, Hawaii."
+		}
 		]
 	},
 	{
 		"speaker" : "Maya Angelou",
+		"headline" : "Poet and Civil Rights Activist",
 		"image" : "./images/maya_angelou.jpg",
 		"quotes" : [
 		{
@@ -844,10 +1277,21 @@ var quotes = {
 			"moving on"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1928",
+			"event" : "Born in St. Louis, Missouri."
+		},
+		{
+			"date" : "2014",
+			"event" : "Died in Winston-Salem, North Carolina."
+		}
 		]
 	},
 	{
 		"speaker" : "Norman Vincent Peale",
+		"headline" : "Author and Minister",
 		"image" : "./images/norman_vincent_peale.jpg",
 		"quotes" : [
 		{
@@ -878,10 +1322,21 @@ var quotes = {
 			"success"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1898",
+			"event" : "Born in Bowersville, Ohio."
+		},
+		{
+			"date" : "1993",
+			"event" : "Died in Pawling, New York."
+		}
 		]
 	},
 	{
 		"speaker" : "Paul Gauguin",
+		"headline" : "Experimental Artist",
 		"image" : "./images/paul_gauguin.jpg",
 		"quotes" : [
 		{
@@ -909,10 +1364,21 @@ var quotes = {
 			"failure"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1848",
+			"event" : "Born in Paris, France."
+		},
+		{
+			"date" : "1903",
+			"event" : "Died in French Polynesia."
+		}
 		]
 	},
 	{
 		"speaker" : "Siddhartha Gautama",
+		"headline" : "Founder of Buddhism",
 		"image" : "./images/siddhartha_gautama.jpg",
 		"quotes" : [
 		{
@@ -945,10 +1411,21 @@ var quotes = {
 			"wisdom"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "563 BCE",
+			"event" : "Born in Lumbini, Shakya Republic."
+		},
+		{
+			"date" : "483 BCE",
+			"event" : "Died in Kushinagar, Malla Republic."
+		}
 		]
 	},
 	{
 		"speaker" : "Sophia Loren",
+		"headline" : "Award-winning Actress",
 		"image" : "./images/sophia_loren.jpg",
 		"quotes" : [
 		{
@@ -973,10 +1450,17 @@ var quotes = {
 			"women"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1934",
+			"event" : "Born in Rome, Italy."
+		}
 		]
 	},
 	{
 		"speaker" : "Steve Jobs",
+		"headline" : "Co-founder and CEO of Apple",
 		"image" : "./images/steve_jobs.jpg",
 		"quotes" : [
 		{
@@ -1002,10 +1486,21 @@ var quotes = {
 			"work"
 			]
 		}	
+		],
+		"timeline" : [
+		{
+			"date" : "1955",
+			"event" : "Born in San Francisco, California."
+		},
+		{
+			"date" : "2011",
+			"event" : "Died in Palo Alto, California."
+		}
 		]
 	},
 	{
 		"speaker" : "Vince Lombardi",
+		"headline" : "Hall of Fame-inducted NFL Coach",
 		"image" : "./images/vince_lombardi.jpg",
 		"quotes" : [
 		{
@@ -1035,10 +1530,21 @@ var quotes = {
 			"work"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1913",
+			"event" : "Born in Brooklyn, New York."
+		},
+		{
+			"date" : "1970",
+			"event" : "Died in Washington, D.C."
+		}
 		]
 	},
 	{
 		"speaker" : "Walt Whitman",
+		"headline" : "The Father of Free Verse",
 		"image" : "./images/walt_whitman.jpg",
 		"quotes" : [
 		{
@@ -1074,10 +1580,21 @@ var quotes = {
 			"hope"
 			]
 		}
+		],
+		"timeline" : [
+		{
+			"date" : "1819",
+			"event" : "Born in Long Island, New York."
+		},
+		{
+			"date" : "1892",
+			"event" : "Died in Camden, New Jersey."
+		}
 		]
 	},
 	{
 		"speaker" : "William Shakespeare",
+		"headline" : "The Bard of Avon",
 		"image" : "./images/william_shakespeare.jpg",
 		"quotes" : [
 		{
@@ -1112,6 +1629,16 @@ var quotes = {
 			"knowledge",
 			"motivational"
 			]
+		}
+		],
+		"timeline" : [
+		{
+			"date" : "1564",
+			"event" : "Baptised in Stratford-upon-Avon, England."
+		},
+		{
+			"date" : "1616",
+			"event" : "Died in Stratford-upon-Avon, England."
 		}
 		]
 	}
@@ -1192,6 +1719,24 @@ function portfolioAddToPage(section, helper, url, imgurl, title, description) {
 		emptyError("description", functionName);
 	}
 }
+function helpModal(initial, page, short) {
+	var modalText = initial;
+	for (item in frequentlyAskedQuestions[page]) {
+		var heading = short + 'Help' + item.toString();
+		var collapseid = short + 'HelpAnswer' + item.toString();
+		var question = frequentlyAskedQuestions[page][item].question;
+		var answer = frequentlyAskedQuestions[page][item].answer;
+		var formattedHelpText = HTMLquoteHelpText.replace(/%heading%/g, heading).replace(/%collapseid%/g, collapseid).replace(/%question%/g, question).replace(/%answer%/g, answer);
+		modalText = modalText + formattedHelpText;
+	}
+	modalText = modalText + '</div>';
+	return modalText;
+}
+function modalText(section, title, data) {
+	var formattedModal = HTMLhelpModal;
+	formattedModal = HTMLhelpModal.replace(/%title%/g, title).replace(/%data%/g, data);
+	$(section).append(formattedModal);
+}
 navDisplay = function() {
 	navAddToPage("#nav", HTMLnavbarNav, homeNav.sections[0].anchor, bio.name);
 	if (homeNav.sections.length > 0) {
@@ -1225,12 +1770,11 @@ bio.display = function() {
  		for (blurb in bio.contacts.contactBlurbs) {
  			addToPage("#contact", HTMLContactBlurb, bio.contacts.contactBlurbs[blurb]);
  		}
- 		addToPage("#contact", HTMLmobile, bio.contacts.mobile);
- 		addToPage("#contact", HTMLemail, bio.contacts.email);
- 		addToPage("#contact", HTMLlinkedin, bio.contacts.linkedin);
- 		addToPage("#contact", HTMLtwitter, bio.contacts.twitter);
- 		addToPage("#contact", HTMLgithub, bio.contacts.github);
- 		addToPage("#contact", HTMLlocation, bio.contacts.location);
+ 		$("#contact").append("<ul id='contact-list'></ul>");
+ 		for (item in bio.contacts.contactInfo) {
+ 			var formattedContact = HTMLcontactIcons.replace(/%title%/g, bio.contacts.contactInfo[item].fontAwesome).replace(/%data%/g, bio.contacts.contactInfo[item].description);
+ 			$("#contact-list").append(formattedContact);
+ 		}
  		$("#contact").append(HTMLcontactFormStart);
  		for (item in bio.contacts.contactFormItems) {
  			formAddToPage("#form-item:last", HTMLformItem, bio.contacts.contactFormItems[item].formItemID, bio.contacts.contactFormItems[item].label, bio.contacts.contactFormItems[item].placeholder, bio.contacts.contactFormItems[item].inputType);
@@ -1238,7 +1782,7 @@ bio.display = function() {
  		$("#form-item:last").append(HTMLsubmitReset);
  		$("#about").append(HTMLskillsStart);
  		for (skill in bio.skills) {
- 			addToPage("#skills", HTMLskills, bio.skills[skill]);
+ 			addToPage("#skills", HTMLskills, bio.skills[skill].icon);
  		}
  	}
 }
@@ -1306,23 +1850,58 @@ function randomizer(groupLength) {
 	randomIndex = Math.floor(Math.random() * (maxID - minID + 1) + minID);
 	return randomIndex;
 }
-function wikipediaSearch() {
-	var searchQuery = $('#inputSearch').value;
-	// Call Wikipedia API and get list of results for search query
-	$.ajax({
-		url: '//www.wikipedia.org/w/api.php',
-		data: { action: 'query', list: 'search', srsearch: searchQuery, srprop: "snippet", srlimit: 15, format: 'json' },
-		dataType: 'jsonp',
-		success: function(xhr) {
-			// Obtain array from JSON results
-			var wikiArray = $.map(xhr, function(i) {
-				return i;
-			});
-			// Populate description list with titles with links and snippets from the array
-			for (i = 0; i < wikiArray.length; i++) {
-				var wikiEncode = encodeURI(wikiArray[i].title);
-				$('#resultsBox').append('<dt><a href=https://en.wikipedia.org/wiki/' + wikiEncode + 'target="_blank">' + wikiArray[i].title + '</a></dt><dd>' + wikiArray[i].snippet + "...</dd>");
-			}
-		}
-	});
+function ownership(name) {
+    if (name.endsWith("s")) {
+        name = name + "'";
+    } else {
+        name = name + "'s";
+    }
+    return name;
+}
+function makeSnakeCase(name) {
+    var nameArray = name.split(" ");
+    name = nameArray.join("_");
+    return name;
+}
+function tributeSetUp(number) {
+    $('#home').html("");
+    $('#quoteBox').html("");
+    $('#timeline').html("");
+    var tributePerson = quotes.speakers[number].speaker;
+    var tributeHeadline = quotes.speakers[number].headline;
+    var HTMLtributeStart = '<h1 class="text-center">%title%<p class="small text-center">%headline%</p></h1>';
+    var formattedStart = HTMLtributeStart.replace(/%title%/g, tributePerson).replace(/%headline%/g, tributeHeadline);
+    $('#home').append(formattedStart);
+    var formattedImg = HTMLquoteImage.replace(/%imgurl%/g, quotes.speakers[number].image);
+    $('#home').append(formattedImg);
+    var HTMLtributeQuoteStart = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="quoteBlock"></blockquote></div></div>';
+    $('#quoteBox').append(HTMLtributeQuoteStart);
+    var quoteNumber = randomizer(quotes.speakers[number].quotes.length);
+    var formattedQuote = HTMLquoteItem.replace(/%quote%/g, quotes.speakers[number].quotes[quoteNumber].quoteText).replace(/%citation%/g, quotes.speakers[number].speaker);
+    $('#quoteBlock').html(formattedQuote);
+    var tributeOwnership = ownership(tributePerson);
+    HTMLdescriptionList = '<div class="row"><div class="col-md-10 col-md-offset-1 col-sm-12"><h2 class="text-center">A Timeline of %data% Life:</h2><dl class="dl-horizontal"></dl>';
+    HTMLdescriptionItem = '<dt>%date%</dt><dd>%event%</dd>';
+    addToPage($('#timeline'), HTMLdescriptionList, tributeOwnership);
+    for (year in quotes.speakers[number].timeline) {
+        var formattedDescription = HTMLdescriptionItem.replace(/%date%/g, quotes.speakers[number].timeline[year].date).replace(/%event%/g, quotes.speakers[number].timeline[year].event);
+        $('.dl-horizontal:last').append(formattedDescription);
+    }
+    var tributeWiki = makeSnakeCase(tributePerson);
+    var HTMLreadMore = '<p class="text-center lead">Read more about %person% life on <a href="https://en.wikipedia.org/wiki/%url%">Wikipedia</a>.';
+    var formattedReadMore = HTMLreadMore.replace(/%person%/g, tributeOwnership).replace(/%url%/g, tributeWiki);
+    $('#quoteBox').append(formattedReadMore);
+    $('#quoteBox').append(HTMLhelpButton);
+}
+function tributeSelectSetUp() {
+	var HTMLtributeDrop = HTMLquoteTagsDrop.replace(/quoteTags/g, 'tributeSelect').replace(/Tag/g, 'Speaker');
+    $('#speakerButton').append(HTMLtributeDrop);
+    var tributeSelectArray = [];
+    for (speaker in quotes.speakers) {
+    	tributeSelectArray.push(quotes.speakers[speaker].speaker);
+    }
+    tributeSelectArray = tributeSelectArray.sort();
+    for (person in tributeSelectArray) {
+    	addToPage($('.tributeSelect:last'), HTMLquoteTagsEach, tributeSelectArray[person]);
+    }
 }

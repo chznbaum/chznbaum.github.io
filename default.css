@@ -1,18 +1,48 @@
-@import 'https://fonts.googleapis.com/css?family=Bree+Serif';
 @font-face {
 	font-family: "Lolita Medium";
 	src: url(./fonts/lolita_medium.woff);
 }
+
+@font-face {
+	font-family: "Bree Serif";
+	src: url(./fonts/bree_serif_regular.otf);
+}
+
+blockquote {
+	font-size: 2em;
+}
+
 body {
 	font-family: "Lolita Medium";
 }
 
-h1, h2, h3, h4, h5, h6, nav {
+h1, h2, h3, h4, h5, h6, nav, .btn {
 	font-family: "Bree Serif";
 }
 
-.quotePic {
+.biopic, .quotePic {
 	width: 25%;
+}
+
+.contact-item {
+}
+
+.skills-item {
+	float: left;
+	display: block;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+}
+
+#contact-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#contact-list {
+	font-size: 3em;
 }
 
 #hidden_iframe {
@@ -21,4 +51,19 @@ h1, h2, h3, h4, h5, h6, nav {
 
 #main {
 	margin-top: 60px;
+}
+
+#skills {
+	list-style-type: none;
+	margin: 20px;
+	padding: 10px;
+
+}
+
+#skills i {
+	font-size: 6em;
+}
+
+#portfolio {
+	clear: both;
 }

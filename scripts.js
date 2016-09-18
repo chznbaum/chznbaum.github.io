@@ -1,5 +1,10 @@
 navDisplay();
 bio.display();
+var HTMLindexHelpButton = HTMLhelpButton.replace(/Need help\?/, "What am I like?");
+$('#about p:last').append(HTMLindexHelpButton);
+var helpTitle = 'Chazona Baum\'s Personal Portfolio';
+var HTMLindexHelpBox = HTMLhelpBox.replace(/Frequently Asked Questions:/, "What Am I Really Like?")
+modalText('#about', helpTitle, helpModal(HTMLindexHelpBox, 'index', 'index'));
 portfolioDisplay();
 footer.display();
 $(document).ready(function() {

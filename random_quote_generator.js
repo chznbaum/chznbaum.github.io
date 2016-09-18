@@ -23,6 +23,8 @@ for(tag in uniqueTagArray) {
     addToPage($('.quoteTags:last'), HTMLquoteTagsEach, uniqueTagArray[tag]);
 }
 $('#quoteBox').append(HTMLquoteStart);
+var helpTitle = 'Random Quote Generator Help';
+modalText('#quoteBox', helpTitle, helpModal(HTMLhelpBox, 'random_quote_generator', 'quote'));
 $('#quoteBox').append(HTMLquoteButtons);
 footer.display();
 $(document).ready(function() {
@@ -86,8 +88,7 @@ $(document).ready(function() {
         }
     });
     $('#resultsBtn').click(function(event) {
-        console.log(document.getElementById('inputSearch').value);
-        var searchQuery = document.getElementById('inputSearch').value;
+        var searchQuery = document.getElementById('inputSearch').value.replace(/</, '&lt;').replace(/>/, '&gt;').replace(/&/, '&amp;').replace(/"/, '&quot;').replace(/'/, '&#x27;').replace(/\//, '&#x2F');
         var resultsArray = [];
         for (speaker in quotes.speakers) {
             if (quotes.speakers[speaker].quotes.length > 0) {
@@ -111,7 +112,17 @@ $(document).ready(function() {
             $('#resultsBlock').append(resultsArray[item]);
         }
     });
+    var twitter = 'http://twitter.com/intent/tweet?';
+    var facebook = 'http://www.facebook.com/sharer.php?'
+    function socialShare(site, status) {
+        window.open(site + status);
+    }
     $('#btnTweetQuote').click(function(event) {
-        window.open('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + $('#quoteBlock').text());
+        var twitterStatus = 'hashtags=quotes&related=freecodecamp&text=' + $('#quoteBlock').text();
+        socialShare(twitter, twitterStatus);
     });
+    $('#btnFacebookQuote').click(function(event) {
+        var facebookStatus = 's=100&p[title]=Quote&p[url]=http://anotherconsolelog.com/random_quote_generator.html&p[summary]=' + $('#quoteBlock').text();
+        socialShare(facebook, facebookStatus);
+    })
 });
