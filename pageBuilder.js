@@ -68,7 +68,8 @@ var HTMLquoteButtons = '<div class="row"><div class="col-md-6 col-md-offset-3 co
 var HTMLquoteImage = '<img src="%imgurl%" class="quotePic img-responsive img-circle center-block" />';
 var HTMLquoteItem = '<p><span class="fa fa-quote-left"></span> %quote% <span class="fa fa-quote-right"></span></p><footer>%citation%</footer>';
 var HTMLpreviousQuotes = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>You previously generated:</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="previousQuotes"></blockquote></div></div>';
-var HTMLerrorNoQuotes = '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><span class="fa fa-times-circle-o"></span></span></button><h4>Hey, there aren\'t any quotes here!</h4><p>No quotes have been generated, so there\'s nothing to display. How about generating a quote?</p><button type="button" class="btn btn-danger" data-dismiss="alert">Close</button></div>';
+var HTMLgenericError = '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><span class="fa fa-times-circle-o"></span></span></button>%errorMessage%<button type="button" class="btn btn-danger" data-dismiss="alert">Close</button></div>';
+var HTMLerrorNoQuotes = HTMLgenericError.replace(/%errorMessage%/g, '<h4>Hey, there aren\'t any quotes here!</h4><p>No quotes have been generated, so there\'s nothing to display. How about generating a quote?</p>');
 var HTMLquoteTagsDrop = '<div class="row"><div class="col-md-4 col-md-offset-3 col-sm-8 col-xs-6"><div class="dropdown"><select id="quoteTags" class="quoteTags form-control input-lg"></select></div></div><div class="col-md-2 col-sm-4 col-xs-6"><button id="btnTagClick" type="button" class="btn btn-default btn-block btn-lg">Choose Tag</button></div></div></div>';
 var HTMLquoteTagsEach = '<option value="%data%">%data%</option>'
 var HTMLquoteResults = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>Quotes tagged "%data%":</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="resultsBlock"></blockquote></div></div>';
@@ -86,9 +87,91 @@ var HTMLwikipediaResultsStart = '<div class="row"><div class="col-md-6 col-md-of
 var HTMLtributeCarousel = '<div id="carousel-tribute-quote" class="carousel slide" data-ride="carousel"></div>';
 var HTMLtributeCarouselItem = '<div class="carousel-inner" role="listbox"><div class="item"><div class="carousel-caption"><blockquote><span class="fa fa-quote-left"></span>%quote%<span class="fa fa-quote-right"></span><footer>%citation%</footer></blockquote></div></div></div>';
 
-var HTMLweatherSetUp = '<div class="row"><div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" id="weatherBox"><h1 class="text-center">Local Weather App</h1><p class="text-center" id="currentLocation">City, State, Country</p><p class="text-center">Currently: <span id="weatherTemp">0</span><span id="degreeSym1">&#8457</span></p><p class="text-center">Feels like: <span id="feelsLikeTemp">0</span><span id="degreeSym2">&#8457</span></p><p class="text-center" id="weatherDescrip">Local weather</p><button class="btn btn-lg center-block btn-primary" id="convertBtn">Convert &#8457 / &#8451</button></div></div>';
+var HTMLweatherSetUp = '<div class="row"><div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" id="weatherBox"><h1 class="text-center">Local Weather App</h1><p class="text-center lead" id="currentLocation">City, State, Country</p><div id="weatherImage"></div><p class="text-center lead">Currently: <span id="weatherTemp">0</span><span id="degreeSym1">&#8457</span></p><p class="text-center lead">Feels like: <span id="feelsLikeTemp">0</span><span id="degreeSym2">&#8457</span></p><p class="text-center lead" id="weatherDescrip">Local weather</p><button class="btn btn-lg center-block btn-primary" id="convertBtn">Convert &#8457 / &#8451</button></div></div>';
+var geoAPI = 'AIzaSyDC6U1aZXcePTAR20iwRKIuJ26LqXX6t5s';
+var geoString = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=%latitude%,%longitude%&key=%geoAPI%';
+var weatherKey = '56e678830a6e621a5f38e1b43296e432';
+var weatherStr = 'https://api.forecast.io/forecast/%weatherKey%/%latitude%,%longitude%?callback=?';
+var HTMLweatherNavigatorError = HTMLgenericError.replace(/%errorMessage%/g, '<h4>Aww, shucks...</h4><p>Geolocation is not supported by your browser.</p>');
+var HTMLweatherPositionError = HTMLgenericError.replace(/%errorMessage%/g, '<h4>We tried...</h4><p>Unable to retrieve your location.</p>');
+var HTMLlocatingMessage = '<p class="text-center lead">Locating...<i class="fa fa-spinner fa-spin"></i></p>';
+
+var HTMLtwitchSetUp = '<div class="row" id="pagetitle"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1"><h1 class="text-center">Twitch TV JSON API</h1></div></div><div class="row" id="toggleSwitches"><div class="col-md-4 col-md-offset-4 col-sm-12"><div class="row"><div class="col-md-4"><button class="btn btn-default btn-block btn-lg" role="button" id="allButton">All</button></div><div class="col-md-4"><button class="btn btn-default btn-block btn-lg" role="button" id="onlineButton">Online</button></div><div class="col-md-4"><button class="btn btn-default btn-block btn-lg" role="button" id="offlineButton">Offline</button></div></div><div id="searchRow"></div></div></div>';
+var HTMLtwitchResults = '<div class="row" id="twitchAccounts"><div class="col-md-12"><div class="row" id="twitchBox"></div></div></div>';
+var twitchID = 'd6aqc5tx14y8xmy1ckjknsiux94cw2u';
 
 var submitted = false;
+
+var twitchUsersArray = [
+"ESL_SC2",
+"OgamingSC2",
+"cretetion",
+"freecodecamp",
+"storbeck",
+"habathcx",
+"RobotCaleb",
+"noobs2ninjas",
+"brunofin",
+"comster404",
+"GeekandSundry",
+"Di3seL",
+"VGBootCamp",
+"PJDiCesare",
+"jcarverpoker",
+"Ninja",
+"Kacey",
+"Hafu",
+"Tara",
+"Wyld",
+"PhoenixCrashGaming",
+"StrayMav",
+"SpeakToTheDoc",
+"PandaPlaysHD",
+"SykeonRoa",
+"ESL_CSGO",
+"MushIsGosu",
+"Trick2g",
+"DreamhackCS",
+"TSM_TheOddOne",
+"GamesDoneQuick",
+"Voyboy",
+"Monstercat",
+"KingGothalion",
+"Reckful",
+"Froggen",
+"StreamerHouse",
+"kaceytron",
+"ESL_LOL",
+"itsHafu",
+"Scarra",
+"Mrtweeday",
+"ZeeooN",
+"BrownMan",
+"Krepo",
+"YoDa",
+"EatMyDiction1",
+"Admiral_Bahroo",
+"steel_tv",
+"Fairlight_Excalibur",
+"rsgloryandgold",
+"CobaltStreak",
+"Alexich",
+"SeriousGaming",
+"MasterSnakou",
+"Slyfoxhound",
+"WagamamaTV",
+"wtcNN",
+"BehkuhTV",
+"flOm",
+"Koopatroopa787",
+"Quin69",
+"BonnieDoll",
+"Mhova",
+"Jendenise",
+"zai",
+"justfoxii",
+"julia_tv"
+]
 
 var projects = {
 	"projects" : [
@@ -451,14 +534,52 @@ var frequentlyAskedQuestions = {
 		"answer" : "The person you are seeing is featured in my Random Quote Generator project. If you don't like this person, no worries. Refresh the page for a random other person's tribute page."
 	}
 	],
+	"local_weather_app" : [
+	{
+		"question" : "What is this?",
+		"answer" : "This page is a Local Weather App project I built while studying with Free Code Camp. Assuming you allow it to obtain your location, it provides you with the current weather at your location. It includes a photo based on the type of weather you're having, the temperature, what it actually feels like, as well as a description."
+	},
+	{
+		"question" : "Why is this in Fahrenheit?",
+		"answer" : "That's what we use in America. Somewhere else or don't like Fahrenheit? Click the button to toggle Celsius values instead."
+	}
+	],
 	"random_quote_generator" : [
+	{
+		"question" : "What is this?",
+		"answer" : "This page is a Random Quote Generator project I built while studying with Free Code Camp. Click the button to get a completely random quote by a random person."
+	},
 	{
 		"question" : "How to I generate a new quote?",
 		"answer" : "Click the \"Generate Random Quote\" button."
 	},
 	{
+		"question" : "Aww....I got a good one, but then I forgot it.",
+		"answer" : "If it was during this session, click the \"Show Previous Quotes\" button. It will show you a list of quotes you've already generated."
+	},
+	{
 		"question" : "How can I view a quote on a specific topic?",
 		"answer" : "For most broad topics, select from the drop-down menu the tag about your topic. Click \"Choose Tag\", and a list of any quotes tagged with your topic will display. For a more specific search, choose a word or phrase you want included in your quote, and enter it in the search box. Click \"Search Quotes\" to pull up a list of all quotes that include your word or phrase."
+	}
+	],
+	"wikipedia_viewer" : [
+	{
+		"question" : "What is this?",
+		"answer" : "This page is a project I built while studying with Free Code Camp. It allows you to search for anything and find related Wikipedia articles. You can also choose to view a random article."
+	}
+	],
+	"twitch_tv_json_api" : [
+	{
+		"question" : "What is this?",
+		"answer" : "This page is a project I built while studying with Free Code Camp. It allows you to see which of a group of Twitch live-streamers are currently streaming."
+	},
+	{
+		"question" : "Oh, this stream looks really cool!",
+		"answer" : "Awesome! Click that stream to view it live."
+	},
+	{
+		"question" : "What if I don't want all these offline people cluttering the page.",
+		"answer" : "No worries. Click the \"Online\" button to only show current streamers. You can also click the \"Offline\" button to only show those offline or whose accounts are closed, or the \"All\" button to view everyone."
 	}
 	]
 };
@@ -1904,4 +2025,100 @@ function tributeSelectSetUp() {
     for (person in tributeSelectArray) {
     	addToPage($('.tributeSelect:last'), HTMLquoteTagsEach, tributeSelectArray[person]);
     }
+}
+function celsiusConvert(temperature) {
+	temperature = parseInt((temperature - 32) / 1.8);
+	return temperature;
+}
+function locationDescription(gotPosition) {
+	var formattedGeoString = geoString.replace(/%latitude%/g, gotPosition.latitude).replace(/%longitude%/g, gotPosition.longitude).replace(/%geoAPI%/g, geoAPI);
+	$.getJSON(formattedGeoString, function(locData) {// Call the Google Maps API to get a more descriptive form of the location for the user to see
+		$('#currentLocation').html(locData.results[0].formatted_address);//Insert the user's location into the page
+	});
+}
+function currentWeather(gotPosition) {
+	var formattedWeatherString = weatherStr.replace(/%weatherKey%/g, weatherKey).replace(/%latitude%/g, gotPosition.latitude).replace(/%longitude%/g, gotPosition.longitude);
+	$.getJSON(formattedWeatherString, function(weatherData) {
+		$('#weatherTemp').html(parseInt(weatherData.currently.temperature));
+		$('#feelsLikeTemp').html(parseInt(weatherData.currently.apparentTemperature));
+		$('#weatherDescrip').html(weatherData.currently.summary);
+		var formattedImage;
+		switch(weatherData.currently.icon) {
+			case 'clear-day':
+				formattedImage = HTMLquoteImage.replace(/%imgurl%/g, './images/clearday.jpg');
+				$('#weatherImage').html(formattedImage);
+				break;
+			case 'clear-night':
+				formattedImage = HTMLquoteImage.replace(/%imgurl%/g, './images/clearnight.jpg');
+				$('#weatherImage').html(formattedImage);
+				break;
+			case 'rain':
+				formattedImage = HTMLquoteImage.replace(/%imgurl%/g, './images/rain.jpg');
+				$('#weatherImage').html(formattedImage);
+				break;
+			case 'snow':
+				formattedImage = HTMLquoteImage.replace(/%imgurl%/g, './images/snow.jpg');
+				$('#weatherImage').html(formattedImage);
+				break;
+			case 'sleet':
+				formattedImage = HTMLquoteImage.replace(/%imgurl%/g, './images/sleet.jpg');
+				$('#weatherImage').html(formattedImage);
+				break;
+			case 'wind':
+				formattedImage = HTMLquoteImage.replace(/%imgurl%/g, './images/wind.jpg');
+				$('#weatherImage').html(formattedImage);
+				break;
+			case 'fog':
+				formattedImage = HTMLquoteImage.replace(/%imgurl%/g, './images/fog.jpg');
+				$('#weatherImage').html(formattedImage);
+				break;
+			case 'cloudy':
+				formattedImage = HTMLquoteImage.replace(/%imgurl%/g, './images/cloudy.jpg');
+				$('#weatherImage').html(formattedImage);
+				break;
+			case 'partly-cloudy-day':
+				formattedImage = HTMLquoteImage.replace(/%imgurl%/g, './images/partlycloudyday.jpg');
+				$('#weatherImage').html(formattedImage);
+				break;
+			case 'partly-cloudy-night':
+				formattedImage = HTMLquoteImage.replace(/%imgurl%/g, './images/partlycloudynight.jpg');
+				$('#weatherImage').html(formattedImage);
+				break;
+		};
+		var fahrenheit = true;
+		$('#convertBtn').click(function(event) {
+			if (fahrenheit === true) {// If already fahrenheit
+				$('#weatherTemp').html(celsiusConvert(weatherData.currently.temperature));// Convert current temperature to celsius
+				$('#feelsLikeTemp').html(celsiusConvert(weatherData.currently.apparentTemperature));// Convert "feels like" temperature to celsius
+				$('#degreeSym1').html('&#8451');// Change degree symbol to C
+				$('#degreeSym2').html('&#8451');
+				fahrenheit = false;
+			} else if (fahrenheit === false) {
+				$('#weatherTemp').html(parseInt(weatherData.currently.temperature));// Trim the temperature number of decimals
+				$('#feelsLikeTemp').html(parseInt(weatherData.currently.apparentTemperature));// Trim the "feels like" number of decimals
+				$('#degreeSym1').html('&#8457');// Change degree symbol to F
+				$('#degreeSym2').html('&#8457');
+				fahrenheit = true;
+			}
+		});
+	});
+}
+function weatherApp() {
+    if (!navigator.geolocation) {// If browser doesn't support navigator.geolocation,
+        $('#locating').html(HTMLweatherNavigatorError);// Throw an error for the user
+        return;
+    }
+    function success(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        $('#locating').html('');// Clear locating section
+        var location = { 'latitude' : latitude, 'longitude' : longitude };// Store user's lat & lon to use in currentWeather function
+        locationDescription(location);// Get a desciptive location to display
+        currentWeather(location);// Get the current weather from Dark Sky API
+    }
+    function error() {
+        $('#locating').html(HTMLweatherPositionError);// If can't get position, throw an error for the user
+    }
+    $('#locating').html(HTMLlocatingMessage);// Show something while locating so user knows it's working
+    navigator.geolocation.getCurrentPosition(success, error);
 }
