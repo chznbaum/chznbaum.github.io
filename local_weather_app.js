@@ -4,6 +4,7 @@ navDisplay();
 $('#helpBox').append(HTMLhelpButton);
 $('#currentBox').html(HTMLweatherSetUp);
 footer.display();
+$('#footer p').append(HTMLdarkSkyAttribution);
 $(document).ready(function() {
     // Scrollspy
     $('body').scrollspy({target: ".navbar", offset: 50});

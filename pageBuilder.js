@@ -91,10 +91,11 @@ var HTMLweatherSetUp = '<div class="row"><div class="col-md-8 col-md-offset-2 co
 var geoAPI = 'AIzaSyDC6U1aZXcePTAR20iwRKIuJ26LqXX6t5s';
 var geoString = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=%latitude%,%longitude%&key=%geoAPI%';
 var weatherKey = '56e678830a6e621a5f38e1b43296e432';
-var weatherStr = 'https://api.forecast.io/forecast/%weatherKey%/%latitude%,%longitude%?callback=?';
+var weatherStr = 'https://api.darksky.net/forecast/%weatherKey%/%latitude%,%longitude%?callback=?';
 var HTMLweatherNavigatorError = HTMLgenericError.replace(/%errorMessage%/g, '<h4>Aww, shucks...</h4><p>Geolocation is not supported by your browser.</p>');
 var HTMLweatherPositionError = HTMLgenericError.replace(/%errorMessage%/g, '<h4>We tried...</h4><p>Unable to retrieve your location.</p>');
 var HTMLlocatingMessage = '<p class="text-center lead">Locating...<i class="fa fa-spinner fa-spin"></i></p>';
+var HTMLdarkSkyAttribution = ' | Powered by <a href="https://darksky.net/poweredby/">Dark Sky</a>';
 
 var HTMLtwitchSetUp = '<div class="row" id="pagetitle"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1"><h1 class="text-center">Twitch TV JSON API</h1></div></div><div class="row" id="toggleSwitches"><div class="col-md-4 col-md-offset-4 col-sm-12"><div class="row"><div class="col-md-4"><button class="btn btn-default btn-block btn-lg" role="button" id="allButton">All</button></div><div class="col-md-4"><button class="btn btn-default btn-block btn-lg" role="button" id="onlineButton">Online</button></div><div class="col-md-4"><button class="btn btn-default btn-block btn-lg" role="button" id="offlineButton">Offline</button></div></div><div id="searchRow"></div></div></div>';
 var HTMLtwitchResults = '<div class="row" id="twitchAccounts"><div class="col-md-12"><div class="row" id="twitchBox"></div></div></div>';
@@ -1867,7 +1868,9 @@ navDisplay = function() {
 			} else if (homeNav.sections[section].title == "Portfolio") {
 				navAddToPage("#navbar-items:last", HTMLportfolioNav, homeNav.sections[section].anchor, homeNav.sections[section].title);
 				for (project in projects.projects) {
-					navAddToPage("#portfolio-items:last", HTMLanchorItem, projects.projects[project].url, projects.projects[project].title);
+					if (projects.projects[project].title != "Twitch TV JSON API") {
+						navAddToPage("#portfolio-items:last", HTMLanchorItem, projects.projects[project].url, projects.projects[project].title);
+					}
 				}
 			}
 		}
@@ -1938,7 +1941,9 @@ portfolioDisplay = function() {
 		$("#portfolio").append('<div class="row">');
 		$("#portfolio").append(HTMLportfolioStart);
 		for (project in projects.projects) {
-			portfolioAddToPage(".portfolio-each:last", HTMLportfolioEach, projects.projects[project].url, projects.projects[project].images[0], projects.projects[project].title, projects.projects[project].description);
+			if (projects.projects[project].title != "Twitch TV JSON API") {
+				portfolioAddToPage(".portfolio-each:last", HTMLportfolioEach, projects.projects[project].url, projects.projects[project].images[0], projects.projects[project].title, projects.projects[project].description);
+			}
 		}
 	}
 }
