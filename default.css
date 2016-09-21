@@ -137,10 +137,10 @@ h1, h2, h3, h4, h5, h6, nav, .btn {
 	font-size: 2em;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 500px) {
 
-.biopic {
-	margin-bottom: 15%;
+button {
+	margin: 20px;
 }
 
 #about, #contact {
@@ -149,6 +149,36 @@ h1, h2, h3, h4, h5, h6, nav, .btn {
 
 #about h2 {
 	padding-top: 30%;
+}
+
+#contact-list {
+	font-size: 4em;
+}
+
+#main {
+	margin-top: 60px;
+}
+
+#main dd, p, label {
+	font-size: 2em;
+}
+
+#main dt {
+	font-size: 3em;
+}
+
+#main .btn-link {
+	font-size: 3em;
+}
+
+#mynavbar, .navbar-brand {
+	margin: 5px 20px 5px 5px;
+	font-size: 2.25em;
+}
+
+#name {
+	margin-top: 15%;
+	font-size: 3.5em;
 }
 
 #footer {
