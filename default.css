@@ -136,3 +136,23 @@ h1, h2, h3, h4, h5, h6, nav, .btn {
 #welcomeMessage {
 	font-size: 2em;
 }
+
+@media only screen and (max-width: 768px) {
+
+.biopic {
+	margin-bottom: 15%;
+}
+
+#about, #contact {
+	padding: 30% 5% 30% 5%;
+}
+
+#about h2 {
+	padding-top: 30%;
+}
+
+#footer {
+	padding-bottom: 30%;
+}
+
+}
