@@ -1,128 +1,138 @@
-@import 'https://fonts.googleapis.com/css?family=PT+Sans|Bree+Serif';
+@font-face {
+	font-family: "Lolita Medium";
+	src: url(./fonts/lolita_medium.woff);
+}
+
+@font-face {
+	font-family: "Bree Serif";
+	src: url(./fonts/bree_serif_regular.otf);
+}
 
 body {
-    position: relative;
+	font-family: "Lolita Medium";
+	background-color: rgba(242, 235, 191, 0.5);
+	color: rgba(92, 75, 81, 1);
 }
 
-p, .navbar, form {
-    font-family: "PT Sans", sans-serif;
+button {
+	margin: 5px;
 }
 
-h1, h2, h3, .navbar-brand {
-    font-family: "Bree Serif", serif;
+h1, h2, h3, h4, h5, h6, nav, .btn {
+	font-family: "Bree Serif";
 }
 
-h2 {
-    font-size: 2.5em;
+.biopic {
+	margin-bottom: 15%;
 }
 
-footer a {
-    color: #FFFFFF;
+.biopic, .quotePic {
+	width: 25%;
 }
 
-.navbar, form, p {
-    font-size: 1.25em;
+.skills-item {
+	float: left;
+	display: block;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
 }
 
-.lead {
-    font-size: 1.5em;
+.thumbnail img {
+	width: 100%;
 }
 
-.navbar-brand {
-    font-size: 1.75em;
+#about h2 {
+	padding-top: 10%;
 }
 
-.jumbotron {
-    margin: 0 40px 0 40px;
+#contact-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
-.social li {
-    margin: 10px;
-    padding: 13px 0;
-    font-size: 1.5em;
-    border-style: solid;
-    border-width: 4px;
-    border-color: #FFFFFF;
-    border-radius: 50%;
-}
-
-.social a {
-    display: block;
-    width: 60px;
-}
-
-#main {
-    padding: 0;
-}
-
-#home, #about, #portfolio, #contact {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-#home {
-    padding: 200px 0 150px 0; 
-    background: url("images/typingcode.jpg");
-    background-size: cover;
-}
-
-#chazona-baum {
-    max-width: 300px;
+#contact-list {
+	font-size: 2em;
 }
 
 #about, #contact {
-    padding: 220px 60px 250px 60px; 
+	padding: 20% 5% 20% 5%;
 }
 
-#portfolio {
-    padding: 60px; 
+#footer {
+	padding-bottom: 20%;
 }
 
-#about {
-    background: #FFE4E1;
+#headerHeadline {
+	font-size: 1.75em;
 }
 
-#portfolio {
-    background: #F0F0F0;
-}
-
-#contact, body, footer {
-    background: #F08080;
-}
-
-#home, #about, #portfolio, #contact p, h2, h3, label {
-    color: rgba(0,0,0,0.875);
-}
-
-#contact a {
-    color: #FFFFFF;
+#home, #portfolio, #currentBox, #forcastBox, #resultsBox, #speakerButton {
+	padding: 5% 5% 2% 5%;
 }
 
 #hidden_iframe {
-    display: none;
+	display: none;
 }
 
-#privacy {
-    margin-top: 80px;
+#main {
+	margin-top: 60px;
 }
 
-@media (max-width: 767px){
-    #home {
-        margin-top: 40px;
-        padding: 150px 0 150px 0;
-  }
-  
-    .jumbotron {
-        padding: 40px 80px 40px 80px;
-  }
-  
-    #chazona-baum {
-        max-width: 200px;
-    }
-    
-    #about, #contact {
-        padding: 40px;
-    }
-} 
+#main a, #footer a, .btn-link {
+	color: rgba(240, 96, 96, 1);
+}
+
+#main .btn-default, #main .btn-primary {
+	color: rgba(92, 75, 81, 1);
+}
+
+#main dd, p, label {
+	font-size: 1.5em;
+}
+
+#main dt {
+	font-size: 2em;
+}
+
+#main .btn-link {
+	font-size: 2em;
+}
+
+#mynavbar, .navbar-brand {
+	margin: 5px 20px 5px 5px;
+	font-size: 1.75em;
+}
+
+#name {
+	margin-top: 15%;
+	font-size: 3em;
+}
+
+#skills {
+	list-style-type: none;
+	margin: 20px;
+	padding: 10px;
+
+}
+
+#skills i {
+	font-size: 5em;
+}
+
+#portfolio {
+	clear: both;
+}
+
+#portfolio p {
+	font-size: 1em;
+}
+
+#quoteBox blockquote {
+	font-size: 1.75em;
+}
+
+#welcomeMessage {
+	font-size: 2em;
+}

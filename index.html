@@ -1,263 +1,39 @@
+<!--
+Personal Portfolio
+
+version 2.0
+author: Chazona Baum <chazona@anotherconsolelog.com>
+copyright: Chazona Baum 2016
+-->
 <!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta name="charset" content="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Personal Portfolio|Chazona Baum</title>
-        <meta name="author" content="Chazona Baum" />
-        <meta name="description" content="The personal portfolio of Chazona Baum, web development student" />
-        <meta name="keywords" content="portfolio, web development, html, css, javascript" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@otherconsolelog" />
-        <meta name="twitter:creator" content="@chznbaum" />
-        <meta name="twitter:title" content="Personal Portfolio | Chazona Baum" />
-        <meta name="twitter:description" content="The personal portfolio of Chazona Baum, web development student." />
-        <meta name="twitter:image" content="http://anotherconsolelog.com/images/typingcode.jpg" />
-        <meta property="fb:app_id" content="1104125226329574" />
-        <meta property="og:url" content="http://anotherconsolelog.com/" />
-        <meta property="og:title" content="Personal Portfolio" />
-        <meta property="og:description" content="The personal portfolio of Chazona Baum, web development student." />
-        <meta property="og:site_name" content="Chazona Baum" />
-        <meta property="og:image" content="http://anotherconsolelog.com/images/typingcode.jpg" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="default.css" />
-        <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="https://use.fontawesome.com/05e1351669.js"></script>
-        <script src="scripts.js"></script>
-    </head>
-    <body data-spy="scroll" data-target=".navbar" data-offset="80">
-        <div class="skip">
-            <a class="btn btn-primary btn-lg sr-only sr-only-focusable skip-navigation" href="#main">Skip navigation</a>
-        </div>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Chazona Baum</a>
-                </div>
-                <div class="collapse navbar-collapse" id="mynavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#home">Home</a></li>
-                        <li><a href="#about">About Chazona</a></li>
-                        <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Portfolio<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#portfolio">View All</a></li>
-                                <li><a href="tributepage/index.html">Tribute Page</a></li>
-                                <li><a href="randomquotemachine/index.html">Random Quote Generator</a></li>
-                                <li><a href="localweatherapp/index.html">Local Weather App</a></li>
-                                <li><a href="wikipediaviewer/index.html">Wikipedia Viewer</a></li>
-                                <li><a href="twitchtv/index.html">Twitch TV JSON API</a></li>
-                                <li><a href="https://scratch.mit.edu/projects/119382473/">Free Food Game</a></li>
-                                <li><a href="https://github.com/chznbaum/frontend-nanodegree-resume/">Resume</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="https://medium.com/another-day-another-console-log">Blog</a></li>
-                        <li><a href="es/index.html">Español</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="container-fluid" id="main" role="main">
-            <div id="home">
-                <div class="jumbotron">
-                    <img class= "img-circle img-responsive center-block" src="images/chazonabaum.JPG" id="chazona-baum">
-                    <h1 class="text-center">Chazona Baum</h1>
-                    <p class="text-center">Front-End Web Development | HTML CSS JavaScript jQuery</p>
-                </div>
-            </div>
-            <div id="about">
-                <div class="row" id="aboutrow">
-                    <div class="col-md-6 col-md-offset-3">
-                        <h2 class="text-center">About Chazona</h2>
-                        <p class="lead text-center">I don't look like your average coder. And my resume doesn't read like someone who works with computers. My experiences in life have been incredibly diverse, and I've worked in industries ranging from food to veterinary medicine to insurance. I have two adventurous children, and I've made a point to listen to people from virtually every walk in life.</p>
-                        <p class="text-center">The unique worldview I've cultivated puts me in a excellent frame of mind to solve complex challenges and find common ground. With a passion for creating, a hunger for knowledge, and an unbreakable resiliency, you would be hard-pressed to find anyone else who brings to the table what I have or learns as quickly as I do.</p>
-                        <p class="text-center">Whether you're looking for an addition to your growing team or you're in need of a freelance project, your business deserves more than average.</p>
-                    </div>
-                </div>
-            </div>
-            <div id="portfolio">
-                <div class="row" id="portfoliorow">
-                    <h2 class="text-center">Portfolio</h2>
-                    <p class="lead text-center">Browse my recent projects:</p>
-                    <div class="col-xs-12 col-s-6 col-md-3">
-                        <div class="thumbnail">
-                            <img src="images/tributepage.jpg" alt="Screenshot of Tribute Page" />
-                            <div class="caption">
-                                <h3 class="text-center">Tribute Page</h3>
-                                <p class="text-center">A tribute page in honor of Jane Addams, an influential author, suffragette, and social work pioneer, created in HTML and CSS.</p>
-                                <p><a href="http://anotherconsolelog.com/tributepage/index.html" class="btn btn-primary btn-block">View Project</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-s-6 col-md-3">
-                        <div class="thumbnail">
-                            <img src="images/randomquotemachine.jpg" alt="Screenshot of Random Quote Machine" />
-                            <div class="caption">
-                                <h3 class="text-center">Random Quote Machine</h3>
-                                <p class="text-center">A generator that provides random inspirational quotes to the user, created with HTML, CSS and client-side JavaScript.</p>
-                                <p><a href="http://anotherconsolelog.com/randomquotemachine/index.html" class="btn btn-primary btn-block">View Project</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-s-6 col-md-3">
-                        <div class="thumbnail">
-                            <img src="images/localweatherapp.jpg" alt="Screenshot of Local Weather App" />          
-                            <div class="caption">
-                                <h3 class="text-center">Local Weather App</h3>
-                                <p class="text-center">A web app that displays the weather at the user's location, and adjusts the graphical display accordingly, created with HTML, CSS, client-side JavaScript and APIs.</p>
-                                <p><a href="localweatherapp/index.html" class="btn btn-primary btn-block">View Project</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-s-6 col-md-3">
-                        <div class="thumbnail">
-                            <img src="images/wikiviewer.jpg" alt="Screenshot of Wikipedia Viewer" />
-                            <div class="caption">
-                                <h3 class="text-center">Wikipedia Viewer</h3>
-                                <p class="text-center">A web tool that allows the user to search for and view relevant Wikipedia entries or view a random Wikipedia entry, created with HTML, CSS, client-side JavaScript and APIs.</p>
-                                <p><a href="wikipediaviewer/index.html" class="btn btn-primary btn-block">View Project</a></p>
-                            </div>          
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-s-6 col-md-3">
-                        <div class="thumbnail">
-                            <img src="images/twitchtvjsonapi.JPG" alt="Screenshot of Twitch TV JSON API" />
-                            <div class="caption">
-                                <h3 class="text-center">Twitch TV JSON API</h3>
-                                <p class="text-center">A web tool which allows the user to check if various Twitch live-streamers are broadcasting and to view their content, created with HTML, CSS, client-side JavaScript and APIs.</p>
-                                <p><a href="twitchtv/index.html" class="btn btn-primary btn-block">View Project</a></p>
-                            </div>          
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-s-6 col-md-3">
-                        <div class="thumbnail">
-                            <img src="images/freefoodgame.png" alt="Screenshot of Free Food Game" />
-                            <div class="caption">
-                                <h3 class="text-center">Free Food Game</h3>
-                                <p class="text-center">A simple falling objects game made with Scratch. Using the left and right keys to control the protagonist, catch as many fruit as you can without being hit by the school's musical instruments.</p>
-                                <p><a href="https://scratch.mit.edu/projects/119382473/" class="btn btn-primary btn-block">View Project</a></p>
-                            </div>          
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-s-6 col-md-3">
-                        <div class="thumbnail">
-                            <img src="images/resume02.png" alt="Screenshot of Personal Resume" />
-                            <div class="caption">
-                                <h3 class="text-center">Resume</h3>
-                                <p class="text-center">An easily updated personal resume, created with HTML, CSS and client-side Javascript.</p>
-                                <p><a href="https://github.com/chznbaum/frontend-nanodegree-resume/" class="btn btn-primary btn-block">View Project</a></p>
-                            </div>          
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-s-6 col-md-3">
-                        <div class="thumbnail">
-                            <img src="images/comingsoon.jpg" alt="An example of a designed website" />
-                            <div class="caption">
-                                <h3 class="text-center">TBA</h3>
-                                <p class="text-center">A sample of my recent work.</p>
-                                <p><a href="#" class="btn btn-primary btn-block">View Project</a></p>
-                            </div>          
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="contact">
-                <div class="row" id="contactrow">
-                    <h2 class="text-center">Contact</h2>
-                    <div class="col-xs-12 col-md-6">
-                        <p class="lead">Interested in more information, or to talk about your business needs?</p>
-                        <p>Feel free to contact me through this form or social media. I will get back to you within 48 hours, whether we're talking about a job or merely sharing our mutual love of Unbreakable Kimmy Schmidt.</p>
-                    </div>
-                    <div class="col-xs-12 col-md-6">
-                        <form action="https://docs.google.com/forms/u/1/d/12DqhH2BxLz6ESSYmnKRgpjBFQGHWvk3GPkW5jSynh7M/formResponse" enctype="text/plain" name="contactform" id="contactform" target="hidden_iframe" onsubmit="submitted=true;">
-                            <fieldset>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label for="entry.1048969626">First name</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control" name="entry.1048969626" id="entry.1048969626" placeholder="John" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label for="entry.1752707953">Last name</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control" name="entry.1752707953" id="entry.1752707953" placeholder="Doe" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label for="entry.1454796987">Email address</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <input type="email" class="form-control" name="entry.1454796987" id="entry.1454796987" placeholder="johndoe@company.com" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label for="entry.610207668">Phone number</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <input type="tel" class="form-control" name="entry.610207668" id="entry.610207668" placeholder="(000)000-0000">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label for="entry.401952099">Message</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <textarea class="form-control" name="entry.401952099" id="entry.401952099" placeholder="Hi Chazona, ..." rows="5" required></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-4">
-                                        <input type="submit" class="btn btn-default" role="button" value="Submit" />
-                                        <input type="reset" class="btn btn-default" role="button" value="Reset" />
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </form>
-                        <iframe name="hidden_iframe" id="hidden_iframe" onload="if(submitted) {}"></iframe>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-center">Get Social</h2>
-                        <div class="social">
-                            <ul class="list-inline text-center">
-                                <li><a href="https://www.linkedin.com/in/chznbaum/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="https://github.com/chznbaum/" target="_blank"><i class="fa fa-github"></i></a></li>
-                                <li><a href="https://twitter.com/chznbaum/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://www.freecodecamp.com/chznbaum/" target="_blank">(<i class="fa fa-fire">)</i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer role="contentinfo">
-            <hr><p class="text-center"><a href="#home">Chazona Baum</a> &#169 2016. All Rights Reserved. <a href="privacy.html">Privacy Policy</a></p>
-        </footer>
-    </body>
+<html lang="en">
+   <head>
+   <meta charset="utf-8" />
+   <title>Chazona Baum | Personal Portfolio</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+   <link rel="stylesheet" href="./font-mfizz/font-mfizz.css" />
+   <link rel="stylesheet" type="text/css" href="./default.css" />
+   <link rel="shortcut icon" href="./favicon.ico" />
+   </head>
+   <body>
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="nav"></nav>
+      <header id="header"></header>
+      <div class="container-fluid">
+      <main id="main">
+         <section id="home"></section>
+         <section id="about">
+         </section>
+         <section id="portfolio">
+         </section>
+         <section id="contact">
+         </section>
+      </main>
+      </div>
+      <footer id="footer"></footer>
+      <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="https://use.fontawesome.com/05e1351669.js"></script>
+      <script src="./pageBuilder.js"></script>
+      <script src="./scripts.js"></script>
+   </body>
 </html>

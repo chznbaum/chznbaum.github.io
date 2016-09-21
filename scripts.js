@@ -1,7 +1,18 @@
+navDisplay();
+$('#about').append(HTMLaboutStart);
+$('#contact').html(HTMLcontactStart);
+bio.display();
+var HTMLindexHelpButton = HTMLhelpButton.replace(/Need help\?/, "What am I like?");
+$('#about p:last').append(HTMLindexHelpButton);
+var helpTitle = 'Chazona Baum\'s Personal Portfolio';
+var HTMLindexHelpBox = HTMLhelpBox.replace(/Frequently Asked Questions:/, "What Am I Really Like?")
+modalText('#about', helpTitle, helpModal(HTMLindexHelpBox, 'index', 'index'));
+portfolioDisplay();
+footer.display();
 $(document).ready(function() {
     // Scrollspy
     $('body').scrollspy({target: ".navbar", offset: 50});
-    $("#mynavbar a").on('click', function(event) {
+    $('#mynavbar a').on('click', function(event) {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
@@ -10,25 +21,11 @@ $(document).ready(function() {
             }, 800, function(){
                 window.location.hash = hash;
             });
-        } 
-    });
-    // Skip to content
-    $(".skip").click(function(event){
-        // strip the leading hash and declare
-        // the content we're skipping to
-        var skipTo="#"+this.href.split('#')[1];
-        // Setting 'tabindex' to -1 takes an element out of normal 
-        // tab flow but allows it to be focused via javascript
-        $(skipTo).attr('tabindex', -1).on('blur focusout', function () {
-            // when focus leaves this element, 
-            // remove the tabindex attribute
-            $(this).removeAttr('tabindex');
-        }).focus(); // focus on the content container
+        }
     });
     // Contact form
-    var submitted=false;
-    $("#contactform").on("submit", function(e) {
-        $("#contactform *").fadeOut(2000);
-        $("#contactform").prepend("Your message has been sent.");
+    $('form').on('submit', function(e) {
+        $('form').fadeOut(2000);
+        $('#contact').append("Thank you! Your message has been sent.");
     });
 });
