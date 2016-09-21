@@ -8,23 +8,26 @@
 	src: url(./fonts/bree_serif_regular.otf);
 }
 
-blockquote {
-	font-size: 2em;
-}
-
 body {
 	font-family: "Lolita Medium";
+	background-color: rgba(242, 235, 191, 0.5);
+	color: rgba(92, 75, 81, 1);
+}
+
+button {
+	margin: 5px;
 }
 
 h1, h2, h3, h4, h5, h6, nav, .btn {
 	font-family: "Bree Serif";
 }
 
-.biopic, .quotePic {
-	width: 25%;
+.biopic {
+	margin-bottom: 15%;
 }
 
-.contact-item {
+.biopic, .quotePic {
+	width: 25%;
 }
 
 .skills-item {
@@ -35,6 +38,14 @@ h1, h2, h3, h4, h5, h6, nav, .btn {
 	text-decoration: none;
 }
 
+.thumbnail img {
+	width: 100%;
+}
+
+#about h2 {
+	padding-top: 10%;
+}
+
 #contact-list {
 	list-style-type: none;
 	margin: 0;
@@ -42,7 +53,23 @@ h1, h2, h3, h4, h5, h6, nav, .btn {
 }
 
 #contact-list {
-	font-size: 3em;
+	font-size: 2em;
+}
+
+#about, #contact {
+	padding: 20% 5% 20% 5%;
+}
+
+#footer {
+	padding-bottom: 20%;
+}
+
+#headerHeadline {
+	font-size: 1.75em;
+}
+
+#home, #portfolio, #currentBox, #forcastBox, #resultsBox, #speakerButton {
+	padding: 5% 5% 2% 5%;
 }
 
 #hidden_iframe {
@@ -53,6 +80,36 @@ h1, h2, h3, h4, h5, h6, nav, .btn {
 	margin-top: 60px;
 }
 
+#main a, #footer a, .btn-link {
+	color: rgba(240, 96, 96, 1);
+}
+
+#main .btn-default, #main .btn-primary {
+	color: rgba(92, 75, 81, 1);
+}
+
+#main dd, p, label {
+	font-size: 1.5em;
+}
+
+#main dt {
+	font-size: 2em;
+}
+
+#main .btn-link {
+	font-size: 2em;
+}
+
+#mynavbar, .navbar-brand {
+	margin: 5px 20px 5px 5px;
+	font-size: 1.75em;
+}
+
+#name {
+	margin-top: 15%;
+	font-size: 3em;
+}
+
 #skills {
 	list-style-type: none;
 	margin: 20px;
@@ -61,9 +118,21 @@ h1, h2, h3, h4, h5, h6, nav, .btn {
 }
 
 #skills i {
-	font-size: 6em;
+	font-size: 5em;
 }
 
 #portfolio {
 	clear: both;
+}
+
+#portfolio p {
+	font-size: 1em;
+}
+
+#quoteBox blockquote {
+	font-size: 1.75em;
+}
+
+#welcomeMessage {
+	font-size: 2em;
 }

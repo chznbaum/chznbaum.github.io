@@ -1,4 +1,6 @@
 navDisplay();
+$('#about').append(HTMLaboutStart);
+$('#contact').html(HTMLcontactStart);
 bio.display();
 var HTMLindexHelpButton = HTMLhelpButton.replace(/Need help\?/, "What am I like?");
 $('#about p:last').append(HTMLindexHelpButton);

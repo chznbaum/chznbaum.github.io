@@ -1,4 +1,5 @@
 navDisplay();
+$('#home').append(HTMLquoteStart);
 $('#home').append(HTMLquoteTagsDrop);
 addToPage('#home', HTMLsearchBox, 'Search Quotes');
 var quoteTagsArray = []
@@ -22,25 +23,12 @@ var titleCaseTagArray = titleCaseArray(uniqueTagArray);
 for(tag in uniqueTagArray) {
     addToPage($('.quoteTags:last'), HTMLquoteTagsEach, uniqueTagArray[tag]);
 }
-$('#quoteBox').append(HTMLquoteStart);
+$('#quoteBox').append(HTMLquoteBoxStart);
 var helpTitle = 'Random Quote Generator Help';
 modalText('#quoteBox', helpTitle, helpModal(HTMLhelpBox, 'random_quote_generator', 'quote'));
 $('#quoteBox').append(HTMLquoteButtons);
 footer.display();
 $(document).ready(function() {
-    // Scrollspy
-    $('body').scrollspy({target: ".navbar", offset: 50});
-    $('#mynavbar a').on('click', function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function(){
-                window.location.hash = hash;
-            });
-        }
-    });
     var prevQuotesArray = [];
     $('#btnNewQuote').on('click', function() {
         var citationIndex = randomizer(quotes.speakers.length);

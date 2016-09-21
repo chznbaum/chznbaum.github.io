@@ -7,12 +7,14 @@ var HTMLanchorItem = '<li><a href="%url%">%title%</a></li>';
 var HTMLportfolioNav = '<li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#portfolio" role="button" aria-haspopup="true" aria-expanded="false">%title%<span class="caret"></span></a><ul class="dropdown-menu" id="portfolio-items"></ul></li>';
 
 var HTMLheaderName = '<h1 id="name" class="text-center">%data%</h1>';
-var HTMLheaderHeadline = '<p class="text-center">%data%</p><hr>';
+var HTMLheaderHeadline = '<p class="text-center id="headerHeadline">%data%</p><hr>';
 var HTMLfooter = '<hr><p class="text-center"><a href="%url%">%name%</a> &#169 2016. All Rights Reserved. <a href="%privurl%">Privacy Policy</a></p>'
 
+var HTMLaboutStart = '<h2 class="text-center">About Chazona</h2>';
+var HTMLcontactStart = '<h2 class="text-center">Contact Me</h2><div id="row"><div id="contactVia" class="col-md-6 col-sm-12"></div><div id="contactForm" class="col-md-6 col-sm-12"></div></div>';
 var HTMLcontactGeneric = '<li class="contact-item">%contact% %data%</li>';
 var HTMLContactBlurb = '<p class="lead">%data%</p>';
-var HTMLcontactIcons = '<li class="contact-item"><span class="fa %title%"></span> %data%</li>'
+var HTMLcontactIcons = '<li class="contact-item"><a href="%url%"><span class="fa %title%"></span> %data%</a></li>'
 var HTMLmobile = '<li class="contact-item">mobile %data%</li>';
 var HTMLemail = '<li class="contact-item">email %data%</li>';
 var HTMLlinkedin = '<li class="contact-item">linkedin %data% </li>';
@@ -20,19 +22,20 @@ var HTMLtwitter = '<li class="contact-item">twitter %data%</li>';
 var HTMLgithub = '<li class="contact-item">github %data%</li>';
 var HTMLblog = '<li class="contact-item">blog %data%</li>';
 var HTMLlocation = '<li class="contact-item">location %data%</li>';
+var HTMLblogURL = 'https://medium.com/another-day-another-console-log';
 
 var HTMLcontactFormStart = '<form action="https://docs.google.com/forms/u/1/d/12DqhH2BxLz6ESSYmnKRgpjBFQGHWvk3GPkW5jSynh7M/formResponse" enctype="text/plain" name="contactform" id="contactform" target="hidden_iframe" onsubmit="submitted=true;"><fieldset><div id="form-item"></div></fieldset></form><iframe name="hidden_iframe" id="hidden_iframe" onload="if(submitted) {}"></iframe>';
-var HTMLformItem = '<div class="form-group"><label for="%formitemid%">%label%</label><input type="%inputtype%" class="form-control" name="%formitemid%" id="%formitemid%" placeholder="%placeholder%" required></div>';
-var HTMLtextarea = '<div class="form-group"><label for="%formitemid%">%label%</label><textarea class="form-control" name="%formitemid%" id="%formitemid%" placeholder="%placeholder%" rows="5" required></textarea></div>';
+var HTMLformItem = '<div class="form-group"><label for="%formitemid%">%label%</label><input type="%inputtype%" class="form-control input-lg" name="%formitemid%" id="%formitemid%" placeholder="%placeholder%" required></div>';
+var HTMLtextarea = '<div class="form-group"><label for="%formitemid%">%label%</label><textarea class="form-control input-lg" name="%formitemid%" id="%formitemid%" placeholder="%placeholder%" rows="5" required></textarea></div>';
 var HTMLsubmitReset = '<input type="submit" class="btn btn-default" role="button" value="Submit" /><input type="reset" class="btn btn-default" role="button" value="Reset" />';
 
 var HTMLbioPic = '<img src="%data%" class="biopic img-responsive img-circle center-block">';
 var HTMLhelpButton = '<button type="button" class="btn btn-link btn-lg center-block" data-toggle="modal" data-target="#helpModal">Need help?</button>'
-var HTMLwelcomeMsg = '<p class="text-center">%data%</p>';
-var HTMLblurb = '<p class="lead">%data%</p>';
+var HTMLwelcomeMsg = '<p class="text-center" id="welcomeMessage">%data%</p>';
+var HTMLblurb = '<p>%data%</p>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills"></ul>';
-var HTMLskills = '<li class="skills-item"><i class="%data%"></i></li>';
+var HTMLskillsStart = '<h3 id="skills-h3" class="text-center">Skills at a Glance:</h3><div class="row"><div class="col-md-6 col-md-offset-3 col-sm-12"><div class="row"><ul id="skills"></ul></div></div></div>';
+var HTMLskills = '<div class="col-md-2 col-sm-4 col-xs-6"><li class="skills-item"><i class="%data%"></i></li></div>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
@@ -47,8 +50,8 @@ var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%" class="img-responsive">';
 
-var HTMLportfolioStart = '<div class="row portfolio-each"></div>';
-var HTMLportfolioEach = '<div class="col-xs-12 col-s-6 col-md-3"><div class="thumbnail"><img src="%imgurl%" alt="Screenshot of %title%" /><div class="caption"><h3 class="text-center">%title%</h3><p class="text-center">%description%</p><p><a href="%url%" class="btn btn-primary btn-block">View Project</a></p></div></div></div>';
+var HTMLportfolioStart = '<h2 class="text-center">Portfolio</h2><div class="row portfolio-each"></div>';
+var HTMLportfolioEach = '<div class="col-sm-12 col-md-6"><div class="thumbnail"><img src="%imgurl%" alt="Screenshot of %title%" /><div class="caption"><h3 class="text-center">%title%</h3><p class="text-center">%description%</p><p><a href="%url%" class="btn btn-default btn-block btn-lg">View Project</a></p></div></div></div>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -63,7 +66,8 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var HTMLquoteStart = '<div class="row"><h1 class="text-center">Random Quote Generator</h1></div><div class="row"><p class="lead text-center">curated by Chazona Baum</p><p class="lead text-center">Click below to enjoy a different quote for endless motivation.</p>' + HTMLhelpButton + '<div id="image"></div></div><div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="quoteBlock"></blockquote></div></div>';
+var HTMLquoteStart = '<div class="row"><h1 class="text-center">Random Quote Generator</h1></div><div class="row"><p class="lead text-center">curated by Chazona Baum</p></div>';
+var HTMLquoteBoxStart = '<div class="row"><p class="lead text-center">Click below to enjoy a different quote for endless motivation.</p>' + HTMLhelpButton + '<div id="image"></div></div><div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="quoteBlock"></blockquote></div></div>';
 var HTMLquoteButtons = '<div class="row"><div class="col-md-6 col-md-offset-3 col-xs-12"><button class="btn btn-primary btn-block btn-lg" id = "btnNewQuote">Generate Random Quote</button></div></div><div class="row"><div class="col-md-3 col-md-offset-3 col-xs-12"><button class="btn btn-default btn-block btn-lg" id="btnTweetQuote"><i class="fa fa-twitter"></i> Tweet this Quote</button></div><div class="col-md-3 col-xs-12"><button class="btn btn-default btn-block btn-lg" id="btnFacebookQuote"><i class="fa fa-facebook-square"></i> Share the Generator</button></div></div><div class="row"><div class="col-md-6 col-md-offset-3 col-xs-12"><button class="btn btn-default btn-block btn-lg" id = "btnPreviousQuote">Show Previous Quotes</button></div></div>';
 var HTMLquoteImage = '<img src="%imgurl%" class="quotePic img-responsive img-circle center-block" />';
 var HTMLquoteItem = '<p><span class="fa fa-quote-left"></span> %quote% <span class="fa fa-quote-right"></span></p><footer>%citation%</footer>';
@@ -76,18 +80,22 @@ var HTMLquoteResults = '<div class="row"><div class="col-md-6 col-md-offset-3 co
 
 var HTMLsearchBox = '<div class="row"><div class="col-md-4 col-md-offset-3 col-sm-8 col-xs-6"><input type="search" class="form-control input-lg" placeholder="Search" id="inputSearch" aria-label="Search" /></div><div class="col-md-2 col-sm-4 col-xs-6"><button class="btn btn-default btn-block btn-lg" id="resultsBtn">%data%</button></div></div>';
 var HTMLsearchResults = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><h3>Quotes containing your search term, "%data%":</h3></div><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><blockquote class="blockquote" id="resultsBlock"></blockquote></div></div>';
+var HTMLerrorNoSearch = HTMLgenericError.replace(/%errorMessage%/g, '<h4>Hey, did you forget to search for something?</h4><p>No search term was entered, so no results can be found. Do you want to try that again?</p>');
 
 var HTMLhelpModal = '<div class="modal fade" tabindex="-1" id="helpModal" role="dialog" aria-labelledby="helpModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-times-circle-o"></span></span></button><h4 class="modal-title" id="helpModalLabel">%title%</h4></div><div class="modal-body">%data%</div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div>';
 var HTMLhelpBox = '<h3>Frequently Asked Questions:</h3><div class="panel-group faq-item" id="helpAccordion" role="tablist" aria-multiselectable="true">';
 var HTMLquoteHelpText = '<div class="panel panel-default"><div class="panel-heading" role="tab" id="%heading%"><h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#helpAccordion" href="#%collapseid%" aria-expanded="true" aria-controls="%collapseid%">%question%</a></h4></div><div id="%collapseid%" class="panel-collapse collapse" role="tabpanel" aria-labelledby="%heading%"><div class="panel-body">%answer%</div></div></div>';
 
 var HTMLwikipediaStart = '<div class="row"><div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12"><h1 class="text-center">Wikipedia Viewer</h1><input type="search" class="form-control input-lg" placeholder="Search" id="inputSearch" aria-label="Search" /><div class="row" id="btnRow"><div class="col-md-6 col-sm-6 col-xs-12"><button class="btn btn-default btn-block btn-lg" id="resultsBtn">View Results</button></div><div class="col-md-6 col-sm-6 col-xs-12"><button class="btn btn-default btn-block btn-lg" id="randomBtn">View Random Page</button></div></div></div></div>';
-var HTMLwikipediaResultsStart = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><dl id="showResults"></dl></div></div>';
+var HTMLwikipediaResultsStart = '<div class="row"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12"><dl class="center-block" id="showResults"></dl></div></div>';
+var HTMLwikipediaStr = 'https://www.wikipedia.org/w/api.php?action=query&list=search&srsearch=%searchQuery%&srprop=snippet&srlimit=15&format=json&callback=?';
+var HTMLwikiDescriptionList = '<dt><a href="https://en.wikipedia.org/wiki/%wikiEncode%" target="_blank">%wikiTitle%</a></dt><dd>%wikiSnippet%...</dd>';
 
 var HTMLtributeCarousel = '<div id="carousel-tribute-quote" class="carousel slide" data-ride="carousel"></div>';
 var HTMLtributeCarouselItem = '<div class="carousel-inner" role="listbox"><div class="item"><div class="carousel-caption"><blockquote><span class="fa fa-quote-left"></span>%quote%<span class="fa fa-quote-right"></span><footer>%citation%</footer></blockquote></div></div></div>';
 
-var HTMLweatherSetUp = '<div class="row"><div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" id="weatherBox"><h1 class="text-center">Local Weather App</h1><p class="text-center lead" id="currentLocation">City, State, Country</p><div id="weatherImage"></div><p class="text-center lead">Currently: <span id="weatherTemp">0</span><span id="degreeSym1">&#8457</span></p><p class="text-center lead">Feels like: <span id="feelsLikeTemp">0</span><span id="degreeSym2">&#8457</span></p><p class="text-center lead" id="weatherDescrip">Local weather</p><button class="btn btn-lg center-block btn-primary" id="convertBtn">Convert &#8457 / &#8451</button></div></div>';
+var HTMLweatherStart = '<h1 class="text-center">Local Weather App</h1>';
+var HTMLweatherSetUp = '<div class="row"><div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" id="weatherBox"><p class="text-center lead" id="currentLocation">City, State, Country</p><div id="weatherImage"></div><p class="text-center lead">Currently: <span id="weatherTemp">0</span><span id="degreeSym1">&#8457</span></p><p class="text-center lead">Feels like: <span id="feelsLikeTemp">0</span><span id="degreeSym2">&#8457</span></p><p class="text-center lead" id="weatherDescrip">Local weather</p><button class="btn btn-lg center-block btn-primary" id="convertBtn">Convert &#8457 / &#8451</button></div></div>';
 var geoAPI = 'AIzaSyDC6U1aZXcePTAR20iwRKIuJ26LqXX6t5s';
 var geoString = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=%latitude%,%longitude%&key=%geoAPI%';
 var weatherKey = '56e678830a6e621a5f38e1b43296e432';
@@ -179,7 +187,7 @@ var projects = {
 	{
 		"title" : "Tribute Page",
 		"dates" : "July 2016",
- 		"description" : "A tribute page in honor of Jane Addams, an influential author, suffragette, and social work pioneer, created in HTML and CSS.",
+ 		"description" : "A tribute page in honor of various individuals quoted in the Random Quote Generator, allowing selection by individual, created with HTML, CSS, and client-side JavaScript.",
  		"keywords" : [
  		"Jane Addams",
  		"social work",
@@ -192,7 +200,7 @@ var projects = {
  	{
  		"title" : "Personal Portfolio",
  		"dates" : "July 2016",
- 		"description" : "A personal portfolio page highlighting recent projects, created with HTML, CSS and client-side JavaScript.",
+ 		"description" : "A personal portfolio page highlighting a photo, basic description, recent projects with links, skills, and a contact form, created with HTML, CSS and client-side JavaScript.",
  		"keywords" : [
  		"portfolio",
  		"web development",
@@ -205,18 +213,18 @@ var projects = {
  		"code"
  		],
  		"url" : "./index.html",
- 		"images" : ["./images/portfolio01.png", "images/portfolio02.png", "images/portfolio03.png", "images/portfolio04.png"]
+ 		"images" : ["./images/portfolio01.jpg", "images/portfolio02.jpg", "images/portfolio03.jpg", "images/portfolio04.jpg"]
  	},
  	{
  		"title" : "Random Quote Generator",
  		"dates" : "July 2016",
- 		"description" : "A generator that provides random inspirational quotes to the user, created with HTML, CSS and client-side JavaScript.",
+ 		"description" : "A generator that provides random inspirational quotes to the user, as well as allowing searches, tags, and retrieving previous quotes, created with HTML, CSS and client-side JavaScript.",
  		"keywords" : [
  		"quotes",
  		"randomizer"
  		],
  		"url" : "./random_quote_generator.html",
- 		"images" : ["./images/RandomQuote01.PNG", "images/RandomQuote02.PNG", "images/RandomQuote03.PNG", "images/RandomQuote04.PNG"]
+ 		"images" : ["./images/RandomQuote01.jpg", "images/RandomQuote02.jpg", "images/RandomQuote03.jpg", "images/RandomQuote04.jpg"]
  	},
  	{
  		"title" : "Local Weather App",
@@ -263,7 +271,7 @@ var projects = {
  		"school"
  		],
  		"url" : "https://scratch.mit.edu/projects/119382473/",
- 		"images" : ["./images/freefoodgame.png"]
+ 		"images" : ["./images/freefoodgame.jpg"]
  	},
  	{
  		"title" : "Personal Resume",
@@ -341,32 +349,38 @@ var bio = {
  		{
  			"name" : "mobile",
  			"fontAwesome" : "fa-mobile",
- 			"description" : "(757)617-6964"
+ 			"description" : "(757)617-6964",
+ 			"url" : "tel:7576176964"
  		},
  		{
  			"name" : "email",
  			"fontAwesome" : "fa-envelope-o",
- 			"description" : "chazona@anotherconsolelog.com"
+ 			"description" : "chazona@anotherconsolelog.com",
+ 			"url" : "mailto:chazona@anotherconsolelog.com"
  		},
  		{
  			"name" : "website",
  			"fontAwesome" : "fa-desktop",
- 			"description" : "anotherconsolelog.com"
+ 			"description" : "anotherconsolelog.com",
+ 			"url" : "https://anotherconsolelog.com"
  		},
  		{
  			"name" : "linkedin",
  			"fontAwesome" : "fa-linkedin-square",
- 			"description" : "chznbaum"
+ 			"description" : "chznbaum",
+ 			"url" : "https://linkedin.com/in/chznbaum"
  		},
  		{
  			"name" : "github",
  			"fontAwesome" : "fa-github-square",
- 			"description" : "chznbaum"
+ 			"description" : "chznbaum",
+ 			"url" : "https://github.com/chznbaum"
  		},
  		{
  			"name" : "twitter",
  			"fontAwesome" : "fa-twitter-square",
- 			"description" : "@otherconsolelog"
+ 			"description" : "@otherconsolelog",
+ 			"url" : "https://twitter.com/otherconsolelog"
  		}
  		],
  		"contactBlurbs" : [
@@ -482,19 +496,23 @@ var homeNav = {
 	"sections" : [
 	{
 		"title" : "Home",
-		"anchor" : "#home"
+		"anchor" : "#home",
+		"fullURL" : "./index.html#home"
 	},
 	{
 		"title" : "About Me",
-		"anchor" : "#about"
+		"anchor" : "#about",
+		"fullURL" : "./index.html#about"
 	},
 	{
 		"title" : "Portfolio",
-		"anchor" : "#portfolio"
+		"anchor" : "#portfolio",
+		"fullURL" : "./index.html#portfolio"
 	},
 	{
 		"title" : "Contact Me",
-		"anchor" : "#contact"
+		"anchor" : "#contact",
+		"fullURL" : "./index.html#contact"
 	}
 	]
 };
@@ -532,7 +550,7 @@ var frequentlyAskedQuestions = {
 	},
 	{
 		"question" : "I don't like this person. Is this really who you did a tribute on?",
-		"answer" : "The person you are seeing is featured in my Random Quote Generator project. If you don't like this person, no worries. Refresh the page for a random other person's tribute page."
+		"answer" : "The person you are seeing is featured in my Random Quote Generator project. If you don't like this person, no worries. Refresh the page for a random other person's tribute page. Just as all people are products of their times, some of these figures may not be overly likeable. I don't personally like each person listed, but I don't have to like a person to acknowledge something good they've had to say."
 	}
 	],
 	"local_weather_app" : [
@@ -549,6 +567,10 @@ var frequentlyAskedQuestions = {
 	{
 		"question" : "What is this?",
 		"answer" : "This page is a Random Quote Generator project I built while studying with Free Code Camp. Click the button to get a completely random quote by a random person."
+	},
+		{
+		"question" : "So does everyone at Free Code Camp have one like this?",
+		"answer" : "While it is a common project, each developer takes a different approach to it, and most go back and add additional features or functionality. These projects will not be the same, even though they are made to fit the same user stories."
 	},
 	{
 		"question" : "How to I generate a new quote?",
@@ -567,12 +589,24 @@ var frequentlyAskedQuestions = {
 	{
 		"question" : "What is this?",
 		"answer" : "This page is a project I built while studying with Free Code Camp. It allows you to search for anything and find related Wikipedia articles. You can also choose to view a random article."
+	},
+		{
+		"question" : "So does everyone at Free Code Camp have one like this?",
+		"answer" : "While it is a common project, each developer takes a different approach to it, and most go back and add additional features or functionality. These projects will not be the same, even though they are made to fit the same user stories."
+	},
+	{
+		"question" : "What if I see something I like?",
+		"answer" : "Click it, of course! It will open the correct Wikipedia page for you."
 	}
 	],
 	"twitch_tv_json_api" : [
 	{
 		"question" : "What is this?",
 		"answer" : "This page is a project I built while studying with Free Code Camp. It allows you to see which of a group of Twitch live-streamers are currently streaming."
+	},
+		{
+		"question" : "So does everyone at Free Code Camp have one like this?",
+		"answer" : "While it is a common project, each developer takes a different approach to it, and most go back and add additional features or functionality. These projects will not be the same, even though they are made to fit the same user stories."
 	},
 	{
 		"question" : "Oh, this stream looks really cool!",
@@ -1776,6 +1810,14 @@ function titleCaseArray(array) {
     }
     return array;
 }
+function confirmEnding(str, target) {
+	var ending = str.substring(str.length - target.length);
+	if (ending === target) {
+		return true;
+	} else {
+		return false;
+	}
+}
 function addToPage(section, helper, data) {
  	if (data != "") {
  		var formatted = helper.replace(/%data%/g, data);
@@ -1860,20 +1902,39 @@ function modalText(section, title, data) {
 	$(section).append(formattedModal);
 }
 navDisplay = function() {
-	navAddToPage("#nav", HTMLnavbarNav, homeNav.sections[0].anchor, bio.name);
+	console.log(document.baseURI);
+	if (confirmEnding(document.baseURI, 'index.html')) {
+		navAddToPage("#nav", HTMLnavbarNav, homeNav.sections[0].anchor, bio.name);
+	} else {
+		navAddToPage("#nav", HTMLnavbarNav, homeNav.sections[0].fullURL, bio.name);
+	}
 	if (homeNav.sections.length > 0) {
 		for (section in homeNav.sections) {
-			if (homeNav.sections[section].title != "Portfolio") {
-				navAddToPage("#navbar-items:last", HTMLanchorItem, homeNav.sections[section].anchor, homeNav.sections[section].title);
-			} else if (homeNav.sections[section].title == "Portfolio") {
-				navAddToPage("#navbar-items:last", HTMLportfolioNav, homeNav.sections[section].anchor, homeNav.sections[section].title);
-				for (project in projects.projects) {
-					if (projects.projects[project].title != "Twitch TV JSON API") {
-						navAddToPage("#portfolio-items:last", HTMLanchorItem, projects.projects[project].url, projects.projects[project].title);
+			if (confirmEnding(document.baseURI, 'index.html')) {
+				if (homeNav.sections[section].title != "Portfolio") {
+					navAddToPage("#navbar-items:last", HTMLanchorItem, homeNav.sections[section].anchor, homeNav.sections[section].title);
+				} else if (homeNav.sections[section].title == "Portfolio") {
+					navAddToPage("#navbar-items:last", HTMLportfolioNav, homeNav.sections[section].anchor, homeNav.sections[section].title);
+					for (project in projects.projects) {
+						if ((projects.projects[project].title != "Twitch TV JSON API") && (projects.projects[project].title != "Personal Resume")) {
+							navAddToPage("#portfolio-items:last", HTMLanchorItem, projects.projects[project].url, projects.projects[project].title);
+						}
+					}
+				}
+			} else {
+				if (homeNav.sections[section].title != "Portfolio") {
+					navAddToPage("#navbar-items:last", HTMLanchorItem, homeNav.sections[section].fullURL, homeNav.sections[section].title);
+				} else if (homeNav.sections[section].title == "Portfolio") {
+					navAddToPage("#navbar-items:last", HTMLportfolioNav, homeNav.sections[section].fullURL, homeNav.sections[section].title);
+					for (project in projects.projects) {
+						if ((projects.projects[project].title != "Twitch TV JSON API") && (projects.projects[project].title != "Personal Resume")) {
+							navAddToPage("#portfolio-items:last", HTMLanchorItem, projects.projects[project].url, projects.projects[project].title);
+						}
 					}
 				}
 			}
 		}
+		navAddToPage('#navbar-items:last', HTMLanchorItem, HTMLblogURL, 'Blog');
 	}
 }
 footer.display = function() {
@@ -1892,14 +1953,14 @@ bio.display = function() {
  			addToPage("#about", HTMLblurb, bio.blurbs[blurb]);
  		}
  		for (blurb in bio.contacts.contactBlurbs) {
- 			addToPage("#contact", HTMLContactBlurb, bio.contacts.contactBlurbs[blurb]);
+ 			addToPage("#contactVia", HTMLContactBlurb, bio.contacts.contactBlurbs[blurb]);
  		}
- 		$("#contact").append("<ul id='contact-list'></ul>");
+ 		$("#contactVia").append("<ul id='contact-list'></ul>");
  		for (item in bio.contacts.contactInfo) {
- 			var formattedContact = HTMLcontactIcons.replace(/%title%/g, bio.contacts.contactInfo[item].fontAwesome).replace(/%data%/g, bio.contacts.contactInfo[item].description);
+ 			var formattedContact = HTMLcontactIcons.replace(/%title%/g, bio.contacts.contactInfo[item].fontAwesome).replace(/%data%/g, bio.contacts.contactInfo[item].description).replace(/%url%/g, bio.contacts.contactInfo[item].url);
  			$("#contact-list").append(formattedContact);
  		}
- 		$("#contact").append(HTMLcontactFormStart);
+ 		$("#contactForm").append(HTMLcontactFormStart);
  		for (item in bio.contacts.contactFormItems) {
  			formAddToPage("#form-item:last", HTMLformItem, bio.contacts.contactFormItems[item].formItemID, bio.contacts.contactFormItems[item].label, bio.contacts.contactFormItems[item].placeholder, bio.contacts.contactFormItems[item].inputType);
  		}
@@ -1941,7 +2002,7 @@ portfolioDisplay = function() {
 		$("#portfolio").append('<div class="row">');
 		$("#portfolio").append(HTMLportfolioStart);
 		for (project in projects.projects) {
-			if (projects.projects[project].title != "Twitch TV JSON API") {
+			if ((projects.projects[project].title != "Twitch TV JSON API") && (projects.projects[project].title != "Personal Resume")) {
 				portfolioAddToPage(".portfolio-each:last", HTMLportfolioEach, projects.projects[project].url, projects.projects[project].images[0], projects.projects[project].title, projects.projects[project].description);
 			}
 		}
@@ -2017,7 +2078,6 @@ function tributeSetUp(number) {
     var HTMLreadMore = '<p class="text-center lead">Read more about %person% life on <a href="https://en.wikipedia.org/wiki/%url%">Wikipedia</a>.';
     var formattedReadMore = HTMLreadMore.replace(/%person%/g, tributeOwnership).replace(/%url%/g, tributeWiki);
     $('#quoteBox').append(formattedReadMore);
-    $('#quoteBox').append(HTMLhelpButton);
 }
 function tributeSelectSetUp() {
 	var HTMLtributeDrop = HTMLquoteTagsDrop.replace(/quoteTags/g, 'tributeSelect').replace(/Tag/g, 'Speaker');
@@ -2110,7 +2170,8 @@ function currentWeather(gotPosition) {
 }
 function weatherApp() {
     if (!navigator.geolocation) {// If browser doesn't support navigator.geolocation,
-        $('#locating').html(HTMLweatherNavigatorError);// Throw an error for the user
+    	  $('#locating').html('');// Clear locating section
+        $('#currentBox').html(HTMLweatherNavigatorError);// Throw an error for the user
         return;
     }
     function success(position) {
@@ -2122,7 +2183,8 @@ function weatherApp() {
         currentWeather(location);// Get the current weather from Dark Sky API
     }
     function error() {
-        $('#locating').html(HTMLweatherPositionError);// If can't get position, throw an error for the user
+    	  $('#locating').html('');// Clear locating section
+        $('#currentBox').append(HTMLweatherPositionError);// If can't get position, throw an error for the user
     }
     $('#locating').html(HTMLlocatingMessage);// Show something while locating so user knows it's working
     navigator.geolocation.getCurrentPosition(success, error);
