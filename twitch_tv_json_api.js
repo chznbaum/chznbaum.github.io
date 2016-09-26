@@ -73,33 +73,6 @@ function twitchTV() {
 			$('#' + searchQuery).fadeIn();
 		}
 	});
-/*	console.log('Entering TwitchTV function.');
-	$('#resultsBtn').click(function(event) {
-		console.log('Clicked "Submit"');
-		console.log($('#inputSearch').value);
-		var searchResult = $('#inputSearch').value;
-		console.log(searchResult);
-		var formattedTwitchString, formattedOfflineTwitchString, formattedClosedAccountDiv, formattedOnlineDiv, formattedOfflineDiv;
-		formattedTwitchString = twitchString.replace(/%twitchID%/g, twitchID);
-		$.getJSON(formattedTwitchString, function(twitchData) {
-			console.log(searchResult);
-			console.log(twitchData);
-			if (twitchData.status === 404) {
-				formattedClosedAccountDiv = closedAccountDiv.replace(/%userName%/g, searchResult);
-				$('#twitchBox').append(formattedClosedAccountDiv);
-			} else if (twitchData.hasOwnProperty('stream') && twitchData.stream === null) {
-				formattedOfflineTwitchString = offlineTwitchString.replace(/%userName%/g, searchResult).replace(/%twitchID%/g, twitchID);
-				$.getJSON(formattedOfflineTwitchString, function(offlineData) {
-					formattedOfflineDiv = offlineDiv.replace(/%userName%/g, searchResult).replace(/%logourl%/g, offlineData.logo);
-					$('#twitchBox').append(formattedOfflineDiv);
-				});
-			} else if (twitchData.hasOwnProperty('stream') && twitchData.stream !== null) {
-				formattedOnlineDiv = onlineDiv.replace(/%userName%/g, searchResult).replace(/%logourl%/g, twitchData.stream.channel.logo).replace(/%twitchImage%/g, twitchData.stream.preview.large).replace(/%streamurl%/g, twitchData.stream._links.self).replace(/%twitchUserStatus%/g, twitchData.stream.game);
-				$('#twitchBox').append(formattedOnlineDiv);
-			}
-		});
-	});
-	*/
 }
 twitchTV();
 $(document).ready(function() {
