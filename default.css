@@ -30,6 +30,18 @@ h1, h2, h3, h4, h5, h6, nav, .btn {
 	width: 25%;
 }
 
+.showOffline .caption {
+	height: 150px;
+}
+
+.offline img {
+	height: 200px;
+}
+
+.showOnline .caption {
+	height: 150px;
+}
+
 .skills-item {
 	float: left;
 	display: block;
@@ -40,6 +52,10 @@ h1, h2, h3, h4, h5, h6, nav, .btn {
 
 .thumbnail img {
 	width: 100%;
+}
+
+.twitchLogo {
+	margin-top: -50px;
 }
 
 #about h2 {

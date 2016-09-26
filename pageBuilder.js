@@ -106,8 +106,9 @@ var HTMLlocatingMessage = '<p class="text-center lead">Locating...<i class="fa f
 var HTMLdarkSkyAttribution = ' | Powered by <a href="https://darksky.net/poweredby/">Dark Sky</a>';
 
 var HTMLtwitchSetUp = '<div class="row" id="pagetitle"><div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1"><h1 class="text-center">Twitch TV JSON API</h1></div></div><div class="row" id="toggleSwitches"><div class="col-md-4 col-md-offset-4 col-sm-12"><div class="row"><div class="col-md-4"><button class="btn btn-default btn-block btn-lg" role="button" id="allButton">All</button></div><div class="col-md-4"><button class="btn btn-default btn-block btn-lg" role="button" id="onlineButton">Online</button></div><div class="col-md-4"><button class="btn btn-default btn-block btn-lg" role="button" id="offlineButton">Offline</button></div></div><div id="searchRow"></div></div></div>';
-var HTMLtwitchResults = '<div class="row" id="twitchAccounts"><div class="col-md-12"><div class="row" id="twitchBox"></div></div></div>';
+var HTMLtwitchResults = '<div class="row" id="twitchAccounts"><div class="col-md-12"><div class="row"><h2 class="text-center">Streaming Now:</h2></div><div class="row" id="twitchOnline"></div><div class="row"><h2 class="text-center">Currently Offline:</h2></div><div class="row" id="twitchOffline"></div><div class="row"><h2 class="text-center">Account Closed:</h2></div><div class="row" id="twitchClosed"></div></div></div>';
 var twitchID = 'd6aqc5tx14y8xmy1ckjknsiux94cw2u';
+var HTMLerrorNotFound = HTMLgenericError.replace(/%errorMessage%/g, '<h4>Seems something got misplaced...</h4><p>Your search term wasn\'t found. Did you mean to search for it?</p>');
 
 var submitted = false;
 
@@ -128,9 +129,6 @@ var twitchUsersArray = [
 "PJDiCesare",
 "jcarverpoker",
 "Ninja",
-"Kacey",
-"Hafu",
-"Tara",
 "Wyld",
 "PhoenixCrashGaming",
 "StrayMav",
@@ -171,7 +169,6 @@ var twitchUsersArray = [
 "WagamamaTV",
 "wtcNN",
 "BehkuhTV",
-"flOm",
 "Koopatroopa787",
 "Quin69",
 "BonnieDoll",
@@ -259,7 +256,7 @@ var projects = {
  		"streaming"
  		],
  		"url" : "./twitch_tv_json_api.html",
- 		"images" : ["./images/twitchtvjsonapi.JPG"]
+ 		"images" : ["./images/twitchtvjsonapi.jpg"]
  	},
  	{
  		"title" : "Free Food Game",
@@ -337,7 +334,7 @@ var work = {
 };
 var bio = {
  	"name" : "Chazona Baum",
- 	"role" : "Web Development Student",
+ 	"role" : "Front-End Web Development",
  	"welcomeMessage" : "Hello world!",
  	"biopic" : "images/chazonabaum.JPG",
  	"blurbs" : [
@@ -469,7 +466,7 @@ var education = {
  	{
  		"title" : "Javascript Basics",
  		"school" : "Udacity",
- 		"dates" : "August 2016 - September 2016",
+ 		"dates" : "August 2016",
  		"url" : "https://udacity.com/courses/ud804"
  	},
  	{
@@ -1916,7 +1913,7 @@ navDisplay = function() {
 				} else if (homeNav.sections[section].title == "Portfolio") {
 					navAddToPage("#navbar-items:last", HTMLportfolioNav, homeNav.sections[section].anchor, homeNav.sections[section].title);
 					for (project in projects.projects) {
-						if ((projects.projects[project].title != "Twitch TV JSON API") && (projects.projects[project].title != "Personal Resume")) {
+						if ((projects.projects[project].title != "Free Food Game") && (projects.projects[project].title != "Personal Resume")) {
 							navAddToPage("#portfolio-items:last", HTMLanchorItem, projects.projects[project].url, projects.projects[project].title);
 						}
 					}
@@ -1927,7 +1924,7 @@ navDisplay = function() {
 				} else if (homeNav.sections[section].title == "Portfolio") {
 					navAddToPage("#navbar-items:last", HTMLportfolioNav, homeNav.sections[section].fullURL, homeNav.sections[section].title);
 					for (project in projects.projects) {
-						if ((projects.projects[project].title != "Twitch TV JSON API") && (projects.projects[project].title != "Personal Resume")) {
+						if ((projects.projects[project].title != "Free Food Game") && (projects.projects[project].title != "Personal Resume")) {
 							navAddToPage("#portfolio-items:last", HTMLanchorItem, projects.projects[project].url, projects.projects[project].title);
 						}
 					}
@@ -2002,7 +1999,7 @@ portfolioDisplay = function() {
 		$("#portfolio").append('<div class="row">');
 		$("#portfolio").append(HTMLportfolioStart);
 		for (project in projects.projects) {
-			if ((projects.projects[project].title != "Twitch TV JSON API") && (projects.projects[project].title != "Personal Resume")) {
+			if ((projects.projects[project].title != "Free Food Game") && (projects.projects[project].title != "Personal Resume")) {
 				portfolioAddToPage(".portfolio-each:last", HTMLportfolioEach, projects.projects[project].url, projects.projects[project].images[0], projects.projects[project].title, projects.projects[project].description);
 			}
 		}
