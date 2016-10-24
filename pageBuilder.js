@@ -22,7 +22,7 @@ var HTMLtwitter = '<li class="contact-item">twitter %data%</li>';
 var HTMLgithub = '<li class="contact-item">github %data%</li>';
 var HTMLblog = '<li class="contact-item">blog %data%</li>';
 var HTMLlocation = '<li class="contact-item">location %data%</li>';
-var HTMLblogURL = 'https://www.anotherconsolelog.com';
+var HTMLblogURL = 'https://www.mernmom.com';
 
 var HTMLcontactFormStart = '<form action="https://docs.google.com/forms/u/1/d/12DqhH2BxLz6ESSYmnKRgpjBFQGHWvk3GPkW5jSynh7M/formResponse" enctype="text/plain" name="contactform" id="contactform" target="hidden_iframe" onsubmit="submitted=true;"><fieldset><div id="form-item"></div></fieldset></form><iframe name="hidden_iframe" id="hidden_iframe" onload="if(submitted) {}"></iframe>';
 var HTMLformItem = '<div class="form-group"><label for="%formitemid%">%label%</label><input type="%inputtype%" class="form-control input-lg" name="%formitemid%" id="%formitemid%" placeholder="%placeholder%" required></div>';
