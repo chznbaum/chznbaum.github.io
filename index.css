@@ -57,6 +57,10 @@ footer a {
   padding: 0;
 }
 
+#hidden_iframe {
+  display: none;
+}
+
 #home, #about, #portfolio, #contact {
   position: relative;
   width: 100%;
