@@ -1,3 +1,4 @@
+var submitted = false;
 $(document).ready(function(){
   
   $('body').scrollspy({target: ".navbar", offset: 50});
