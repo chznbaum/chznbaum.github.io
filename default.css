@@ -30,6 +30,10 @@ h1, h2, h3, h4, h5, h6, nav, .btn {
 	width: 25%;
 }
 
+.resume-png {
+	width: 25%;
+}
+
 .showOffline .caption {
 	height: 200px;
 }
