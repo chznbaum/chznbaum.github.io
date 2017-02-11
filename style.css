@@ -1035,7 +1035,7 @@ p {
     width: 80vw;
   }
 }
-@media (max-width: 767px) {
+@media screen and (max-device-width: 800px) {
   .background-video {
     background-image: url('./fire_and_ice_nebula.JPG');
     background-size: cover;
