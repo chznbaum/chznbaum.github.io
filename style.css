@@ -953,6 +953,13 @@ p.text-midlo {
 .section-center {
   margin: auto;
 }
+.section-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
 .section-header {
   text-align: center;
   font-size: 28px;
@@ -1072,7 +1079,7 @@ section p {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: space-around;
+  align-items: flex-start;
   z-index: 200;
 }
 #contact-form input, #contact-form textarea {
