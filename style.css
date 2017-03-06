@@ -1129,7 +1129,7 @@ section p {
     left: -100%;
   }
 }
-@media (max-width: 799px) {
+@media (max-device-width: 799px) {
   .right-nav {
     width: 100%;
   }
