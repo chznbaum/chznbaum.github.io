@@ -1,10 +1,33 @@
-var submitted = false;
-document.addEventListener('DOMContentLoaded', function() {
-  smoothScroll.init();
-  var sendSubmit = document.getElementById('contact-form');
-  var confirmation = document.getElementById('confirmation-message');
-  sendSubmit.onsubmit = function(event) {
-    sendSubmit.classList.remove('is-paused');
-    confirmation.classList.remove('is-paused-in');
-  }
+$(document).ready(function() {
+  $('body').scrollspy({ target: '#navbarSupportedContent' });
+  $("#navbarSupportedContent a").on('click', function(event) {
+
+    if (this.hash !== "") {
+          event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        window.location.hash = hash;
+      });
+    } 
+  });
+  $("#buttonHolder a").on('click', function(event) {
+
+    if (this.hash !== "") {
+          event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        window.location.hash = hash;
+      });
+    } 
+  });
 });

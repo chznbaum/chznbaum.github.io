@@ -1,7 +1,7 @@
 <!--
   Personal Portfolio
 
-  version 4.0
+  version 5.0
   author: Chazona Baum <chazona@chazonabaum.com>
   copyright: Chazona Baum 2017
  -->
@@ -11,9 +11,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Web Experiences by Chazona Baum</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.css">
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/183df169fb.js"></script>
-    <script src="./smooth-scroll.js"></script>
+    <script>
+      var submitted = false;
+      function formSubmit() {
+        submitted = true;
+        console.log('Form submitted.');
+        setTimeout(function() {
+          $('#contact-form').fadeOut();
+          $('#contact-section').text('Thank you for contacting me! I will get in touch with you shortly.').fadeIn();
+        }, 500);
+      }
+    </script>
     <script src="./scripts.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -25,180 +40,284 @@
       ga('send', 'pageview');
     </script>
   </head>
-  <body>
-    <div class="background-video">
-      <video loop muted autoplay poster="./fire_and_ice_nebula.jpg" class="fullscreen-bg-video">
-        <!-- Video sourced from Videezy (http://videezy.com) Free B Roll -->
-        <source src="./fire_and_ice_nebula.mp4" type="video/mp4">
-      </video>
-      <div class="background-overlay"></div>
-    </div>
-    <nav>
-      <header>
-        <h1 class="title"><a href="./index.html">Chazona Baum</a></h1>
-      </header>
-      <ul class="right-nav">
-        <li class="nav-item"><a data-scroll href="#about">About</a></li>
-        <li class="nav-item"><a data-scroll href="#portfolio">Portfolio</a></li>
-        <li class="nav-item"><a data-scroll href="#contact">Contact</a></li>
-        <li class="nav-item"><a href="./csmidlocode.html">Case Study</a></li>
-        <li class="nav-item"><a href="http://mernmom.com">Blog</a></li>
-      </ul>
+  <body data-spy="scroll" data-target="#navbarSupportedContent" data-offset="70">
+    <nav class="nav navbar navbar-toggleable-sm navbar-light bg-faded" id="primary-navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <header><a class="navbar-brand" href="#">Chazona Baum</a></header>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://mernmom.com">Blog</a></li>
+        </ul>
+      </div>
     </nav>
     <main>
-      <section id="hero">
-        <div class="hero-text-wrapper">
-          <p class="hero-text">Web experiences that dazzle.</p>
-        </div>
-        <div class="hero-arrow-wrapper">
-          <div class="arrow-down"></div>
-        </div>
-      </section>
-      <section id="about">
-        <h2 class="section-header">Who I Am</h2>
-        <div class="section-row-float">
-          <p>I am Chazona Baum, a self-taught front-end developer with diverse experiences in industries ranging from food service to veterinary medicine to insurance.</p>
-          <img class="about-image" src="./chazona.JPG" alt="Chazona Baum">
-          <p>My two young children help shape my perspective, and drive me to create experiences that are accessible, friendly, and with a hint of magic.</p>
-          <p>My love of code sprang from my love of language. Where others see confusing symbols, I see an elegant form of communication and expression, and a way for people to extend their capabilities and accomplish the previously impossible.</p>
-          <p>I currently serve as founding member of the board of directors for <a href="./csmidlocode.html">Midlothian Code</a>, a Virginia nonprofit organization I started to expand access and opportunities to learn code, web development, and computer programming within my local community.</p>
-        </div>
-      </section>
-      <section id="portfolio">
-        <h2 class="section-header">What I Do</h2>
-        <div class="section-row-float">
-          <p>I build custom websites like the kind you are currently viewing. Using a variety of modern tools, I design and execute cohesive websites that flow and stimulate the senses.</p>
-          <div class="portfolio-column-wrapper">
-            <div class="portfolio-column-long">
-              <a href="./csmidlocode.html"><img class="img-shape-outside-right" src="./midlothian_code_logo_white.png" alt="Midlothian Code logo"></a>
-              <p>While I enjoy building custom sites completely from scratch, I understand that different problems require their own solutions. I get organizations a presence on the web, and am comfortable with tailoring existing content management systems and templates to meet their needs as I did recently for the nonprofit <a href="./csmidlocode.html" id="midlo-code-button" role="button">Midlothian Code</a>.</p>
-            </div>
-            <div class="portfolio-column">
-              <div class="clock-canvas">
-                <div class="clock">
-                  <div class="clock-copy"></div>
-                  <div class="clock-face">
-                    <div class="clock-center">
-                      <div class="clock-center-copy"></div>
-                    </div>
-                    <div class="hour-hand-container">
-                      <div class="hour-hand"></div>
-                    </div>
-                    <div class="minute-hand-container">
-                      <div class="minute-hand"></div>
-                    </div>
-                    <div class="second-hand-container">
-                      <div class="second-hand"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p>With an understanding of both stylistic animation and dynamic scripting, I am able to breathe life into content made for the web.</p>
-              <p>The right animations for the right purposes, as well as a measure of restraint, allow users to feel like a site responds to them and can give them a sense of wonder.</p>
-              <p>Using the latest in reactive frameworks, I can create interfaces that update automatically before your user's eyes, even <a href="http://codepen.io/chznbaum/full/GWqpqj/">games</a>.</p>
-            </div>
-            <div class="portfolio-column">
-              <div class="mojo-jojo-canvas">
-                <div class="mojo-jojo">
-                  <div class="mojo-jojo-copy"></div>
-                  <div class="mojo-jojo-helmet">
-                    <div class="mojo-jojo-jewel-left"></div>
-                    <div class="mojo-jojo-jewel-center"></div>
-                    <div class="mojo-jojo-jewel-right"></div>
-                    <div class="mojo-jojo-helmet-section-left">
-                      <div class="mojo-jojo-helmet-inner-ring-1-left"></div>
-                      <div class="mojo-jojo-helmet-inner-ring-2-left"></div>
-                      <div class="mojo-jojo-helmet-inner-ring-3-left"></div>
-                    </div>
-                    <div class="mojo-jojo-helmet-section-right">
-                      <div class="mojo-jojo-helmet-inner-ring-1-right"></div>
-                      <div class="mojo-jojo-helmet-inner-ring-2-right"></div>
-                      <div class="mojo-jojo-helmet-inner-ring-3-right"></div>
-                    </div>
-                  </div>
-                  <div class="mojo-jojo-ear-left">
-                    <div class="mojo-jojo-inner-ear-left"></div>
-                    <div class="mojo-jojo-inner-ear-two-left"></div>
-                  </div>
-                  <div class="mojo-jojo-ear-right">
-                    <div class="mojo-jojo-inner-ear-right"></div>
-                    <div class="mojo-jojo-inner-ear-two-right"></div>
-                  </div>
-                  <div class="mojo-jojo-eye-frame-left">
-                    <div class="mojo-jojo-eye">
-                      <div class="mojo-jojo-pupil-left"></div>
-                    </div>
-                  </div>
-                  <div class="mojo-jojo-eye-frame-right">
-                    <div class="mojo-jojo-eye">
-                      <div class="mojo-jojo-pupil-right"></div>
-                    </div>
-                  </div>
-                  <div class="mojo-jojo-nose-left"></div>
-                  <div class="mojo-jojo-nose-right"></div>
-                  <div class="mojo-jojo-mouth-frame">
-                    <div class="mojo-jojo-mouth">
-                      <div class="mojo-jojo-tooth-1"></div>
-                      <div class="mojo-jojo-tooth-2"></div>
-                      <div class="mojo-jojo-tooth-3"></div>
-                      <div class="mojo-jojo-tooth-4"></div>
-                      <div class="mojo-jojo-tongue"></div>
-                    </div>
-                    <div class="mojo-jojo-mouth-upper"></div>
-                  </div>
-                </div>
-              </div>
-              <p>Using the design language of the web, I create vector graphics that scale reliably without showing pixels. Concepts, characters, and brands can all be represented beautifully online using current web techniques.</p>
-              <p>As an avid sketcher, I delight in coming up with concept art, characters, and branding concepts, and am eager to apply my creativity to projects I take on.</p>
+      <section id="home">
+        <div class="jumbotron">
+          <div class="container-fluid" id="contains-jumbotron">
+            <h1 class="display-4 title-color">Web Experiences that Delight</h1>
+            <p class="lead text-muted">Web Development by Chazona Baum</p>
+            <hr class="my-4">
+            <div id="buttonHolder">
+              <a class="btn secondary-outline-button btn-lg" href="#about" role="button">Learn More</a>
+              <a class="btn primary-outline-button btn-lg" href="#portfolio" role="button">View My Work</a>
             </div>
           </div>
         </div>
       </section>
-      <section id="contact">
-        <h2 class="section-header">Get in Touch</h2>
-        <div class="section-row">
-          <p class="section-text-wide">If you need to create or update a web presence for yourself, your business, or your nonprofit, talk to me and we can grab a cup of coffee while we discuss your needs.</p>
-          <p class="section-text-wide">I am also available for full-time or contract work with the right company. Contact me if you think we might work well together.</p>
-        </div>
-        <div class="section-column" id="form-row">
-          <div class="fade-in is-paused-in" id="confirmation-message">
-            <p>Thanks for getting in touch! I will review and respond shortly.</p>
+      <div id="main-container" class="container">
+        <section id="about">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                <h2 class="text-center">You Should Get to Know Me...</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5 col-sm-3 col-lg-4 col-xl-3">
+                <img class="img-fluid img-rounded" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/chazonabaum.JPG" alt="Chazona Baum">
+              </div>
+              <div class="col-7 col-sm-9 col-md-6 col-lg-4 col-xl-4">
+                <p>My name is Chazona Baum, and I am a self-taught front-end developer with diverse experiences in industries ranging from food service to veterinary medicine to insurance.</p>
+              </div>
+              <div class="col-lg-4 col-xl-4">
+                <p>My two young children help shape my perspective, and drive me to create experiences that are accessible, friendly, and with a hint of magic.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>My love of code sprang from my love of language. Where some see confusing symbols, I see an elegant form of communication and expression, and a way for people to extend their capabilities and accomplish the previously impossible.</p>
+                <p>My belief in the positive potential of code and technology drove me to found Midlothian Code, a local nonprofit geared to expanding access to code-based skills and employment and removing barriers to the industry.</p>
+                <h2 class="text-center">...And What I Do</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <p>Using a variety of modern tools, I design and execute cohesive websites that flow and stimulate the senses.</p>
+              </div>
+              <div class="col-sm">
+                <p id="technology-list" class="text-center">
+                  <i class="fa fa-html5" aria-hidden="true"></i>
+                  <i class="fa fa-css3" aria-hidden="true"></i>
+                  <i class="icon-bootstrap" aria-hidden="true"></i>
+                  <i class="icon-sass" aria-hidden="true"></i>
+                  <i class="icon-javascript-alt" aria-hidden="true"></i>
+                  <i class="icon-jquery" aria-hidden="true"></i>
+                  <i class="icon-npm" aria-hidden="true"></i>
+                  <i class="icon-git" aria-hidden="true"></i>
+                  <i class="fa fa-wordpress" aria-hidden="true"></i>
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>While I enjoy building custom sites completely from scratch, I understand that different problems require their own solutions. I get organizations a presence on the web, and am comfortable with tailoring existing content management systems and templates to meet their needs as I did recently for the nonprofit <a href="https://midlothiancode.com" target="_blank">Midlothian Code</a>.</p>
+                <p>Using the design language of the web, I create vector graphics that scale reliably without showing pixels. Concepts, characters, and brands can all be represented beautifully online using current web techniques.</p>
+                <p>As an avid sketcher, I delight in coming up with concept art, characters, and branding concepts, and am eager to apply my creativity to projects I take on.</p>
+                <p>With an understanding of both stylistic animation and dynamic scripting, I am able to breathe life into content made for the web.</p>
+                <p>The right animations for the right purposes, as well as a measure of restraint, allow users to feel like a site responds to them and can give them a sense of wonder.</p>
+                <p>Utilizing the latest in reactive frameworks, I create interfaces that update automatically before your user's eyes, even games.</p>
+              </div>
+            </div>
           </div>
-          <form id="contact-form" class="fade-out is-paused" action="https://docs.google.com/a/chazonabaum.com/forms/d/1qXUxMRAwgKHJOmXJGlRNco5KIX24ye-BH54Fssr0RXw/formResponse" enctype="text/plain" name="contact-form" target="hidden_iframe" onsubmit="submitted=true;">
-            <label for="entry.1533270285">First Name</label>
-            <input type="text" id="entry.1533270285" name="entry.1533270285" required>
-            <label for="entry.1838445991">Last Name</label>
-            <input type="text" id="entry.1838445991" name="entry.1838445991" required>
-            <label for="entry.781217583">Email</label>
-            <input type="email" id="entry.781217583" name="entry.781217583" required>
-            <label for="entry.248522592">Phone Number</label>
-            <input type="tel" id="entry.248522592" name="entry.248522592">
-            <label for="entry.566958641">Message</label>
-            <textarea id="entry.566958641" name="entry.566958641" rows="5" wrap="soft" required></textarea>
-            <input type="submit" value="Send" id="send-button" class="button">
-          </form>
-          <iframe name="hidden_iframe" id="hidden_iframe" onload="if(submitted){}"></iframe>
-        </div>
-        <div class="section-row">
-          <p class="section-text-center">I am available across the web and on social media:</p>
-        </div>
-        <div class="section-row">
-          <ul class="social-links">
-            <li class="social-item"><a href="tel:+1-757-617-6964"><i class="fa fa-mobile"></i></a></li>
-            <li class="social-item"><a href="mailto:chazona@chazonabaum.com"><i class="fa fa-envelope"></i></a></li>
-            <li class="social-item"><a href="http://mernmom.com"><i class="fa fa-rss"></i></a></li>
-            <li class="social-item"><a href="https://twitter.com/chznbaum"><i class="fa fa-twitter"></i></a></li>
-            <li class="social-item"><a href="https://www.linkedin.com/in/chznbaum"><i class="fa fa-linkedin"></i></a></li>
-            <li class="social-item"><a href="https://github.com/chznbaum"><i class="fa fa-github"></i></a></li>
-            <li class="social-item"><a href="https://codepen.io/chznbaum"><i class="fa fa-codepen"></i></a></li>
-            <li class="social-item"><a href="https://dribbble.com/chznbaum"><i class="fa fa-dribbble"></i></a></li>
-            <li class="social-item"><a href="https://www.freecodecamp.com/chznbaum"><i class="fa fa-free-code-camp"></i></a></li>
-          </ul>
-        </div>
-      </section>
+        </section>
+        <section id="portfolio">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                <h2 class="text-center">View My Work</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="card-columns">
+                <div class="card text-center">
+                  <div class="card-header">Front-End Development</div>
+                  <div class="card-block">
+                    <h3>Pok&eacute;mon Battle Game</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/pokemon_screenshot.jpg" alt="Pokemon Battle Game Screenshot">
+                    <p class="card-text">An interactive, turn-by-turn battle game inspired by old Pok&eacute;mon GameBoy games. The user can choose a character and a Pokémon, and each turn they can use one of up to four of the Pokémon's attacks, heal with a potion, or pass.</p>
+                    <a href="http://codepen.io/chznbaum/full/GWqpqj" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">HTML, CSS, JavaScript, Vue.js</div>
+                </div>
+                <div class="card text-center">
+                  <div class="card-header">Graphic Design</div>
+                  <div class="card-block">
+                    <h3>Mojo Jojo CSS Vector Graphic</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/mojojojo.JPG" alt="Mojo Jojo Vector Graphic">
+                    <p class="card-text">Mojo Jojo character from The PowerPuff Girls recreated as a pure CSS vector graphic.</p>
+                    <a href="http://codepen.io/chznbaum/full/mREzdw" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">CSS</div>
+                </div>
+                <div class="card text-center">
+                  <div class="card-header">Graphic Design</div>
+                  <div class="card-block">
+                    <h3>Ruler CSS Vector Graphic</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/ruler.JPG" alt="Ruler Vector Graphic">
+                    <p class="card-text">A ruler created as a pure CSS vector graphic. Selected as one of Codepen's Picked Pens.</p>
+                    <a href="http://codepen.io/chznbaum/full/WRoybZ" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">CSS</div>
+                </div>
+                <div class="card text-center">
+                  <div class="card-header">Graphic Design</div>
+                  <div class="card-block">
+                    <h3>Animated Wall Clock CSS Vector Graphic</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/clock.JPG" alt="Clock Vector Graphic">
+                    <p class="card-text">A wall clock created and animated as a pure CSS vector graphic.</p>
+                    <a href="http://codepen.io/chznbaum/full/KaNvby" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">CSS</div>
+                </div>
+                <div class="card text-center">
+                  <div class="card-header">Front-End Development</div>
+                  <div class="card-block">
+                    <h3>JavaScript Calculator</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/calculator.JPG" alt="Calculator Screenshot">
+                    <p class="card-text">A calculator created visually in CSS, that uses JavaScript to perform calculations. The calculator will chain calculations until the user is ready to apply them by pressing the equals button.</p>
+                    <p class="card-text">Note: The percent button and negative toggle will evaluate the current chain before applying their changes. The equals button is not needed for those functions.</p>
+                    <a href="http://codepen.io/chznbaum/full/EZjrRp" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">CSS, JavaScript, jQuery</div>
+                </div>
+                <div class="card text-center">
+                  <div class="card-header">WordPress</div>
+                  <div class="card-block">
+                    <h3>Midlothian Code Website</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/midlothian_code.jpg" alt="Midlothian Code Screenshot">
+                    <p class="card-text">A website built using self-hosted WordPress for the organization Midlothian Code. Features a blog, events with reservations, job listings, and an online store. I continue to serve as developer and webmaster.</p>
+                    <a href="https://midlothiancode.com/" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">WordPress, CSS</div>
+                </div>
+                <div class="card text-center">
+                  <div class="card-header">Front-End Development</div>
+                  <div class="card-block">
+                    <h3>Pig Latin Translator</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/PigLatin.JPG" alt="Pig Latin Translator Screenshot">
+                    <p class="card-text">A translator that converts English typed in the left field into Pig Latin in the right field, live while the user is typing. Selected as one of Codepen's Picked Pens.</p>
+                    <a href="http://codepen.io/chznbaum/full/GNNwJZ" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">Bootstrap, JavaScript</div>
+                </div>
+                <div class="card text-center">
+                  <div class="card-header">Back-End Development</div>
+                  <div class="card-block">
+                    <h3>"Mom Bot" Twitter Bot</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/proud_screen.jpg" alt="Tweet Screenshot">
+                    <p class="card-text">A Twitter Bot, @the_mother_bot, created in Node.js. The bot follows and unfollows independently, scans @replies to give encouragement or praise when prompted by key words, and scans followers' tweets for "bad words" to warn of word choice and offer that the follower can delete a potentially embarrassing tweet.</p>
+                    <a href="https://github.com/chznbaum/the-mom-bot" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">Node.js</div>
+                </div>
+                <div class="card text-center">
+                  <div class="card-header">Front-End Development</div>
+                  <div class="card-block">
+                    <h3>Twitch TV JSON API</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/twitchtvjsonapi.jpg" alt="Twitch TV Project Screenshot">
+                    <p class="card-text">A web tool which allows the user to check if various Twitch live-streamers are broadcasting and to view their content.</p>
+                    <a href="http://codepen.io/chznbaum/full/oYYqEb" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">HTML, CSS, Bootstrap, JavaScript, jQuery, TwitchTV API</div>
+                </div>
+                <div class="card text-center">
+                  <div class="card-header">Front-End Development</div>
+                  <div class="card-block">
+                    <h3>Wikipedia Viewer</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/wikipediaviewer.jpg" alt="Wikipedia Viewer Screenshot">
+                    <p class="card-text">A web tool that allows the user to search for and view relevant Wikipedia entries or view a random Wikipedia entry.</p>
+                    <a href="http://codepen.io/chznbaum/full/qNKrAq" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">HTML, CSS, Bootstrap, JavaScript, jQuery, Wikimedia API</div>
+                </div>
+                <div class="card text-center">
+                  <div class="card-header">Front-End Development</div>
+                  <div class="card-block">
+                    <h3>Local Weather App</h3>
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/724333/localweatherapp.jpg" alt="Local Weather App Screenshot">
+                    <p class="card-text">A web app that displays the weather at the user's location, and adjusts the graphical display accordingly.</p>
+                    <a href="http://codepen.io/chznbaum/full/QEAJRz/" class="btn primary-outline-button" target="_blank">View Project</a>
+                  </div>
+                  <div class="card-footer text-muted">HTML, CSS, Bootstrap, JavaScript, jQuery, Dark Sky API</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="contact">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                <h2 class="text-center">Get in Touch</h2>
+                <p>If you need to create or update a web presence for yourself, your business, or your nonprofit, talk to me and we can grab a cup of coffee while we discuss your needs.</p>
+                <p>I am also available for full-time or contract work with the right company. Contact me if your users are your passion and you think we might work well together.</p>
+              </div>
+            </div>
+            <div id="contact-section">
+              <form id="contact-form" action="https://docs.google.com/a/chazonabaum.com/forms/d/1qXUxMRAwgKHJOmXJGlRNco5KIX24ye-BH54Fssr0RXw/formResponse" enctype="text/plain" name="contact-form" target="hidden_iframe" onsubmit="formSubmit()">
+                <div class="row">
+                  <div class="col-md">
+                    <div class="form-group">
+                      <label for="entry.1533270285">First Name</label>
+                      <input type="text" class="form-control" id="entry.1533270285" name="entry.1533270285" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="entry.1838445991">Last Name</label>
+                      <input type="text" class="form-control" id="entry.1838445991" name="entry.1838445991" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="entry.781217583">Email</label>
+                      <input type="email" class="form-control" id="entry.781217583" name="entry.781217583" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="entry.248522592">Phone Number</label>
+                      <input type="tel" class="form-control" id="entry.248522592" name="entry.248522592">
+                    </div>
+                  </div>
+                  <div class="col-md">
+                    <div class="form-group">
+                      <label for="entry.566958641">Message</label>
+                      <textarea class="form-control" id="entry.566958641" name="entry.566958641" rows="13" wrap="soft" required></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <input type="submit" value="Send" id="send-button" class="form-control btn primary-outline-button btn-lg">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <iframe name="hidden_iframe" id="hidden_iframe" onload="if(submitted){}"></iframe>
+            <div class="row">
+              <div class="col justify-content-center">
+                <ul class="nav justify-content-center" id="social-links">
+                  <li class="nav-item"><a class="nav-link" href="tel:+1-757-617-6964"><i class="fa fa-mobile"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="mailto:chazona@chazonabaum.com"><i class="fa fa-envelope"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="http://mernmom.com"><i class="fa fa-rss"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://twitter.com/chznbaum"><i class="fa fa-twitter"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/chznbaum"><i class="fa fa-linkedin"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://github.com/chznbaum"><i class="fa fa-github"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://codepen.io/chznbaum"><i class="fa fa-codepen"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://dribbble.com/chznbaum"><i class="fa fa-dribbble"></i></a></li>
+                  <li class="nav-item"><a class="nav-link" href="https://www.freecodecamp.com/chznbaum"><i class="fa fa-free-code-camp"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
-    <footer>
-      <p class="copy">&copy; 2017 <a href="http://chazonabaum.com/">Chazona Baum</a> | Video sourced from <a href="https://videezy.com">Videezy</a></p>
+    <footer class="footer text-center">
+      <div class="container">
+        <span class="text-muted">&copy;2017 <a href="http://chazonabaum.com">Chazona Baum</a></span>
+      </div>
     </footer>
   </body>
 </html>
