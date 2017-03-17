@@ -22,11 +22,20 @@ Think there's some cool feature that a project should be able to do? Awesome! Op
 ## Credits
 This website is thanks in large part to [Free Code Camp](https://freecodecamp.com) and its community of budding developers, without whom I would not be this far along with my code progress. Thanks as well to [Quincy Larson](https://twitter.com/ossia) for establishing this program and community in the first place.
 
-Smooth Scrolling courtesy of [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll) by [Chris Ferdinandi](https://github.com/cferdinandi) under an MIT license.
+The current redesign came about as a part of the #30Days30Sites challenge created by [Tris](https://github.com/techwithtris).
+
+Design choices were made to ensure the site would pair well with business cards cards I have ordered in a [design](https://www.moo.com/us/design-templates/standard-size-business-cards/pack/colourlovers-champions.html) by [COLOURlovers](http://www.colourlovers.com/). Thus, the web design is loosely inspired by the cards.
 
 ## Version History
 
-### Version 4.0 Current
+### Version 5.0 Current
+16 March 2017
+
+Again?
+
+Another website redesign, and hopefully the last for a little while. Designed to pair with business card palette and showcase more of my projects within my portfolio.
+
+### Version 4.0
 10 February 2017
 
 Complete website redesign. Simplified and given more coordinated color palette and animations.
